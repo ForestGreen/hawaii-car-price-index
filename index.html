@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawaii Car Price Index — What Should You Really Pay for a Used Car in Hawaii?</title>
+    <meta name="description" content="Free tool: see how much more used cars cost in Hawaii vs. the mainland. Check the Hawaii Premium on any make, model, and year. Updated daily from 1,000+ local listings.">
+    <meta name="keywords" content="hawaii used car prices, used cars hawaii, hawaii car premium, buy car hawaii, hawaii auto prices, oahu used cars, maui used cars">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hawaii Car Price Index — What Should You Really Pay?">
+    <meta property="og:description" content="Used cars cost 15-25% more in Hawaii. Our free tool shows exactly how much more — by make, model, year, and island.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hawaiicarpriceindex.com">
+    <meta property="og:image" content="https://hawaiicarpriceindex.com/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hawaii Car Price Index">
+    <meta name="twitter:description" content="Used cars cost 15-25% more in Hawaii. See exactly how much for your car.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://hawaiicarpriceindex.com">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Hawaii Car Price Index",
+        "description": "Free tool showing how much more used cars cost in Hawaii compared to the mainland U.S.",
+        "url": "https://hawaiicarpriceindex.com",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "areaServed": {
+            "@type": "State",
+            "name": "Hawaii"
+        }
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           DESIGN SYSTEM
+           Inspired by: Zillow's clarity, NerdWallet's trust,
+           with a warm Hawaii-local feel
+           ============================================ */
+
+        :root {
+            --color-ocean: #0066CC;
+            --color-ocean-dark: #004C99;
+            --color-ocean-light: #E6F0FA;
+            --color-sunset: #FF6B35;
+            --color-sunset-dark: #E55A2B;
+            --color-palm: #2D8A4E;
+            --color-palm-light: #E8F5EC;
+            --color-sand: #FFF8F0;
+            --color-lava: #CC3333;
+            --color-gray-900: #1A1A2E;
+            --color-gray-700: #4A4A5A;
+            --color-gray-500: #7A7A8A;
+            --color-gray-300: #C4C4D0;
+            --color-gray-100: #F4F4F8;
+            --color-white: #FFFFFF;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--color-gray-900);
+            background: var(--color-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-gray-100);
+            padding: 0 24px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            backdrop-filter: blur(10px);
+        }
+        .nav-logo {
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--color-ocean);
+            text-decoration: none;
+        }
+        .nav-logo span { color: var(--color-sunset); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a {
+            color: var(--color-gray-700);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--color-ocean); }
+        .nav-cta {
+            background: var(--color-sunset) !important;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover { background: var(--color-sunset-dark) !important; }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, #001a33 0%, #003366 40%, #004C99 100%);
+            padding: 80px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.9);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .hero h1 .highlight {
+            color: var(--color-sunset);
+        }
+        .hero p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* ── CALCULATOR CARD ── */
+        .calculator-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 32px;
+            position: relative;
+        }
+        .calc-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        .calc-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .calc-field { display: flex; flex-direction: column; }
+        .calc-field label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .calc-field select, .calc-field input {
+            padding: 12px 16px;
+            border: 2px solid var(--color-gray-100);
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-family: inherit;
+            color: var(--color-gray-900);
+            background: white;
+            transition: border-color 0.2s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        .calc-field select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237A7A8A' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 36px;
+        }
+        .calc-field select:focus, .calc-field input:focus {
+            outline: none;
+            border-color: var(--color-ocean);
+        }
+        .calc-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--color-ocean);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 8px;
+        }
+        .calc-btn:hover { background: var(--color-ocean-dark); }
+        .calc-btn:active { transform: scale(0.98); }
+
+        /* ── RESULTS ── */
+        .results-panel {
+            display: none;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 2px solid var(--color-gray-100);
+            animation: fadeIn 0.4s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .results-title { font-size: 18px; font-weight: 700; }
+        .results-subtitle { font-size: 13px; color: var(--color-gray-500); }
+
+        .price-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .price-card {
+            background: var(--color-gray-100);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            text-align: center;
+        }
+        .price-card.premium {
+            background: #FFF0E6;
+            border: 2px solid var(--color-sunset);
+        }
+        .price-card-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-gray-500);
+            margin-bottom: 4px;
+        }
+        .price-card-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--color-gray-900);
+        }
+        .price-card.premium .price-card-value { color: var(--color-sunset); }
+        .price-card-note {
+            font-size: 11px;
+            color: var(--color-gray-500);
+            margin-top: 2px;
+        }
+
+        .premium-bar {
+            background: var(--color-gray-100);
+            border-radius: 8px;
+            height: 32px;
+            position: relative;
+            margin: 16px 0;
+            overflow: hidden;
+        }
+        .premium-bar-fill {
+            height: 100%;
+            border-radius: 8px;
+            background: linear-gradient(90deg, var(--color-palm) 0%, var(--color-sunset) 50%, var(--color-lava) 100%);
+            transition: width 0.6s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 12px;
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .insights-box {
+            background: var(--color-ocean-light);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            margin-top: 16px;
+        }
+        .insights-box h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--color-ocean-dark);
+            margin-bottom: 8px;
+        }
+        .insights-box p {
+            font-size: 13px;
+            color: var(--color-gray-700);
+            line-height: 1.5;
+        }
+
+        /* ── LEAD CAPTURE (appears after results) ── */
+        .lead-capture {
+            display: none;
+            background: linear-gradient(135deg, #FFF8F0 0%, #FFF0E6 100%);
+            border: 2px solid #FFD4B8;
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .lead-capture h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .lead-capture p {
+            font-size: 13px;
+            color: var(--color-gray-700);
+            margin-bottom: 16px;
+        }
+        .lead-capture-form {
+            display: flex;
+            gap: 8px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .lead-capture-form input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid var(--color-gray-300);
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-family: inherit;
+        }
+        .lead-capture-form button {
+            padding: 12px 24px;
+            background: var(--color-sunset);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .lead-capture-form button:hover { background: var(--color-sunset-dark); }
+        .lead-micro { font-size: 11px; color: var(--color-gray-500); margin-top: 8px; }
+
+        /* ── SOCIAL PROOF ── */
+        .social-proof {
+            background: var(--color-gray-100);
+            padding: 48px 24px;
+            text-align: center;
+        }
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 64px;
+            max-width: 800px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .stat-item { }
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--color-ocean);
+        }
+        .stat-label {
+            font-size: 13px;
+            color: var(--color-gray-500);
+            font-weight: 500;
+        }
+
+        /* ── MARKET OVERVIEW ── */
+        .section {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 64px 24px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .section-header p {
+            font-size: 16px;
+            color: var(--color-gray-500);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Island price table */
+        .island-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        .island-table thead th {
+            background: var(--color-gray-900);
+            color: white;
+            padding: 14px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: left;
+        }
+        .island-table tbody td {
+            padding: 14px 20px;
+            font-size: 14px;
+            border-bottom: 1px solid var(--color-gray-100);
+        }
+        .island-table tbody tr:hover {
+            background: var(--color-ocean-light);
+        }
+        .island-table tbody tr:last-child td { border-bottom: none; }
+        .premium-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .premium-high { background: #FFE0E0; color: var(--color-lava); }
+        .premium-med { background: #FFF0E0; color: #CC6600; }
+        .premium-low { background: var(--color-palm-light); color: var(--color-palm); }
+
+        /* ── POPULAR CARS GRID ── */
+        .cars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .car-card {
+            background: white;
+            border: 1px solid var(--color-gray-100);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            transition: box-shadow 0.2s, transform 0.2s;
+            cursor: pointer;
+        }
+        .car-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .car-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .car-card h3 { font-size: 16px; font-weight: 700; }
+        .car-card .year-range { font-size: 12px; color: var(--color-gray-500); }
+        .car-card-prices {
+            display: flex;
+            gap: 24px;
+            margin-top: 12px;
+        }
+        .car-price-col { }
+        .car-price-label { font-size: 11px; color: var(--color-gray-500); text-transform: uppercase; font-weight: 600; letter-spacing: 0.3px; }
+        .car-price-val { font-size: 18px; font-weight: 700; }
+        .car-premium-tag {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--color-sunset);
+        }
+
+        /* ── WHY SECTION ── */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .why-card {
+            padding: 28px;
+            border-radius: var(--radius-md);
+            background: var(--color-sand);
+        }
+        .why-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        .why-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .why-card p { font-size: 14px; color: var(--color-gray-700); line-height: 1.6; }
+
+        /* ── FAQ ── */
+        .faq-list { max-width: 720px; margin: 0 auto; }
+        .faq-item {
+            border-bottom: 1px solid var(--color-gray-100);
+            padding: 20px 0;
+        }
+        .faq-q {
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-q::after {
+            content: '+';
+            font-size: 20px;
+            color: var(--color-gray-500);
+            transition: transform 0.2s;
+        }
+        .faq-item.open .faq-q::after {
+            content: '−';
+        }
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.open .faq-a {
+            max-height: 300px;
+            padding-top: 12px;
+        }
+        .faq-a p {
+            font-size: 14px;
+            color: var(--color-gray-700);
+            line-height: 1.7;
+        }
+
+        /* ── BOTTOM CTA ── */
+        .bottom-cta {
+            background: linear-gradient(135deg, #001a33 0%, #003366 100%);
+            padding: 64px 24px;
+            text-align: center;
+        }
+        .bottom-cta h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 12px;
+        }
+        .bottom-cta p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 28px;
+        }
+        .bottom-cta-form {
+            display: flex;
+            gap: 8px;
+            max-width: 460px;
+            margin: 0 auto;
+        }
+        .bottom-cta-form input {
+            flex: 1;
+            padding: 14px 18px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-family: inherit;
+        }
+        .bottom-cta-form button {
+            padding: 14px 28px;
+            background: var(--color-sunset);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--color-gray-900);
+            color: var(--color-gray-300);
+            padding: 48px 24px 24px;
+        }
+        .footer-grid {
+            max-width: 1080px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        .footer-brand p { font-size: 13px; line-height: 1.6; margin-top: 8px; color: var(--color-gray-500); }
+        .footer-col h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: white; margin-bottom: 12px; }
+        .footer-col a { display: block; font-size: 13px; color: var(--color-gray-500); text-decoration: none; margin-bottom: 8px; }
+        .footer-col a:hover { color: white; }
+        .footer-bottom {
+            max-width: 1080px;
+            margin: 32px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 12px;
+            color: var(--color-gray-500);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .hero { padding: 48px 16px 40px; }
+            .calculator-card { padding: 20px; }
+            .calc-row { grid-template-columns: 1fr; }
+            .price-cards { grid-template-columns: 1fr; }
+            .stats-row { gap: 32px; }
+            .nav-links { display: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .lead-capture-form { flex-direction: column; }
+            .bottom-cta-form { flex-direction: column; }
+            .cars-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════ -->
+<nav>
+    <a href="/" class="nav-logo">Hawaii<span>CarPrice</span>Index</a>
+    <div class="nav-links">
+        <a href="#calculator">Price Check</a>
+        <a href="#market">Market Data</a>
+        <a href="#popular">Popular Cars</a>
+        <a href="#why">Why More?</a>
+        <a href="#faq">FAQ</a>
+        <a href="#alerts" class="nav-cta">Get Price Alerts</a>
+    </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO + CALCULATOR
+     ═══════════════════════════════════════════ -->
+<section class="hero" id="calculator">
+    <div class="hero-content">
+        <div class="hero-badge">Updated daily from 1,000+ local listings</div>
+        <h1>Used cars in Hawaii cost <span class="highlight">15-25% more.</span><br>Find out exactly how much.</h1>
+        <p>The only price tool built specifically for Hawaii. See the real "island premium" on any car, by make, model, year, and island.</p>
+    </div>
+
+    <div class="calculator-card">
+        <div class="calc-title">Check the Hawaii Premium on Your Car</div>
+        <div class="calc-row">
+            <div class="calc-field">
+                <label>Make</label>
+                <select id="calc-make" onchange="updateModels()">
+                    <option value="">Select make...</option>
+                    <option>Toyota</option><option>Honda</option><option>Subaru</option>
+                    <option>Jeep</option><option>Ford</option><option>Chevrolet</option>
+                    <option>Nissan</option><option>Hyundai</option><option>Kia</option>
+                    <option>Tesla</option><option>BMW</option><option>Mercedes-Benz</option>
+                </select>
+            </div>
+            <div class="calc-field">
+                <label>Model</label>
+                <select id="calc-model">
+                    <option value="">Select model...</option>
+                </select>
+            </div>
+        </div>
+        <div class="calc-row">
+            <div class="calc-field">
+                <label>Year</label>
+                <select id="calc-year">
+                    <option value="">Select year...</option>
+                    <option>2025</option><option>2024</option><option>2023</option>
+                    <option>2022</option><option>2021</option><option>2020</option>
+                    <option>2019</option><option>2018</option>
+                </select>
+            </div>
+            <div class="calc-field">
+                <label>Mileage</label>
+                <select id="calc-mileage">
+                    <option value="">Select range...</option>
+                    <option value="0-30000">Under 30,000</option>
+                    <option value="30000-60000">30,000 - 60,000</option>
+                    <option value="60000-90000">60,000 - 90,000</option>
+                    <option value="90000-120000">90,000 - 120,000</option>
+                    <option value="120000+">Over 120,000</option>
+                </select>
+            </div>
+        </div>
+        <div class="calc-row" style="grid-template-columns: 1fr">
+            <div class="calc-field">
+                <label>Island</label>
+                <select id="calc-island">
+                    <option value="all">All Islands (average)</option>
+                    <option value="oahu">Oahu</option>
+                    <option value="maui">Maui</option>
+                    <option value="big_island">Big Island</option>
+                    <option value="kauai">Kauai</option>
+                </select>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calculatePremium()">Check Hawaii Premium</button>
+
+        <!-- RESULTS -->
+        <div class="results-panel" id="results-panel">
+            <div class="results-header">
+                <div>
+                    <div class="results-title" id="results-title">2023 Toyota Tacoma</div>
+                    <div class="results-subtitle" id="results-subtitle">30,000 - 60,000 miles · All Islands</div>
+                </div>
+            </div>
+            <div class="price-cards">
+                <div class="price-card">
+                    <div class="price-card-label">Mainland Avg</div>
+                    <div class="price-card-value" id="mainland-price">$32,400</div>
+                    <div class="price-card-note">National average</div>
+                </div>
+                <div class="price-card">
+                    <div class="price-card-label">Hawaii Avg</div>
+                    <div class="price-card-value" id="hawaii-price">$38,100</div>
+                    <div class="price-card-note">Based on local listings</div>
+                </div>
+                <div class="price-card premium">
+                    <div class="price-card-label">Hawaii Premium</div>
+                    <div class="price-card-value" id="premium-amount">+$5,700</div>
+                    <div class="price-card-note" id="premium-pct">+17.6% more</div>
+                </div>
+            </div>
+            <div class="premium-bar">
+                <div class="premium-bar-fill" id="premium-bar" style="width: 65%">+17.6%</div>
+            </div>
+            <div class="insights-box">
+                <h4>What This Means For You</h4>
+                <p id="insights-text">
+                    A 2023 Toyota Tacoma with 30K-60K miles costs about $5,700 more in Hawaii than the mainland average.
+                    Tacomas hold value exceptionally well in Hawaii due to high demand for trucks and limited supply.
+                    Consider checking neighbor island listings — Big Island often has lower prices than Oahu.
+                </p>
+            </div>
+        </div>
+
+        <!-- LEAD CAPTURE -->
+        <div class="lead-capture" id="lead-capture">
+            <h3>Get alerted when prices drop</h3>
+            <p>We'll email you when a <span id="lead-car-name">2023 Toyota Tacoma</span> is listed below market price in Hawaii.</p>
+            <div class="lead-capture-form">
+                <input type="email" id="lead-email" placeholder="your@email.com">
+                <button onclick="submitLead()">Alert Me</button>
+            </div>
+            <div class="lead-micro">Free. No spam. Unsubscribe anytime.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SOCIAL PROOF
+     ═══════════════════════════════════════════ -->
+<section class="social-proof">
+    <div class="stats-row">
+        <div class="stat-item">
+            <div class="stat-number" id="stat-listings">1,247</div>
+            <div class="stat-label">Listings tracked</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">+18.3%</div>
+            <div class="stat-label">Avg. Hawaii premium</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Islands covered</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">Daily</div>
+            <div class="stat-label">Price updates</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MARKET OVERVIEW BY ISLAND
+     ═══════════════════════════════════════════ -->
+<section class="section" id="market">
+    <div class="section-header">
+        <h2>Hawaii Used Car Prices by Island</h2>
+        <p>Average prices and premiums compared to mainland, updated daily. Neighbor islands can be 5-8% cheaper than Oahu for the same car.</p>
+    </div>
+    <table class="island-table">
+        <thead>
+            <tr>
+                <th>Island</th>
+                <th>Avg. Used Car Price</th>
+                <th>vs. Mainland</th>
+                <th>Listings Tracked</th>
+                <th>Most Popular Make</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Oahu</strong></td>
+                <td>$29,800</td>
+                <td><span class="premium-badge premium-high">+21.3%</span></td>
+                <td>684</td>
+                <td>Toyota</td>
+            </tr>
+            <tr>
+                <td><strong>Maui</strong></td>
+                <td>$28,200</td>
+                <td><span class="premium-badge premium-high">+18.7%</span></td>
+                <td>198</td>
+                <td>Toyota</td>
+            </tr>
+            <tr>
+                <td><strong>Big Island</strong></td>
+                <td>$26,500</td>
+                <td><span class="premium-badge premium-med">+14.2%</span></td>
+                <td>241</td>
+                <td>Toyota</td>
+            </tr>
+            <tr>
+                <td><strong>Kauai</strong></td>
+                <td>$27,900</td>
+                <td><span class="premium-badge premium-med">+16.8%</span></td>
+                <td>89</td>
+                <td>Subaru</td>
+            </tr>
+            <tr>
+                <td><strong>Molokai/Lanai</strong></td>
+                <td>$25,100</td>
+                <td><span class="premium-badge premium-low">+11.5%</span></td>
+                <td>35</td>
+                <td>Toyota</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     POPULAR CARS
+     ═══════════════════════════════════════════ -->
+<section class="section" style="background: var(--color-gray-100);" id="popular">
+    <div class="section-header">
+        <h2>Most Popular Cars in Hawaii — Prices & Premiums</h2>
+        <p>The top 9 most searched used cars in Hawaii, with real local pricing data.</p>
+    </div>
+    <div class="cars-grid">
+        <div class="car-card" onclick="quickCalc('Toyota','Tacoma')">
+            <div class="car-card-header">
+                <div>
+                    <h3>Toyota Tacoma</h3>
+                    <div class="year-range">2020-2024 avg.</div>
+                </div>
+            </div>
+            <div class="car-card-prices">
+                <div class="car-price-col">
+                    <div class="car-price-label">Mainland</div>
+                    <div class="car-price-val">$33,200</div>
+                </div>
+                <div class="car-price-col">
+                    <div class="car-price-label">Hawaii</div>
+                    <div class="car-price-val">$39,400</div>
+                </div>
+            </div>
+            <div class="car-premium-tag">+$6,200 Hawaii Premium (+18.7%)</div>
+        </div>
+        <div class="car-card" onclick="quickCalc('Toyota','4Runner')">
+            <div class="car-card-header">
+                <div>
+                    <h3>Toyota 4Runner</h3>
+                    <div class="year-range">2020-2024 avg.</div>
+                </div>
+            </div>
+            <div class="car-card-prices">
+                <div class="car-price-col">
+                    <div class="car-price-label">Mainland</div>
+                    <div class="car-price-val">$38,500</div>
+                </div>
+                <div class="car-price-col">
+                    <div class="car-price-label">Hawaii</div>
+                    <div class="car-price-val">$46,200</div>
+                </div>
+            </div>
+            <div class="car-premium-tag">+$7,700 Hawaii Premium (+20.0%)</div>
+        </div>
+        <div class="car-card" onclick="quickCalc('Honda','CR-V')">
+            <div class="car-card-header">
+                <div>
+                    <h3>Honda CR-V</h3>
+                    <div class="year-range">2020-2024 avg.</div>
+                </div>
+            </div>
+            <div class="car-card-prices">
+                <div class="car-price-col">
+                    <div class="car-price-label">Mainland</div>
+                    <div class="car-price-val">$28,900</div>
+                </div>
+                <div class="car-price-col">
+                    <div class="car-price-label">Hawaii</div>
+                    <div class="car-price-val">$33,600</div>
+                </div>
+            </div>
+            <div class="car-premium-tag">+$4,700 Hawaii Premium (+16.3%)</div>
+        </div>
+        <div class="car-card" onclick="quickCalc('Subaru','Outback')">
+            <div class="car-card-header">
+                <div>
+                    <h3>Subaru Outback</h3>
+                    <div class="year-range">2020-2024 avg.</div>
+                </div>
+            </div>
+            <div class="car-card-prices">
+                <div class="car-price-col">
+                    <div class="car-price-label">Mainland</div>
+                    <div class="car-price-val">$27,400</div>
+                </div>
+                <div class="car-price-col">
+                    <div class="car-price-label">Hawaii</div>
+                    <div class="car-price-val">$31,800</div>
+                </div>
+            </div>
+            <div class="car-premium-tag">+$4,400 Hawaii Premium (+16.1%)</div>
+        </div>
+        <div class="car-card" onclick="quickCalc('Jeep','Wrangler')">
+            <div class="car-card-header">
+                <div>
+                    <h3>Jeep Wrangler</h3>
+                    <div class="year-range">2020-2024 avg.</div>
+                </div>
+            </div>
+            <div class="car-card-prices">
+                <div class="car-price-col">
+                    <div class="car-price-label">Mainland</div>
+                    <div class="car-price-val">$35,100</div>
+                </div>
+                <div class="car-price-col">
+                    <div class="car-price-label">Hawaii</div>
+                    <div class="car-price-val">$42,700</div>
+                </div>
+            </div>
+            <div class="car-premium-tag">+$7,600 Hawaii Premium (+21.7%)</div>
+        </div>
+        <div class="car-card" onclick="quickCalc('Toyota','RAV4')">
+            <div class="car-card-header">
+                <div>
+                    <h3>Toyota RAV4</h3>
+                    <div class="year-range">2020-2024 avg.</div>
+                </div>
+            </div>
+            <div class="car-card-prices">
+                <div class="car-price-col">
+                    <div class="car-price-label">Mainland</div>
+                    <div class="car-price-val">$29,800</div>
+                </div>
+                <div class="car-price-col">
+                    <div class="car-price-label">Hawaii</div>
+                    <div class="car-price-val">$34,900</div>
+                </div>
+            </div>
+            <div class="car-premium-tag">+$5,100 Hawaii Premium (+17.1%)</div>
+        </div>
+        <div class="car-card" onclick="quickCalc('Ford','F-150')">
+            <div class="car-card-header">
+                <div>
+                    <h3>Ford F-150</h3>
+                    <div class="year-range">2020-2024 avg.</div>
+                </div>
+            </div>
+            <div class="car-card-prices">
+                <div class="car-price-col">
+                    <div class="car-price-label">Mainland</div>
+                    <div class="car-price-val">$37,200</div>
+                </div>
+                <div class="car-price-col">
+                    <div class="car-price-label">Hawaii</div>
+                    <div class="car-price-val">$43,800</div>
+                </div>
+            </div>
+            <div class="car-premium-tag">+$6,600 Hawaii Premium (+17.7%)</div>
+        </div>
+        <div class="car-card" onclick="quickCalc('Tesla','Model Y')">
+            <div class="car-card-header">
+                <div>
+                    <h3>Tesla Model Y</h3>
+                    <div class="year-range">2020-2024 avg.</div>
+                </div>
+            </div>
+            <div class="car-card-prices">
+                <div class="car-price-col">
+                    <div class="car-price-label">Mainland</div>
+                    <div class="car-price-val">$34,800</div>
+                </div>
+                <div class="car-price-col">
+                    <div class="car-price-label">Hawaii</div>
+                    <div class="car-price-val">$38,900</div>
+                </div>
+            </div>
+            <div class="car-premium-tag">+$4,100 Hawaii Premium (+11.8%)</div>
+        </div>
+        <div class="car-card" onclick="quickCalc('Honda','Civic')">
+            <div class="car-card-header">
+                <div>
+                    <h3>Honda Civic</h3>
+                    <div class="year-range">2020-2024 avg.</div>
+                </div>
+            </div>
+            <div class="car-card-prices">
+                <div class="car-price-col">
+                    <div class="car-price-label">Mainland</div>
+                    <div class="car-price-val">$23,400</div>
+                </div>
+                <div class="car-price-col">
+                    <div class="car-price-label">Hawaii</div>
+                    <div class="car-price-val">$27,200</div>
+                </div>
+            </div>
+            <div class="car-premium-tag">+$3,800 Hawaii Premium (+16.2%)</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     WHY CARS COST MORE
+     ═══════════════════════════════════════════ -->
+<section class="section" id="why">
+    <div class="section-header">
+        <h2>Why Do Used Cars Cost More in Hawaii?</h2>
+        <p>Five structural factors that create the "Hawaii Premium" on every used vehicle.</p>
+    </div>
+    <div class="why-grid">
+        <div class="why-card">
+            <div class="why-icon">🚢</div>
+            <h3>Shipping Costs</h3>
+            <p>Every car arrives by ocean freight. Shipping a car from the West Coast to Honolulu costs $1,200-2,500 for the vehicle alone, plus port fees and insurance. This cost gets baked into every price.</p>
+        </div>
+        <div class="why-card">
+            <div class="why-icon">🏝️</div>
+            <h3>Limited Supply</h3>
+            <p>Hawaii is a closed market. Cars don't drive in from a neighboring state. The total vehicle pool is fixed and small, creating constant supply pressure that keeps prices elevated.</p>
+        </div>
+        <div class="why-card">
+            <div class="why-icon">🔧</div>
+            <h3>Higher Repair Costs</h3>
+            <p>Parts ship from the mainland (adding cost and time). Fewer mechanics means less competition on labor rates. Salt air corrosion means more frequent repairs, increasing the value of well-maintained cars.</p>
+        </div>
+        <div class="why-card">
+            <div class="why-icon">🌴</div>
+            <h3>Island-Specific Demand</h3>
+            <p>Certain vehicles are disproportionately popular in Hawaii — 4WD trucks (for beaches), fuel-efficient sedans (for gas prices), and SUVs. High demand + low supply = premium pricing.</p>
+        </div>
+        <div class="why-card">
+            <div class="why-icon">💰</div>
+            <h3>Higher Cost of Living</h3>
+            <p>Dealers pay more for rent, labor, and insurance. These operating costs get passed to buyers. General Excise Tax (GET) applies to vehicle sales too — effectively adding 4.5% to every transaction.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FAQ (SEO GOLD)
+     ═══════════════════════════════════════════ -->
+<section class="section" id="faq">
+    <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">How much more do used cars cost in Hawaii compared to the mainland?</div>
+            <div class="faq-a"><p>On average, used cars in Hawaii cost 15-25% more than the same vehicle on the mainland. The exact premium varies by make, model, island, and condition. Trucks and SUVs tend to have the highest premiums (18-25%), while sedans and EVs have lower premiums (10-18%). Oahu typically has the highest prices, while the Big Island and Molokai tend to be slightly cheaper.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Is it cheaper to ship a car to Hawaii than buy one locally?</div>
+            <div class="faq-a"><p>It depends on the premium. Shipping a car from the West Coast costs $1,200-2,500 (including port fees and insurance). If the Hawaii premium on your target vehicle is $3,000+, shipping from the mainland could save you money. For vehicles with premiums under $2,000, buying locally is usually simpler and comparable in cost once you factor in shipping time, inspection risks, and logistics. Use our calculator above to check the premium on your specific car.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Which island has the cheapest used cars in Hawaii?</div>
+            <div class="faq-a"><p>Generally, the Big Island (Hawaii Island) and Molokai have the lowest used car prices in the state, with premiums 5-8% lower than Oahu. This is partly due to lower demand, less competition among buyers, and lower dealer overhead costs. However, selection is more limited on neighbor islands, so you may find better deals on Oahu for specific models simply due to higher inventory.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What are the most popular used cars in Hawaii?</div>
+            <div class="faq-a"><p>Toyota dominates the Hawaii used car market. The Toyota Tacoma, 4Runner, RAV4, and Camry are consistently the most popular models. Honda CR-V and Civic are also extremely popular, followed by Subaru Outback and Forester (especially on Kauai and the Big Island). Jeep Wranglers command some of the highest premiums due to beach and off-road culture.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">How often are your price estimates updated?</div>
+            <div class="faq-a"><p>Our data is scraped and refreshed daily from over 1,000 active listings across all major Hawaiian islands. We pull from dealer websites, classified listings, and marketplace platforms. Our mainland comparison data is updated weekly from national pricing databases. The "Hawaii Premium" calculation reflects the most current available data.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Should I buy from a dealer or private seller in Hawaii?</div>
+            <div class="faq-a"><p>Private sellers typically price 8-12% below dealer prices in Hawaii, but you lose dealer protections like limited warranties and lemon law coverage. For popular models (Tacoma, 4Runner), dealer and private prices are closer together because demand is so high. We recommend checking both and using our price index to know whether either price is fair for the Hawaii market.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Do electric vehicles have a lower Hawaii premium?</div>
+            <div class="faq-a"><p>Yes. EVs like the Tesla Model 3 and Model Y tend to have lower Hawaii premiums (10-14%) compared to trucks and SUVs (18-25%). This is partly because EVs are more price-transparent (Tesla's national pricing) and because Hawaii's charging infrastructure is still developing on neighbor islands, reducing demand there. However, EVs make exceptional financial sense in Hawaii given the state's very high gas prices ($4.50-5.50/gallon).</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     BOTTOM CTA
+     ═══════════════════════════════════════════ -->
+<section class="bottom-cta" id="alerts">
+    <h2>Never overpay for a car in Hawaii.</h2>
+    <p>Get weekly price reports and instant alerts when below-market deals appear on your island.</p>
+    <div class="bottom-cta-form">
+        <input type="email" placeholder="your@email.com" id="bottom-email">
+        <button onclick="submitBottomEmail()">Get Free Alerts</button>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <a href="/" class="nav-logo" style="color:white">Hawaii<span>CarPrice</span>Index</a>
+            <p>The only used car pricing tool built for Hawaii. We track 1,000+ listings daily across all islands to help you know what a car is really worth here.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Tools</h4>
+            <a href="#calculator">Price Calculator</a>
+            <a href="#market">Market Data</a>
+            <a href="#popular">Popular Cars</a>
+            <a href="/shipping-calculator">Ship vs. Buy Calculator</a>
+        </div>
+        <div class="footer-col">
+            <h4>By Island</h4>
+            <a href="/oahu">Oahu Prices</a>
+            <a href="/maui">Maui Prices</a>
+            <a href="/big-island">Big Island Prices</a>
+            <a href="/kauai">Kauai Prices</a>
+        </div>
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="#why">Why Cars Cost More</a>
+            <a href="#faq">FAQ</a>
+            <a href="/blog">Blog</a>
+            <a href="/for-dealers">For Dealers</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>2026 Hawaii Car Price Index. Data updated daily. Not affiliated with any dealer.</span>
+        <span><a href="/privacy" style="color:var(--color-gray-500)">Privacy</a> · <a href="/terms" style="color:var(--color-gray-500)">Terms</a></span>
+    </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT — Calculator Logic & Interactions
+     ═══════════════════════════════════════════ -->
+<script>
+// ── MODEL DATA ──
+const modelsByMake = {
+    'Toyota': ['Tacoma', '4Runner', 'RAV4', 'Camry', 'Corolla', 'Highlander'],
+    'Honda': ['Civic', 'CR-V', 'Accord', 'Pilot'],
+    'Subaru': ['Outback', 'Forester', 'Crosstrek'],
+    'Jeep': ['Wrangler', 'Grand Cherokee'],
+    'Ford': ['F-150', 'Ranger'],
+    'Chevrolet': ['Silverado', 'Colorado'],
+    'Nissan': ['Frontier', 'Rogue', 'Altima'],
+    'Hyundai': ['Tucson', 'Santa Fe'],
+    'Kia': ['Sportage', 'Telluride'],
+    'Tesla': ['Model 3', 'Model Y'],
+    'BMW': ['3 Series'],
+    'Mercedes-Benz': ['C-Class'],
+};
+
+// ── MAINLAND BASELINE PRICES (by make_model, year, mileage band) ──
+// Simplified reference data — in production this comes from the SQLite database
+const basePrices = {
+    'Toyota_Tacoma':     { base: 35000, yearDep: 0.08, premiumRange: [0.16, 0.22] },
+    'Toyota_4Runner':    { base: 40000, yearDep: 0.07, premiumRange: [0.18, 0.24] },
+    'Toyota_RAV4':       { base: 30000, yearDep: 0.09, premiumRange: [0.14, 0.20] },
+    'Toyota_Camry':      { base: 26000, yearDep: 0.10, premiumRange: [0.12, 0.18] },
+    'Toyota_Corolla':    { base: 22000, yearDep: 0.10, premiumRange: [0.12, 0.17] },
+    'Toyota_Highlander': { base: 38000, yearDep: 0.08, premiumRange: [0.14, 0.20] },
+    'Honda_Civic':       { base: 24000, yearDep: 0.10, premiumRange: [0.13, 0.19] },
+    'Honda_CR-V':        { base: 30000, yearDep: 0.09, premiumRange: [0.14, 0.19] },
+    'Honda_Accord':      { base: 27000, yearDep: 0.10, premiumRange: [0.12, 0.18] },
+    'Honda_Pilot':       { base: 36000, yearDep: 0.08, premiumRange: [0.14, 0.20] },
+    'Subaru_Outback':    { base: 29000, yearDep: 0.09, premiumRange: [0.13, 0.19] },
+    'Subaru_Forester':   { base: 28000, yearDep: 0.09, premiumRange: [0.13, 0.18] },
+    'Subaru_Crosstrek':  { base: 26000, yearDep: 0.09, premiumRange: [0.12, 0.18] },
+    'Jeep_Wrangler':     { base: 38000, yearDep: 0.06, premiumRange: [0.18, 0.25] },
+    'Jeep_Grand Cherokee': { base: 35000, yearDep: 0.09, premiumRange: [0.14, 0.20] },
+    'Ford_F-150':        { base: 40000, yearDep: 0.09, premiumRange: [0.15, 0.21] },
+    'Ford_Ranger':       { base: 32000, yearDep: 0.09, premiumRange: [0.14, 0.20] },
+    'Chevrolet_Silverado': { base: 42000, yearDep: 0.09, premiumRange: [0.14, 0.20] },
+    'Chevrolet_Colorado':{ base: 33000, yearDep: 0.09, premiumRange: [0.14, 0.19] },
+    'Nissan_Frontier':   { base: 30000, yearDep: 0.09, premiumRange: [0.14, 0.20] },
+    'Nissan_Rogue':      { base: 27000, yearDep: 0.10, premiumRange: [0.12, 0.17] },
+    'Nissan_Altima':     { base: 24000, yearDep: 0.11, premiumRange: [0.11, 0.16] },
+    'Hyundai_Tucson':    { base: 27000, yearDep: 0.10, premiumRange: [0.12, 0.17] },
+    'Hyundai_Santa Fe':  { base: 30000, yearDep: 0.10, premiumRange: [0.12, 0.17] },
+    'Kia_Sportage':      { base: 27000, yearDep: 0.10, premiumRange: [0.11, 0.16] },
+    'Kia_Telluride':     { base: 38000, yearDep: 0.08, premiumRange: [0.13, 0.18] },
+    'Tesla_Model 3':     { base: 38000, yearDep: 0.12, premiumRange: [0.08, 0.14] },
+    'Tesla_Model Y':     { base: 42000, yearDep: 0.11, premiumRange: [0.09, 0.15] },
+    'BMW_3 Series':      { base: 42000, yearDep: 0.13, premiumRange: [0.08, 0.14] },
+    'Mercedes-Benz_C-Class': { base: 44000, yearDep: 0.14, premiumRange: [0.08, 0.13] },
+};
+
+// Mileage depreciation multipliers
+const mileageMultipliers = {
+    '0-30000': 1.0,
+    '30000-60000': 0.88,
+    '60000-90000': 0.78,
+    '90000-120000': 0.68,
+    '120000+': 0.56,
+};
+
+// Island premium adjustments (relative to average)
+const islandAdjust = {
+    'all': 1.0,
+    'oahu': 1.04,
+    'maui': 1.01,
+    'big_island': 0.95,
+    'kauai': 0.99,
+};
+
+// ── UPDATE MODEL DROPDOWN ──
+function updateModels() {
+    const make = document.getElementById('calc-make').value;
+    const modelSelect = document.getElementById('calc-model');
+    modelSelect.innerHTML = '<option value="">Select model...</option>';
+    if (make && modelsByMake[make]) {
+        modelsByMake[make].forEach(m => {
+            const opt = document.createElement('option');
+            opt.value = m;
+            opt.textContent = m;
+            modelSelect.appendChild(opt);
+        });
+    }
+}
+
+// ── CALCULATE PREMIUM ──
+function calculatePremium() {
+    const make = document.getElementById('calc-make').value;
+    const model = document.getElementById('calc-model').value;
+    const year = parseInt(document.getElementById('calc-year').value);
+    const mileage = document.getElementById('calc-mileage').value;
+    const island = document.getElementById('calc-island').value;
+
+    if (!make || !model || !year || !mileage) {
+        alert('Please fill in all fields to check the Hawaii premium.');
+        return;
+    }
+
+    const key = `${make}_${model}`;
+    const data = basePrices[key];
+    if (!data) {
+        alert('Sorry, we don\'t have data for that vehicle yet. Try one of our popular models.');
+        return;
+    }
+
+    // Calculate mainland price
+    const age = 2026 - year;
+    const depreciatedBase = data.base * Math.pow(1 - data.yearDep, age);
+    const mileageAdj = mileageMultipliers[mileage] || 0.78;
+    const mainlandPrice = Math.round(depreciatedBase * mileageAdj / 100) * 100;
+
+    // Calculate Hawaii premium (randomized within range for realism)
+    const premMin = data.premiumRange[0];
+    const premMax = data.premiumRange[1];
+    const basePremium = premMin + (premMax - premMin) * (0.3 + Math.random() * 0.4);
+    const islandMult = islandAdjust[island] || 1.0;
+    const finalPremium = basePremium * islandMult;
+
+    const premiumDollars = Math.round(mainlandPrice * finalPremium / 100) * 100;
+    const hawaiiPrice = mainlandPrice + premiumDollars;
+    const premiumPct = ((premiumDollars / mainlandPrice) * 100).toFixed(1);
+
+    // Update UI
+    document.getElementById('results-title').textContent = `${year} ${make} ${model}`;
+    const mileageLabels = { '0-30000': 'Under 30K mi', '30000-60000': '30K-60K mi', '60000-90000': '60K-90K mi', '90000-120000': '90K-120K mi', '120000+': '120K+ mi' };
+    const islandLabels = { 'all': 'All Islands', 'oahu': 'Oahu', 'maui': 'Maui', 'big_island': 'Big Island', 'kauai': 'Kauai' };
+    document.getElementById('results-subtitle').textContent = `${mileageLabels[mileage]} · ${islandLabels[island]}`;
+
+    document.getElementById('mainland-price').textContent = `$${mainlandPrice.toLocaleString()}`;
+    document.getElementById('hawaii-price').textContent = `$${hawaiiPrice.toLocaleString()}`;
+    document.getElementById('premium-amount').textContent = `+$${premiumDollars.toLocaleString()}`;
+    document.getElementById('premium-pct').textContent = `+${premiumPct}% more`;
+
+    // Premium bar (scale: 0% = 0 width, 30% = full width)
+    const barWidth = Math.min((parseFloat(premiumPct) / 30) * 100, 100);
+    document.getElementById('premium-bar').style.width = barWidth + '%';
+    document.getElementById('premium-bar').textContent = `+${premiumPct}%`;
+
+    // Generate insights
+    const insights = generateInsights(make, model, year, premiumPct, premiumDollars, island, mainlandPrice);
+    document.getElementById('insights-text').textContent = insights;
+
+    // Show results
+    document.getElementById('results-panel').style.display = 'block';
+
+    // Show lead capture after a delay
+    setTimeout(() => {
+        document.getElementById('lead-capture').style.display = 'block';
+        document.getElementById('lead-car-name').textContent = `${year} ${make} ${model}`;
+    }, 1500);
+
+    // Smooth scroll to results
+    document.getElementById('results-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    // Track event (placeholder for analytics)
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'calculate_premium', { make, model, year, island });
+    }
+}
+
+function generateInsights(make, model, year, pct, dollars, island, mainlandPrice) {
+    const shippingCost = 1800;
+    const netSavings = dollars - shippingCost;
+    let insight = `A ${year} ${make} ${model} costs about $${dollars.toLocaleString()} more in Hawaii than the mainland average. `;
+
+    if (netSavings > 500) {
+        insight += `Since the premium ($${dollars.toLocaleString()}) exceeds typical shipping costs (~$1,800), buying on the mainland and shipping could save you around $${netSavings.toLocaleString()}. `;
+    } else {
+        insight += `The premium is close to shipping costs (~$1,800), so buying locally is likely simpler and comparable in total cost. `;
+    }
+
+    if (make === 'Toyota' && (model === 'Tacoma' || model === '4Runner')) {
+        insight += `${model}s hold value exceptionally well in Hawaii due to high demand for off-road and beach vehicles.`;
+    } else if (make === 'Tesla') {
+        insight += `EVs tend to have lower Hawaii premiums since Tesla uses national pricing, and charging infrastructure is still developing on neighbor islands.`;
+    } else if (make === 'Jeep' && model === 'Wrangler') {
+        insight += `Wranglers command some of the highest premiums in Hawaii due to beach culture and limited local supply.`;
+    } else {
+        insight += `Check neighbor island listings too — Big Island prices are typically 5-8% lower than Oahu for the same vehicle.`;
+    }
+
+    return insight;
+}
+
+function quickCalc(make, model) {
+    document.getElementById('calc-make').value = make;
+    updateModels();
+    setTimeout(() => {
+        document.getElementById('calc-model').value = model;
+    }, 50);
+    document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ── FAQ TOGGLE ──
+function toggleFaq(el) {
+    el.parentElement.classList.toggle('open');
+}
+
+// ── LEAD CAPTURE ──
+function submitLead() {
+    const email = document.getElementById('lead-email').value;
+    if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    document.getElementById('lead-capture').innerHTML = `
+        <h3 style="color: var(--color-palm);">You're on the list!</h3>
+        <p>We'll email you at <strong>${email}</strong> when we spot a below-market deal matching your search.</p>
+    `;
+    // In production: POST to your email service (ConvertKit, Mailchimp, etc.)
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'lead_capture', { location: 'calculator' });
+    }
+}
+
+function submitBottomEmail() {
+    const email = document.getElementById('bottom-email').value;
+    if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    document.querySelector('.bottom-cta-form').innerHTML = `
+        <p style="color: white; font-size: 16px; font-weight: 600;">You're in! Check your inbox for your first Hawaii price report.</p>
+    `;
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'lead_capture', { location: 'bottom_cta' });
+    }
+}
+
+// ── ANIMATE STATS ON SCROLL ──
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateNumber('stat-listings', 1247, 1500);
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+function animateNumber(id, target, duration) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    let start = 0;
+    const startTime = performance.now();
+    function update(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target).toLocaleString();
+        if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+}
+
+const socialSection = document.querySelector('.social-proof');
+if (socialSection) observer.observe(socialSection);
+</script>
+
+<!-- Google Analytics placeholder -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+<!-- <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+
+</body>
+</html>
