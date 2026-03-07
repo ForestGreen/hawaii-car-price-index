@@ -661,9 +661,13 @@
             .cars-grid { grid-template-columns: 1fr; }
         }
     </style>
-    <!-- Google Analytics 4 - Replace GA4_MEASUREMENT_ID with your actual ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","GA4_MEASUREMENT_ID");</script>
+    <!-- Google Analytics 4 - Uncomment and replace G-XXXXXXXXXX with your GA4 Measurement ID -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+    <!-- <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-XXXXXXXXXX");</script> -->
+    <script>
+    // Stub gtag so event tracking calls don't error before GA is configured
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+    </script>
 </head>
 <body>
 
@@ -1450,9 +1454,6 @@ const socialSection = document.querySelector('.social-proof');
 if (socialSection) observer.observe(socialSection);
 </script>
 
-<!-- Google Analytics placeholder -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
-<!-- <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
 
 </body>
 </html>
