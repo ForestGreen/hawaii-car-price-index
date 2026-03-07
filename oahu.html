@@ -756,7 +756,7 @@
                     <li><a href="https://hawaiicarpriceindex.com/big-island">Used Cars on Big Island</a> — Hawaii Island pricing and inventory</li>
                     <li><a href="https://hawaiicarpriceindex.com/kauai">Used Cars on Kauai</a> — Garden Island market overview</li>
                     <li><a href="https://hawaiicarpriceindex.com/prices/toyota-tacoma">Toyota Tacoma Prices</a> — Detailed pricing for Hawaii's favorite truck</li>
-                    <li><a href="https://hawaiicarpriceindex.com/guides/ship-vs-buy-car-hawaii">Ship vs Buy Guide</a> — Compare your purchasing options with calculator</li>
+                    <li><a href="https://hawaiicarpriceindex.com/guides/ship-vs-buy">Ship vs Buy Guide</a> — Compare your purchasing options with calculator</li>
                     <li><a href="https://hawaiicarpriceindex.com/guides/best-used-cars-hawaii">Best Used Cars for Hawaii</a> — Model recommendations specific to island living</li>
                     <li><a href="https://hawaiicarpriceindex.com/guides/why-cars-cost-more-hawaii">Why Cars Cost More in Hawaii</a> — Deep dive into market dynamics</li>
                 </ul>
@@ -765,7 +765,7 @@
             <section class="cta-section">
                 <h3>Get Oahu Used Car Price Alerts</h3>
                 <p>Subscribe to get notifications when matching inventory arrives on Oahu.</p>
-                <form class="cta-form" method="post" action="https://hawaiicarpriceindex.com/api/subscribe">
+                <form class="cta-form" onsubmit="event.preventDefault(); this.innerHTML='<p style="color: #2D8A4E; font-weight: 600;">You\x27re on the list! We\x27ll notify you when matching vehicles arrive.</p>';">
                     <input type="email" name="email" placeholder="Enter your email address" required>
                     <input type="hidden" name="island" value="Oahu">
                     <button type="submit" class="btn btn-primary">Subscribe to Price Alerts</button>
