@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
   <url>
     <loc>https://hawaiicarpriceindex.com</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Island Pages -->
   <url>
     <loc>https://hawaiicarpriceindex.com/oahu</loc>
     <changefreq>weekly</changefreq>
@@ -16,6 +19,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://hawaiicarpriceindex.com/big-island</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hawaiicarpriceindex.com/kauai</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Price Pages -->
+  <url>
     <loc>https://hawaiicarpriceindex.com/prices/toyota-tacoma</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -26,37 +41,17 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://hawaiicarpriceindex.com/prices/toyota-rav4</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://hawaiicarpriceindex.com/prices/honda-civic</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hawaiicarpriceindex.com/guides/ship-vs-buy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hawaiicarpriceindex.com/guides/first-time-buyers</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hawaiicarpriceindex.com/big-island</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hawaiicarpriceindex.com/kauai</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://hawaiicarpriceindex.com/prices/honda-crv</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hawaiicarpriceindex.com/prices/toyota-rav4</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -70,9 +65,33 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Guide Pages -->
+  <url>
+    <loc>https://hawaiicarpriceindex.com/guides/ship-vs-buy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hawaiicarpriceindex.com/guides/first-time-buyers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://hawaiicarpriceindex.com/guides/hawaii-registration</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://hawaiicarpriceindex.com/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://hawaiicarpriceindex.com/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
