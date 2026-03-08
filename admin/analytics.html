@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard — Hawaii Car Price Index</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; background:#F5F7FA; color:#1A1A2E; }
+        .dash-header { background:linear-gradient(135deg,#0066CC,#004499); color:white; padding:20px 24px; display:flex; align-items:center; justify-content:space-between; }
+        .dash-header h1 { font-size:20px; font-weight:700; }
+        .dash-header a { color:rgba(255,255,255,0.8); text-decoration:none; font-size:14px; }
+        .dash-header a:hover { color:white; }
+        .controls { display:flex; gap:8px; align-items:center; padding:16px 24px; background:white; border-bottom:1px solid #E0E0E0; }
+        .controls select, .controls input, .controls button { font-size:14px; padding:8px 12px; border:1px solid #D0D0D0; border-radius:6px; }
+        .controls button { background:#0066CC; color:white; border:none; cursor:pointer; font-weight:600; }
+        .controls button:hover { background:#0055AA; }
+        .controls button.refresh { background:#2D8A4E; }
+        .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; padding:24px; }
+        .stat-card { background:white; border-radius:10px; padding:20px; border:1px solid #E8E8E8; }
+        .stat-card .label { font-size:12px; color:#888; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px; }
+        .stat-card .value { font-size:28px; font-weight:700; color:#1A1A2E; }
+        .stat-card .sub { font-size:13px; color:#666; margin-top:4px; }
+        .section { padding:0 24px 24px; }
+        .section h2 { font-size:16px; font-weight:700; margin-bottom:12px; color:#333; }
+        .table-wrap { background:white; border-radius:10px; border:1px solid #E8E8E8; overflow:hidden; }
+        table { width:100%; border-collapse:collapse; font-size:14px; }
+        th { background:#F5F7FA; padding:10px 14px; text-align:left; font-weight:600; font-size:12px; text-transform:uppercase; color:#666; }
+        td { padding:10px 14px; border-top:1px solid #F0F0F0; }
+        tr:hover td { background:#F9FAFB; }
+        .bar-row { display:flex; align-items:center; gap:8px; }
+        .bar { height:20px; background:linear-gradient(90deg,#0066CC,#3399FF); border-radius:4px; min-width:4px; transition:width 0.5s ease; }
+        .bar-label { font-size:13px; min-width:80px; }
+        .bar-count { font-size:13px; color:#666; min-width:40px; text-align:right; }
+        .two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+        .loading { text-align:center; padding:40px; color:#888; font-size:16px; }
+        .error { text-align:center; padding:40px; color:#CC0000; }
+        .event-log { max-height:300px; overflow-y:auto; background:white; border-radius:10px; border:1px solid #E8E8E8; }
+        .event-log .entry { padding:8px 14px; border-bottom:1px solid #F0F0F0; font-size:13px; font-family:monospace; }
+        .event-log .entry:last-child { border-bottom:none; }
+        .event-type { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600; margin-right:8px; }
+        .event-type.pageview { background:#E6F0FA; color:#0066CC; }
+        .event-type.click { background:#FFF3E6; color:#CC6600; }
+        .event-type.convert { background:#E6FAE6; color:#2D8A4E; }
+        .chart-area { background:white; border-radius:10px; border:1px solid #E8E8E8; padding:16px; min-height:200px; }
+        .hourly-chart { display:flex; align-items:flex-end; gap:2px; height:150px; padding-top:10px; }
+        .hourly-bar { flex:1; background:linear-gradient(to top,#0066CC,#3399FF); border-radius:2px 2px 0 0; min-height:2px; position:relative; }
+        .hourly-bar:hover::after { content:attr(data-tooltip); position:absolute; bottom:100%; left:50%; transform:translateX(-50%); background:#333; color:white; padding:4px 8px; border-radius:4px; font-size:11px; white-space:nowrap; }
+        @media (max-width:768px) {
+            .two-col { grid-template-columns:1fr; }
+            .grid { grid-template-columns:repeat(2,1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="dash-header">
+        <h1>HCPI Analytics Dashboard</h1>
+        <a href="/">&larr; Back to Site</a>
+    </div>
+
+    <div class="controls">
+        <label>Time Range:</label>
+        <select id="range">
+            <option value="1h">Last Hour</option>
+            <option value="24h" selected>Last 24 Hours</option>
+            <option value="7d">Last 7 Days</option>
+            <option value="30d">Last 30 Days</option>
+        </select>
+        <label style="margin-left:12px;">API Key:</label>
+        <input type="password" id="apiKey" value="hcpi2026" style="width:120px;">
+        <button onclick="loadData()" class="refresh">Refresh</button>
+        <span id="lastUpdate" style="font-size:12px;color:#888;margin-left:auto;"></span>
+    </div>
+
+    <div id="content">
+        <div class="loading">Loading analytics data...</div>
+    </div>
+
+<script>
+async function loadData() {
+    const range = document.getElementById('range').value;
+    const key = document.getElementById('apiKey').value;
+    const content = document.getElementById('content');
+
+    content.innerHTML = '<div class="loading">Loading...</div>';
+
+    try {
+        const res = await fetch(`/api/analytics?range=${range}&key=${encodeURIComponent(key)}`);
+        if (!res.ok) {
+            const err = await res.json();
+            content.innerHTML = `<div class="error">Error: ${err.error || res.statusText}</div>`;
+            return;
+        }
+        const data = await res.json();
+        document.getElementById('lastUpdate').textContent = 'Updated: ' + new Date().toLocaleTimeString();
+        renderDashboard(data);
+    } catch (e) {
+        content.innerHTML = `<div class="error">Failed to load: ${e.message}</div>`;
+    }
+}
+
+function renderDashboard(data) {
+    const s = data.summary;
+    const content = document.getElementById('content');
+
+    const convRate = s.pageviews > 0 ? ((s.emailCaptures / s.pageviews) * 100).toFixed(1) : '0.0';
+    const calcRate = s.pageviews > 0 ? ((s.calculatorUses / s.pageviews) * 100).toFixed(1) : '0.0';
+
+    let html = `
+    <!-- KPI Cards -->
+    <div class="grid">
+        <div class="stat-card">
+            <div class="label">Pageviews</div>
+            <div class="value">${s.pageviews.toLocaleString()}</div>
+            <div class="sub">${data.range} period</div>
+        </div>
+        <div class="stat-card">
+            <div class="label">Sessions</div>
+            <div class="value">${s.sessions.toLocaleString()}</div>
+            <div class="sub">${s.uniqueUsers} unique users</div>
+        </div>
+        <div class="stat-card">
+            <div class="label">New Users</div>
+            <div class="value">${s.newUsers}</div>
+            <div class="sub">${s.returningUsers} returning</div>
+        </div>
+        <div class="stat-card">
+            <div class="label">Email Captures</div>
+            <div class="value">${s.emailCaptures}</div>
+            <div class="sub">${convRate}% conversion rate</div>
+        </div>
+        <div class="stat-card">
+            <div class="label">Calculator Uses</div>
+            <div class="value">${s.calculatorUses}</div>
+            <div class="sub">${calcRate}% of visitors</div>
+        </div>
+        <div class="stat-card">
+            <div class="label">Avg Scroll Depth</div>
+            <div class="value">${s.avgScrollDepth || '—'}%</div>
+            <div class="sub">of page content</div>
+        </div>
+        <div class="stat-card">
+            <div class="label">Avg Time on Page</div>
+            <div class="value">${s.avgTimeOnPage_s ? formatTime(s.avgTimeOnPage_s) : '—'}</div>
+            <div class="sub">engaged time</div>
+        </div>
+        <div class="stat-card">
+            <div class="label">Signup Clicks</div>
+            <div class="value">${s.signupClicks}</div>
+            <div class="sub">CTA interactions</div>
+        </div>
+    </div>
+
+    <!-- Hourly Chart -->
+    <div class="section">
+        <h2>Pageviews Over Time</h2>
+        <div class="chart-area">
+            ${renderHourlyChart(data.hourlyPageviews)}
+        </div>
+    </div>
+
+    <!-- Two Column -->
+    <div class="section">
+        <div class="two-col">
+            <!-- Top Pages -->
+            <div>
+                <h2>Top Pages</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Page</th><th style="text-align:right">Views</th><th style="width:40%">Bar</th></tr></thead>
+                        <tbody>
+                            ${data.topPages.map(p => {
+                                const maxCount = data.topPages[0]?.count || 1;
+                                const pct = Math.max(5, (p.count / maxCount) * 100);
+                                return `<tr>
+                                    <td style="font-size:13px;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${p.path}</td>
+                                    <td style="text-align:right;font-weight:600;">${p.count}</td>
+                                    <td><div class="bar" style="width:${pct}%"></div></td>
+                                </tr>`;
+                            }).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Traffic Sources -->
+            <div>
+                <h2>Traffic Sources</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Source</th><th style="text-align:right">Count</th><th style="width:40%">Bar</th></tr></thead>
+                        <tbody>
+                            ${Object.entries(data.referrers)
+                                .sort((a,b) => b[1] - a[1])
+                                .map(([source, count]) => {
+                                    const maxRef = Math.max(...Object.values(data.referrers)) || 1;
+                                    const pct = Math.max(5, (count / maxRef) * 100);
+                                    return `<tr>
+                                        <td>${source}</td>
+                                        <td style="text-align:right;font-weight:600;">${count}</td>
+                                        <td><div class="bar" style="width:${pct}%;background:linear-gradient(90deg,#2D8A4E,#4CAF50)"></div></td>
+                                    </tr>`;
+                                }).join('')}
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 style="margin-top:20px;">Devices</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Device</th><th style="text-align:right">Count</th></tr></thead>
+                        <tbody>
+                            ${Object.entries(data.devices)
+                                .sort((a,b) => b[1] - a[1])
+                                .map(([device, count]) => `<tr><td>${device}</td><td style="text-align:right;font-weight:600;">${count}</td></tr>`)
+                                .join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calculator & Events -->
+    <div class="section">
+        <div class="two-col">
+            <div>
+                <h2>Top Calculator Searches</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Vehicle</th><th style="text-align:right">Searches</th></tr></thead>
+                        <tbody>
+                            ${data.calculatorModels.length > 0
+                                ? data.calculatorModels.map(m => `<tr><td>${m.model}</td><td style="text-align:right;font-weight:600;">${m.count}</td></tr>`).join('')
+                                : '<tr><td colspan="2" style="text-align:center;color:#888;">No calculator searches yet</td></tr>'}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div>
+                <h2>Event Breakdown</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Event Type</th><th style="text-align:right">Count</th></tr></thead>
+                        <tbody>
+                            ${Object.entries(data.eventCounts)
+                                .sort((a,b) => b[1] - a[1])
+                                .map(([type, count]) => `<tr><td><span class="event-type ${type === 'pageview' ? 'pageview' : type.includes('click') ? 'click' : 'convert'}">${type}</span></td><td style="text-align:right;font-weight:600;">${count}</td></tr>`)
+                                .join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="section">
+        <div class="two-col">
+            <div>
+                <h2>Recent Guide Clicks</h2>
+                <div class="event-log">
+                    ${data.recentGuideClicks.length > 0
+                        ? data.recentGuideClicks.reverse().map(e => `<div class="entry"><span class="event-type click">guide</span> ${e.title} <span style="color:#888;float:right">${timeAgo(e.ts)}</span></div>`).join('')
+                        : '<div class="entry" style="color:#888;text-align:center;">No guide clicks yet</div>'}
+                </div>
+            </div>
+            <div>
+                <h2>Recent Model Clicks</h2>
+                <div class="event-log">
+                    ${data.recentModelClicks.length > 0
+                        ? data.recentModelClicks.reverse().map(e => `<div class="entry"><span class="event-type click">model</span> ${e.model} <span style="color:#888;">(${e.source})</span> <span style="color:#888;float:right">${timeAgo(e.ts)}</span></div>`).join('')
+                        : '<div class="entry" style="color:#888;text-align:center;">No model clicks yet</div>'}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:center;padding:24px;color:#888;font-size:13px;">
+        <p>Data source: In-memory aggregation (resets on cold start).</p>
+        <p>For persistent data, check <strong>Vercel Dashboard &gt; Logs</strong> and filter for <code>HCPI_TRACK</code></p>
+        <p style="margin-top:8px;">${data._note || ''}</p>
+    </div>`;
+
+    content.innerHTML = html;
+}
+
+function renderHourlyChart(hourly) {
+    const entries = Object.entries(hourly).sort((a,b) => a[0].localeCompare(b[0]));
+    if (entries.length === 0) return '<div style="text-align:center;color:#888;padding:40px;">No pageview data yet</div>';
+
+    const maxVal = Math.max(...entries.map(e => e[1])) || 1;
+    const bars = entries.map(([hour, count]) => {
+        const pct = (count / maxVal) * 100;
+        const label = hour.slice(11, 16) || hour.slice(5, 10);
+        return `<div class="hourly-bar" style="height:${Math.max(2, pct)}%" data-tooltip="${label}: ${count} views"></div>`;
+    }).join('');
+
+    return `<div class="hourly-chart">${bars}</div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:#888;margin-top:4px;">
+                <span>${entries[0]?.[0]?.slice(5, 16) || ''}</span>
+                <span>${entries[entries.length-1]?.[0]?.slice(5, 16) || ''}</span>
+            </div>`;
+}
+
+function formatTime(seconds) {
+    if (seconds < 60) return seconds + 's';
+    return Math.floor(seconds / 60) + 'm ' + (seconds % 60) + 's';
+}
+
+function timeAgo(ts) {
+    const diff = Math.round((Date.now() - ts) / 1000);
+    if (diff < 60) return diff + 's ago';
+    if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+    if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+    return Math.floor(diff / 86400) + 'd ago';
+}
+
+// Auto-refresh every 30 seconds
+setInterval(loadData, 30000);
+
+// Initial load
+loadData();
+
+// Auto-refresh on range change
+document.getElementById('range').addEventListener('change', loadData);
+</script>
+</body>
+</html>
