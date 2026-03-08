@@ -735,6 +735,37 @@
             .nav-links a { font-size: 16px; padding: 8px 0; }
             .nav-cta { text-align: center; display: block !important; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
+            /* Sticky mobile CTA */
+            .mobile-cta-bar {
+                display: none;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 200;
+                background: white;
+                border-top: 1px solid #E0E0E0;
+                padding: 10px 16px;
+                box-shadow: 0 -2px 12px rgba(0,0,0,0.1);
+            }
+            .mobile-cta-bar.visible { display: flex; gap: 8px; align-items: center; }
+            .mobile-cta-bar a {
+                flex: 1;
+                text-align: center;
+                padding: 12px;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: 600;
+                text-decoration: none;
+            }
+            .mobile-cta-bar .mcta-primary {
+                background: var(--color-sunset);
+                color: white;
+            }
+            .mobile-cta-bar .mcta-secondary {
+                background: var(--color-ocean-light);
+                color: var(--color-ocean);
+            }
             .lead-capture-form { flex-direction: column; }
             .bottom-cta-form { flex-direction: column; }
             .cars-grid { grid-template-columns: 1fr; }
@@ -769,8 +800,8 @@
         <a href="#calculator">Price Check</a>
         <a href="/cost-calculator">Cost Calculator</a>
         <a href="#models">By Model</a>
+        <a href="#compare">Compare</a>
         <a href="#guides">Guides</a>
-        <a href="#faq">FAQ</a>
         <a href="#alerts" class="nav-cta">Get Price Alerts</a>
     </div>
 </nav>
@@ -1293,6 +1324,39 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
+     COMPARE VEHICLES
+     ═══════════════════════════════════════════ -->
+<section class="section" id="compare" style="background: var(--color-sand);">
+    <div class="section-header">
+        <h2>Compare Vehicles Head-to-Head</h2>
+        <p>Side-by-side comparisons built for Hawaii buyers — with island-specific pricing, reliability ratings, and lifestyle fit.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;max-width:900px;margin:0 auto;">
+        <a href="/compare/tacoma-vs-4runner" style="display:flex;align-items:center;gap:16px;background:white;border:2px solid #E0E0E0;border-radius:12px;padding:20px 24px;text-decoration:none;color:inherit;transition:all 0.2s;" onmouseover="this.style.borderColor='#0066CC';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)'" onmouseout="this.style.borderColor='#E0E0E0';this.style.transform='';this.style.boxShadow=''">
+            <div style="font-size:32px;flex-shrink:0;">⚔️</div>
+            <div>
+                <div style="font-size:16px;font-weight:700;color:var(--color-ocean);">Tacoma vs 4Runner</div>
+                <div style="font-size:13px;color:#666;margin-top:2px;">Hawaii's #1 truck vs #1 SUV — which is right for you?</div>
+            </div>
+        </a>
+        <a href="/compare/crv-vs-rav4" style="display:flex;align-items:center;gap:16px;background:white;border:2px solid #E0E0E0;border-radius:12px;padding:20px 24px;text-decoration:none;color:inherit;transition:all 0.2s;" onmouseover="this.style.borderColor='#0066CC';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)'" onmouseout="this.style.borderColor='#E0E0E0';this.style.transform='';this.style.boxShadow=''">
+            <div style="font-size:32px;flex-shrink:0;">🔄</div>
+            <div>
+                <div style="font-size:16px;font-weight:700;color:var(--color-ocean);">CR-V vs RAV4</div>
+                <div style="font-size:13px;color:#666;margin-top:2px;">The two most popular family SUVs in Hawaii compared</div>
+            </div>
+        </a>
+        <a href="/compare/best-suvs-under-30k" style="display:flex;align-items:center;gap:16px;background:white;border:2px solid #E0E0E0;border-radius:12px;padding:20px 24px;text-decoration:none;color:inherit;transition:all 0.2s;" onmouseover="this.style.borderColor='#0066CC';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)'" onmouseout="this.style.borderColor='#E0E0E0';this.style.transform='';this.style.boxShadow=''">
+            <div style="font-size:32px;flex-shrink:0;">🏆</div>
+            <div>
+                <div style="font-size:16px;font-weight:700;color:var(--color-ocean);">Best SUVs Under $30k</div>
+                <div style="font-size:13px;color:#666;margin-top:2px;">8 top picks ranked for Hawaii — with island-specific scores</div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
      BUYER GUIDES
      ═══════════════════════════════════════════ -->
 <section class="section" id="guides">
@@ -1717,8 +1781,32 @@ function animateNumber(id, target, duration) {
 
 const socialSection = document.querySelector('.social-proof');
 if (socialSection) observer.observe(socialSection);
+
+// ── STICKY MOBILE CTA BAR ──
+(function() {
+    var bar = document.getElementById('mobile-cta-bar');
+    if (!bar || window.innerWidth > 768) return;
+    var hero = document.getElementById('calculator');
+    if (!hero) return;
+    var shown = false;
+    window.addEventListener('scroll', function() {
+        var rect = hero.getBoundingClientRect();
+        if (rect.bottom < 0 && !shown) {
+            bar.classList.add('visible');
+            shown = true;
+        } else if (rect.bottom >= 0 && shown) {
+            bar.classList.remove('visible');
+            shown = false;
+        }
+    }, { passive: true });
+})();
 </script>
 
+<!-- Sticky mobile CTA -->
+<div id="mobile-cta-bar" class="mobile-cta-bar">
+    <a href="#calculator" class="mcta-primary">Check Price</a>
+    <a href="#alerts" class="mcta-secondary">Get Alerts</a>
+</div>
 
 </body>
 </html>
