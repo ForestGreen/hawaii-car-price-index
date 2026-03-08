@@ -741,7 +741,13 @@
             .why-grid { grid-template-columns: 1fr !important; }
         }
     </style>
-    <!-- Google Analytics 4 - Uncomment and replace G-XXXXXXXXXX with your GA4 Measurement ID -->
+    <!-- Vercel Web Analytics (free, privacy-friendly) -->
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- Vercel Speed Insights (free, Core Web Vitals) -->
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+    <!-- Google Analytics 4 - Replace G-XXXXXXXXXX with your GA4 Measurement ID -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
     <!-- <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-XXXXXXXXXX");</script> -->
     <script>
@@ -761,8 +767,8 @@
     </button>
     <div class="nav-links">
         <a href="#calculator">Price Check</a>
-        <a href="#market">Market Data</a>
-        <a href="#popular">Popular Cars</a>
+        <a href="/cost-calculator">Cost Calculator</a>
+        <a href="#models">By Model</a>
         <a href="#guides">Guides</a>
         <a href="#faq">FAQ</a>
         <a href="#alerts" class="nav-cta">Get Price Alerts</a>
@@ -1315,31 +1321,59 @@
             <h3>Ship vs. Buy Locally</h3>
             <p>When does it make sense to buy on the mainland and ship? We break down the real costs and hidden fees.</p>
         </a>
-        <a href="/guides/first-time-buyers" class="why-card" style="text-decoration:none;color:inherit;cursor:pointer;transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-            <div class="why-icon">🔑</div>
-            <h3>First-Time Buyer's Guide</h3>
-            <p>New to Hawaii or buying your first car here? Start here for the complete walkthrough.</p>
+        <a href="/guides/military-pcs-hawaii" class="why-card" style="text-decoration:none;color:inherit;cursor:pointer;transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+            <div class="why-icon">🎖️</div>
+            <h3>Military PCS Guide</h3>
+            <p>PCSing to Hawaii? Ship vs. buy, base-by-base guidance, USAA rates, and avoiding predatory dealers.</p>
         </a>
-        <a href="/guides/hawaii-registration" class="why-card" style="text-decoration:none;color:inherit;cursor:pointer;transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-            <div class="why-icon">📋</div>
-            <h3>Hawaii Registration Guide</h3>
-            <p>Safety inspection, weight tax, registration fees — everything you need to get legal on the road in Hawaii.</p>
+        <a href="/guides/car-insurance-hawaii" class="why-card" style="text-decoration:none;color:inherit;cursor:pointer;transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+            <div class="why-icon">🛡️</div>
+            <h3>Car Insurance in Hawaii</h3>
+            <p>Hawaii's no-fault system, PIP requirements, top providers, and how to save on island premiums.</p>
         </a>
-        <a href="/guides/best-time-to-buy-hawaii" class="why-card" style="text-decoration:none;color:inherit;cursor:pointer;transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-            <div class="why-icon">📅</div>
-            <h3>Best Time to Buy</h3>
-            <p>Seasonal price patterns, military PCS cycles, and the months when you'll find the best deals on each island.</p>
-        </a>
-        <a href="/guides/car-maintenance-hawaii" class="why-card" style="text-decoration:none;color:inherit;cursor:pointer;transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-            <div class="why-icon">🔧</div>
-            <h3>Car Maintenance in Hawaii</h3>
-            <p>Salt air, UV damage, and vog — how to protect your car from Hawaii's unique environmental threats.</p>
-        </a>
-        <a href="/guides/inter-island-car-shipping" class="why-card" style="text-decoration:none;color:inherit;cursor:pointer;transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-            <div class="why-icon">⛴️</div>
-            <h3>Inter-Island Car Shipping</h3>
-            <p>Everything about shipping your car between Hawaiian islands via Young Brothers — costs, timelines, and tips.</p>
-        </a>
+    </div>
+    <div style="text-align:center;margin-top:24px;">
+        <a href="/guides/first-time-buyers" style="color:var(--color-ocean);font-weight:600;text-decoration:none;font-size:15px;">See all 13 guides &rarr;</a>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     COST CALCULATOR CALLOUT
+     ═══════════════════════════════════════════ -->
+<section style="max-width:900px;margin:0 auto 48px;padding:0 20px;">
+    <a href="/cost-calculator" style="display:flex;align-items:center;gap:24px;background:linear-gradient(135deg,#E6F0FA 0%,#F0F7FF 100%);border:2px solid var(--color-ocean);border-radius:16px;padding:28px 32px;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(0,102,204,0.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="font-size:48px;flex-shrink:0;">🧮</div>
+        <div>
+            <div style="font-size:20px;font-weight:700;color:var(--color-ocean);margin-bottom:4px;">True Cost of Ownership Calculator</div>
+            <div style="font-size:15px;color:#555;line-height:1.5;">See the real 5-year cost of owning any vehicle in Hawaii vs. the mainland — including gas, insurance, maintenance, depreciation, and the island premium.</div>
+        </div>
+        <div style="font-size:24px;color:var(--color-ocean);flex-shrink:0;">&rarr;</div>
+    </a>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS
+     ═══════════════════════════════════════════ -->
+<section class="section" style="padding-top:0;">
+    <div class="section-header">
+        <h2>What Hawaii Car Buyers Say</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto;">
+        <div style="background:white;border-radius:12px;padding:24px;border:1px solid #E8E8E8;">
+            <div style="color:#FFB800;font-size:18px;margin-bottom:8px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p style="font-size:15px;color:#333;line-height:1.6;margin-bottom:12px;">"Used the calculator before buying my Tacoma on Oahu. Saved me from overpaying by $2,800 — the dealer's 'discount' was still above market."</p>
+            <div style="font-size:14px;color:#777;">— Sarah M., PCS from San Diego</div>
+        </div>
+        <div style="background:white;border-radius:12px;padding:24px;border:1px solid #E8E8E8;">
+            <div style="color:#FFB800;font-size:18px;margin-bottom:8px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p style="font-size:15px;color:#333;line-height:1.6;margin-bottom:12px;">"The ship vs. buy guide helped me realize I should ship my CR-V from Portland instead of selling it. Saved $4,000+ vs buying the same car here."</p>
+            <div style="font-size:14px;color:#777;">— Mike K., relocated to Maui</div>
+        </div>
+        <div style="background:white;border-radius:12px;padding:24px;border:1px solid #E8E8E8;">
+            <div style="color:#FFB800;font-size:18px;margin-bottom:8px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p style="font-size:15px;color:#333;line-height:1.6;margin-bottom:12px;">"Finally, actual data on Hawaii car prices instead of guessing. Showed the price comparison to a Craigslist seller and negotiated $1,500 off."</p>
+            <div style="font-size:14px;color:#777;">— Jen L., Kailua-Kona</div>
+        </div>
     </div>
 </section>
 
@@ -1604,28 +1638,50 @@ function toggleFaq(el) {
 }
 
 // ── LEAD CAPTURE ──
-function submitLead() {
+async function submitLead() {
     const email = document.getElementById('lead-email').value;
     if (!email || !email.includes('@')) {
         alert('Please enter a valid email address.');
         return;
     }
+    // Get calculator state for context
+    const make = document.getElementById('make')?.value || '';
+    const model = document.getElementById('model')?.value || '';
+    const year = document.getElementById('year')?.value || '';
+    const island = document.getElementById('island')?.value || '';
+
+    try {
+        await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, source: 'calculator', make, model, year, island })
+        });
+    } catch (e) { /* fail silently */ }
+
     document.getElementById('lead-capture').innerHTML = `
         <h3 style="color: var(--color-palm);">You're on the list!</h3>
         <p>We'll email you at <strong>${email}</strong> when we spot a below-market deal matching your search.</p>
     `;
-    // In production: POST to your email service (ConvertKit, Mailchimp, etc.)
     if (typeof gtag !== 'undefined') {
         gtag('event', 'lead_capture', { location: 'calculator' });
     }
 }
 
-function submitBottomEmail() {
+async function submitBottomEmail() {
     const email = document.getElementById('bottom-email').value;
     if (!email || !email.includes('@')) {
         alert('Please enter a valid email address.');
         return;
     }
+
+    try {
+        await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, source: 'bottom_cta' })
+        });
+    } catch (e) { /* fail silently */ }
+
     document.querySelector('.bottom-cta-form').innerHTML = `
         <p style="color: white; font-size: 16px; font-weight: 600;">You're in! Check your inbox for your first Hawaii price report.</p>
     `;

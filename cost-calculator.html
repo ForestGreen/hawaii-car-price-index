@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True Cost of Owning a Car in Hawaii — 5-Year Calculator | Hawaii Car Price Index</title>
+    <meta name="description" content="Calculate the real 5-year total cost of owning a car in Hawaii vs the mainland. See how much more you'll pay with insurance, fuel, registration, maintenance, and depreciation.">
+    <meta name="keywords" content="cost of owning car hawaii, hawaii car ownership cost, total cost ownership, TCO calculator, car expenses hawaii">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="True Cost of Owning a Car in Hawaii — 5-Year Calculator">
+    <meta property="og:description" content="Find out the real cost of car ownership in Hawaii vs mainland. Interactive calculator shows insurance, fuel, maintenance, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hawaiicarpriceindex.com/cost-calculator">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "True Cost of Owning a Car in Hawaii Calculator",
+        "description": "Interactive 5-year total cost of ownership calculator for Hawaii vs mainland",
+        "url": "https://hawaiicarpriceindex.com/cost-calculator",
+        "applicationCategory": "FinanceApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://hawaiicarpriceindex.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Cost Calculator",
+                "item": "https://hawaiicarpriceindex.com/cost-calculator"
+            }
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* ============================================
+           COST CALCULATOR SPECIFIC STYLES
+           ============================================ */
+
+        .calculator-hero {
+            background: linear-gradient(135deg, #001a33 0%, #003366 40%, #004C99 100%);
+            padding: 48px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculator-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .calculator-hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calculator-hero h1 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .calculator-hero p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .calculator-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        /* ── FORM STYLING ── */
+        .calc-form {
+            background: white;
+            border: 1px solid var(--color-gray-100);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 40px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-gray-700);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px 14px;
+            border: 1px solid var(--color-gray-300);
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--color-gray-900);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-ocean);
+            box-shadow: 0 0 0 3px var(--color-ocean-light);
+        }
+
+        .form-group input[type="range"] {
+            padding: 0;
+            border: none;
+            box-shadow: none;
+            cursor: pointer;
+            height: 6px;
+            background: var(--color-gray-300);
+            border-radius: 3px;
+        }
+
+        .form-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-ocean);
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .form-group input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-ocean);
+            cursor: pointer;
+            border: none;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .slider-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-ocean);
+            margin-top: 4px;
+        }
+
+        .financing-section {
+            background: var(--color-gray-100);
+            padding: 20px;
+            border-radius: var(--radius-sm);
+            margin-top: 20px;
+        }
+
+        .financing-toggle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 28px;
+            background: var(--color-gray-300);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .toggle-switch.active {
+            background: var(--color-ocean);
+        }
+
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: left 0.2s;
+        }
+
+        .toggle-switch.active::after {
+            left: 24px;
+        }
+
+        .financing-fields {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .financing-fields.active {
+            max-height: 200px;
+            margin-top: 16px;
+        }
+
+        .calc-button {
+            background: linear-gradient(135deg, var(--color-ocean) 0%, var(--color-ocean-dark) 100%);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .calc-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .calc-button:active {
+            transform: translateY(0);
+        }
+
+        /* ── RESULTS SECTION ── */
+        .results-section {
+            display: none;
+            margin-top: 48px;
+            animation: slideUp 0.4s ease;
+        }
+
+        .results-section.show {
+            display: block;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .results-header h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .comparison-card {
+            background: white;
+            border: 2px solid var(--color-gray-100);
+            border-radius: var(--radius-md);
+            padding: 32px 24px;
+            text-align: center;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .comparison-card.hawaii {
+            border-color: var(--color-ocean);
+        }
+
+        .comparison-card.mainland {
+            border-color: var(--color-gray-500);
+        }
+
+        .comparison-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            color: var(--color-gray-700);
+        }
+
+        .total-cost {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--color-gray-900);
+        }
+
+        .comparison-card.hawaii .total-cost {
+            color: var(--color-ocean);
+        }
+
+        .cost-monthly {
+            font-size: 14px;
+            color: var(--color-gray-500);
+            margin-bottom: 24px;
+        }
+
+        .cost-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-gray-500);
+            margin-bottom: 4px;
+        }
+
+        /* ── HAWAII PREMIUM ── */
+        .hawaii-premium {
+            background: linear-gradient(135deg, var(--color-ocean-light) 0%, #E0F0FF 100%);
+            border: 2px solid var(--color-ocean);
+            border-radius: var(--radius-md);
+            padding: 28px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .hawaii-premium h3 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-ocean-dark);
+            margin-bottom: 8px;
+        }
+
+        .hawaii-premium .premium-amount {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--color-ocean);
+            margin-bottom: 8px;
+        }
+
+        .hawaii-premium p {
+            font-size: 13px;
+            color: var(--color-ocean-dark);
+            line-height: 1.6;
+        }
+
+        /* ── BREAKDOWN CHARTS ── */
+        .breakdown-section {
+            background: white;
+            border: 1px solid var(--color-gray-100);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .breakdown-section h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--color-gray-900);
+        }
+
+        .breakdown-charts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .breakdown-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .chart-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-gray-700);
+        }
+
+        .cost-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cost-label-name {
+            flex: 0 0 100px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-gray-700);
+        }
+
+        .cost-bar-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cost-bar {
+            flex: 1;
+            height: 20px;
+            border-radius: 4px;
+            background: var(--color-gray-200);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cost-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .cost-bar.hawaii {
+            background: #E6F0FA;
+        }
+
+        .cost-bar.hawaii .cost-bar-fill {
+            background: linear-gradient(90deg, var(--color-ocean) 0%, var(--color-ocean-dark) 100%);
+        }
+
+        .cost-bar.mainland {
+            background: #EFEFEF;
+        }
+
+        .cost-bar.mainland .cost-bar-fill {
+            background: linear-gradient(90deg, #999999 0%, #666666 100%);
+        }
+
+        .cost-amount {
+            flex: 0 0 80px;
+            text-align: right;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-gray-900);
+        }
+
+        /* ── SHARE SECTION ── */
+        .share-section {
+            background: var(--color-sand);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .share-section h3 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--color-gray-900);
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--color-gray-300);
+            border-radius: var(--radius-sm);
+            background: white;
+            color: var(--color-gray-700);
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .share-btn:hover {
+            border-color: var(--color-ocean);
+            color: var(--color-ocean);
+        }
+
+        .share-text {
+            font-size: 13px;
+            color: var(--color-gray-700);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        /* ── RELATED GUIDES ── */
+        .related-guides-calc {
+            margin-top: 48px;
+            padding-top: 48px;
+            border-top: 1px solid var(--color-gray-100);
+        }
+
+        .related-guides-calc h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .related-grid-calc {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .related-card-calc {
+            display: block;
+            padding: 20px;
+            background: var(--color-gray-100);
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            color: var(--color-gray-900);
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .related-card-calc:hover {
+            border-color: var(--color-sunset);
+            background: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .related-card-calc strong {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .related-card-calc span {
+            font-size: 13px;
+            color: var(--color-gray-500);
+        }
+
+        /* ── RESPONSIVENESS ── */
+        @media (max-width: 768px) {
+            .calc-form {
+                padding: 24px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .calculator-section {
+                padding: 32px 16px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .breakdown-charts {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .results-header h2 {
+                font-size: 24px;
+            }
+
+            .total-cost {
+                font-size: 36px;
+            }
+
+            .hawaii-premium .premium-amount {
+                font-size: 28px;
+            }
+
+            .calc-button {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calculator-hero {
+                padding: 32px 16px;
+            }
+
+            .calculator-hero h1 {
+                font-size: 24px;
+            }
+
+            .calculator-hero p {
+                font-size: 15px;
+            }
+
+            .cost-label-name {
+                flex: 0 0 80px;
+                font-size: 12px;
+            }
+
+            .cost-amount {
+                flex: 0 0 70px;
+                font-size: 12px;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+            }
+
+            .share-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="site-nav">
+        <a href="/" class="nav-logo">Hawaii<span>CarPrice</span>Index</a>
+        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="nav-links">
+            <a href="/#calculator">Calculator</a>
+            <a href="/guides/best-used-cars-hawaii">Best Cars</a>
+            <a href="/guides/ship-vs-buy">Ship vs Buy</a>
+            <a href="/oahu">Oahu</a>
+            <a href="/maui">Maui</a>
+            <a href="/big-island">Big Island</a>
+            <a href="/kauai">Kauai</a>
+            <a href="/#alerts" class="nav-cta">Get Alerts</a>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <div class="calculator-hero">
+        <div class="calculator-hero-inner">
+            <h1>True Cost of Owning a Car in Hawaii</h1>
+            <p>Calculate your real 5-year ownership costs. See how much more you'll pay for insurance, fuel, maintenance, and registration in Hawaii compared to the mainland.</p>
+        </div>
+    </div>
+
+    <!-- CALCULATOR FORM -->
+    <div class="calculator-section">
+        <div class="calc-form">
+            <div class="form-grid">
+                <!-- Purchase Price -->
+                <div class="form-group">
+                    <label for="purchasePrice">Purchase Price ($)</label>
+                    <input type="range" id="purchasePrice" min="15000" max="60000" step="1000" value="25000">
+                    <div class="slider-value">$<span id="purchasePriceValue">25,000</span></div>
+                </div>
+
+                <!-- Vehicle Type -->
+                <div class="form-group">
+                    <label for="vehicleType">Vehicle Type</label>
+                    <select id="vehicleType">
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
+                        <option value="truck">Truck</option>
+                        <option value="ev">Electric Vehicle</option>
+                    </select>
+                </div>
+
+                <!-- Annual Miles -->
+                <div class="form-group">
+                    <label for="annualMiles">Annual Miles Driven</label>
+                    <input type="range" id="annualMiles" min="5000" max="25000" step="500" value="10000">
+                    <div class="slider-value"><span id="annualMilesValue">10,000</span> miles/year</div>
+                </div>
+
+                <!-- Island -->
+                <div class="form-group">
+                    <label for="island">Island</label>
+                    <select id="island">
+                        <option value="oahu">Oahu</option>
+                        <option value="maui">Maui</option>
+                        <option value="bigisland">Big Island</option>
+                        <option value="kauai">Kauai</option>
+                    </select>
+                </div>
+
+                <!-- Fuel Type (Auto-set) -->
+                <div class="form-group">
+                    <label for="fuelType">Fuel Type</label>
+                    <select id="fuelType" disabled>
+                        <option value="gas">Gasoline</option>
+                        <option value="hybrid">Hybrid</option>
+                        <option value="electric">Electric</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Financing Section -->
+            <div class="financing-section">
+                <div class="financing-toggle">
+                    <div class="toggle-switch" id="financingToggle" onclick="toggleFinancing()"></div>
+                    <label for="financingToggle" style="cursor: pointer; margin: 0; font-weight: 600; font-size: 14px;">Need to Finance?</label>
+                </div>
+                <div class="financing-fields" id="financingFields">
+                    <div class="form-group">
+                        <label for="apr">APR (%)</label>
+                        <input type="number" id="apr" min="0" max="10" step="0.1" value="6.5" placeholder="6.5">
+                    </div>
+                    <div class="form-group">
+                        <label for="loanTerm">Loan Term (months)</label>
+                        <select id="loanTerm">
+                            <option value="36">36 months (3 years)</option>
+                            <option value="48">48 months (4 years)</option>
+                            <option value="60">60 months (5 years)</option>
+                            <option value="72">72 months (6 years)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calculate Button -->
+            <button class="calc-button" onclick="calculateTCO()">Calculate Total Cost</button>
+        </div>
+
+        <!-- RESULTS SECTION -->
+        <div class="results-section" id="resultsSection">
+            <!-- Results Header -->
+            <div class="results-header">
+                <h2>Your 5-Year Cost Comparison</h2>
+            </div>
+
+            <!-- Comparison Cards -->
+            <div class="comparison-grid">
+                <div class="comparison-card hawaii">
+                    <h3>Hawaii</h3>
+                    <div class="total-cost">$<span id="hawaiiTotal">0</span></div>
+                    <div class="cost-monthly">$<span id="hawaiiMonthly">0</span>/month</div>
+                    <div class="cost-label">5-year total cost</div>
+                </div>
+                <div class="comparison-card mainland">
+                    <h3>Mainland</h3>
+                    <div class="total-cost">$<span id="mainlandTotal">0</span></div>
+                    <div class="cost-monthly">$<span id="mainlandMonthly">0</span>/month</div>
+                    <div class="cost-label">5-year total cost</div>
+                </div>
+            </div>
+
+            <!-- Hawaii Premium -->
+            <div class="hawaii-premium">
+                <h3>Hawaii Ownership Premium</h3>
+                <div class="premium-amount">+$<span id="hawaiiPremium">0</span></div>
+                <p id="hawaiiPremiumText">You'll pay this extra amount to own a car in Hawaii over 5 years</p>
+            </div>
+
+            <!-- Breakdown Charts -->
+            <div class="breakdown-section">
+                <h3>Cost Breakdown by Category</h3>
+                <div class="breakdown-charts">
+                    <!-- Hawaii Breakdown -->
+                    <div class="breakdown-chart">
+                        <div class="chart-title">Hawaii Costs</div>
+                        <div class="cost-item">
+                            <div class="cost-label-name">Purchase</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar hawaii">
+                                    <div class="cost-bar-fill" id="hawaiiPurchaseBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="hawaiiPurchaseAmount">0</span></div>
+                        </div>
+                        <div class="cost-item">
+                            <div class="cost-label-name">Fuel</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar hawaii">
+                                    <div class="cost-bar-fill" id="hawaiiFuelBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="hawaiiFuelAmount">0</span></div>
+                        </div>
+                        <div class="cost-item">
+                            <div class="cost-label-name">Insurance</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar hawaii">
+                                    <div class="cost-bar-fill" id="hawaiiInsuranceBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="hawaiiInsuranceAmount">0</span></div>
+                        </div>
+                        <div class="cost-item">
+                            <div class="cost-label-name">Registration</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar hawaii">
+                                    <div class="cost-bar-fill" id="hawaiiRegistrationBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="hawaiiRegistrationAmount">0</span></div>
+                        </div>
+                        <div class="cost-item">
+                            <div class="cost-label-name">Maintenance</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar hawaii">
+                                    <div class="cost-bar-fill" id="hawaiiMaintenanceBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="hawaiiMaintenanceAmount">0</span></div>
+                        </div>
+                        <div class="cost-item">
+                            <div class="cost-label-name">Depreciation</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar hawaii">
+                                    <div class="cost-bar-fill" id="hawaiiDepreciationBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="hawaiiDepreciationAmount">0</span></div>
+                        </div>
+                        <div class="cost-item" id="hawaiiFinancingCostItem" style="display: none;">
+                            <div class="cost-label-name">Financing</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar hawaii">
+                                    <div class="cost-bar-fill" id="hawaiiFinancingBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="hawaiiFinancingAmount">0</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Mainland Breakdown -->
+                    <div class="breakdown-chart">
+                        <div class="chart-title">Mainland Costs</div>
+                        <div class="cost-item">
+                            <div class="cost-label-name">Purchase</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar mainland">
+                                    <div class="cost-bar-fill" id="mainlandPurchaseBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="mainlandPurchaseAmount">0</span></div>
+                        </div>
+                        <div class="cost-item">
+                            <div class="cost-label-name">Fuel</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar mainland">
+                                    <div class="cost-bar-fill" id="mainlandFuelBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="mainlandFuelAmount">0</span></div>
+                        </div>
+                        <div class="cost-item">
+                            <div class="cost-label-name">Insurance</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar mainland">
+                                    <div class="cost-bar-fill" id="mainlandInsuranceBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="mainlandInsuranceAmount">0</span></div>
+                        </div>
+                        <div class="cost-item">
+                            <div class="cost-label-name">Registration</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar mainland">
+                                    <div class="cost-bar-fill" id="mainlandRegistrationBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="mainlandRegistrationAmount">0</span></div>
+                        </div>
+                        <div class="cost-item">
+                            <div class="cost-label-name">Maintenance</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar mainland">
+                                    <div class="cost-bar-fill" id="mainlandMaintenanceBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="mainlandMaintenanceAmount">0</span></div>
+                        </div>
+                        <div class="cost-item">
+                            <div class="cost-label-name">Depreciation</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar mainland">
+                                    <div class="cost-bar-fill" id="mainlandDepreciationBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="mainlandDepreciationAmount">0</span></div>
+                        </div>
+                        <div class="cost-item" id="mainlandFinancingCostItem" style="display: none;">
+                            <div class="cost-label-name">Financing</div>
+                            <div class="cost-bar-container">
+                                <div class="cost-bar mainland">
+                                    <div class="cost-bar-fill" id="mainlandFinancingBar"></div>
+                                </div>
+                            </div>
+                            <div class="cost-amount">$<span id="mainlandFinancingAmount">0</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share Section -->
+            <div class="share-section">
+                <h3>Share This Result</h3>
+                <div class="share-buttons">
+                    <button class="share-btn" onclick="shareOnTwitter()" title="Share on Twitter">
+                        <span>𝕏</span> Tweet
+                    </button>
+                    <button class="share-btn" onclick="copyToClipboard()" title="Copy link">
+                        📋 Copy Link
+                    </button>
+                    <button class="share-btn" onclick="shareViaEmail()" title="Share via email">
+                        📧 Email
+                    </button>
+                </div>
+                <div class="share-text" id="shareText">
+                    My <span id="shareVehicle">vehicle</span> will cost <strong>$<span id="sharePremium">0</span> more</strong> to own in Hawaii over 5 years. That's the real cost of island living.
+                </div>
+            </div>
+
+            <!-- Related Guides -->
+            <div class="related-guides-calc">
+                <h2>Related Guides & Resources</h2>
+                <div class="related-grid-calc">
+                    <a href="/guides/car-insurance-hawaii" class="related-card-calc">
+                        <strong>Car Insurance in Hawaii</strong>
+                        <span>Why insurance costs 30-50% more on island</span>
+                    </a>
+                    <a href="/guides/car-maintenance-hawaii" class="related-card-calc">
+                        <strong>Maintenance Costs</strong>
+                        <span>Parts, labor, and salt air repair costs</span>
+                    </a>
+                    <a href="/guides/financing-used-car-hawaii" class="related-card-calc">
+                        <strong>Financing a Car</strong>
+                        <span>APR, loans, and payment options</span>
+                    </a>
+                    <a href="/guides/why-cars-cost-more" class="related-card-calc">
+                        <strong>Why Cars Cost More</strong>
+                        <span>The economics of Hawaii vehicle pricing</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo" style="color:white">Hawaii<span>CarPrice</span>Index</a>
+                <p>The only used car pricing tool built for Hawaii. We track 1,000+ listings daily across all islands.</p>
+            </div>
+            <div class="footer-col">
+                <h4>By Island</h4>
+                <a href="/oahu">Oahu</a><a href="/maui">Maui</a><a href="/big-island">Big Island</a><a href="/kauai">Kauai</a>
+            </div>
+            <div class="footer-col">
+                <h4>Guides</h4>
+                <a href="/guides/best-used-cars-hawaii">Best Used Cars</a><a href="/guides/ship-vs-buy">Ship vs Buy</a>
+                <a href="/guides/why-cars-cost-more">Why Cars Cost More</a><a href="/guides/financing-used-car-hawaii">Financing</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="/#calculator">Price Calculator</a><a href="/about">About</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Hawaii Car Price Index. Data updated daily.</span>
+            <span><a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></span>
+        </div>
+    </footer>
+
+    <!-- CALCULATOR JAVASCRIPT -->
+    <script>
+        // ============================================
+        // COST CALCULATOR LOGIC
+        // ============================================
+
+        // Update slider values
+        document.getElementById('purchasePrice').addEventListener('input', function() {
+            document.getElementById('purchasePriceValue').textContent = new Intl.NumberFormat('en-US').format(this.value);
+        });
+
+        document.getElementById('annualMiles').addEventListener('input', function() {
+            document.getElementById('annualMilesValue').textContent = new Intl.NumberFormat('en-US').format(this.value);
+        });
+
+        // Update fuel type based on vehicle type
+        document.getElementById('vehicleType').addEventListener('change', function() {
+            const fuelType = document.getElementById('fuelType');
+            if (this.value === 'ev') {
+                fuelType.value = 'electric';
+            } else if (this.value === 'hybrid') {
+                fuelType.value = 'hybrid';
+            } else {
+                fuelType.value = 'gas';
+            }
+        });
+
+        // Toggle financing fields
+        function toggleFinancing() {
+            const toggle = document.getElementById('financingToggle');
+            const fields = document.getElementById('financingFields');
+            toggle.classList.toggle('active');
+            fields.classList.toggle('active');
+        }
+
+        // Format currency
+        function formatCurrency(value) {
+            return new Intl.NumberFormat('en-US', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(Math.round(value));
+        }
+
+        // Calculate TCO
+        function calculateTCO() {
+            // Get input values
+            const purchasePrice = parseFloat(document.getElementById('purchasePrice').value);
+            const vehicleType = document.getElementById('vehicleType').value;
+            const annualMiles = parseFloat(document.getElementById('annualMiles').value);
+            const island = document.getElementById('island').value;
+            const fuelType = document.getElementById('fuelType').value;
+            const hasFinancing = document.getElementById('financingToggle').classList.contains('active');
+            const apr = hasFinancing ? parseFloat(document.getElementById('apr').value) : 0;
+            const loanTerm = hasFinancing ? parseInt(document.getElementById('loanTerm').value) : 0;
+
+            // Constants: Hawaii premiums by vehicle type
+            const hawaiiPremiums = {
+                sedan: 0.12,
+                suv: 0.18,
+                truck: 0.22,
+                ev: 0.11
+            };
+
+            // Insurance by vehicle type
+            const hawaiiInsurance = {
+                sedan: 1450,
+                suv: 1650,
+                truck: 1750,
+                ev: 1550
+            };
+
+            const mainlandInsurance = {
+                sedan: 1100,
+                suv: 1250,
+                truck: 1350,
+                ev: 1200
+            };
+
+            // Island multipliers for insurance
+            const islandMultipliers = {
+                oahu: 1.15,
+                maui: 1.05,
+                bigisland: 0.95,
+                kauai: 0.98
+            };
+
+            // Maintenance base costs
+            const maintenanceBase = {
+                sedan: 800,
+                suv: 1000,
+                truck: 1100,
+                ev: 500
+            };
+
+            // MPG by vehicle type
+            const mpg = {
+                sedan: 32,
+                suv: 24,
+                truck: 20,
+                ev: 120 // MPGe
+            };
+
+            // Registration & taxes by state
+            const hawaiiRegistration = 45 + 20 + 450; // registration + inspection + weight tax
+            const mainlandRegistration = 150;
+
+            // ============================================
+            // HAWAII CALCULATIONS
+            // ============================================
+
+            // 1. Purchase Price (with Hawaii premium)
+            const hawaiiPremium = hawaiiPremiums[vehicleType];
+            const hawaiiPurchasePrice = purchasePrice * (1 + hawaiiPremium);
+
+            // 2. Fuel costs (5 years)
+            let hawaiiFuelCost = 0;
+            if (fuelType === 'electric') {
+                // EV: $0.33/kWh Hawaii, 3.5 miles per kWh
+                const hawaiiElectricity = 0.33;
+                hawaiiFuelCost = (annualMiles * 5) / 3.5 * hawaiiElectricity;
+            } else {
+                // Gas: $4.85/gal Hawaii
+                const hawaiiGasPrice = 4.85;
+                hawaiiFuelCost = (annualMiles * 5) / mpg[vehicleType] * hawaiiGasPrice;
+            }
+
+            // 3. Insurance (5 years, with island multiplier)
+            const hawaiiInsuranceAnnual = hawaiiInsurance[vehicleType] * islandMultipliers[island];
+            const hawaiiInsuranceCost = hawaiiInsuranceAnnual * 5;
+
+            // 4. Registration & taxes (5 years)
+            const hawaiiRegCost = hawaiiRegistration * 5;
+
+            // 5. Maintenance (5 years, with 1.35x multiplier for Hawaii)
+            const hawaiiMaintenanceCost = maintenanceBase[vehicleType] * 1.35 * 5;
+
+            // 6. Depreciation (negative cost, reduces total)
+            // Hawaii: 12% year 1, 8% years 2-5
+            let hawaiiResidualValue = hawaiiPurchasePrice;
+            hawaiiResidualValue *= (1 - 0.12); // Year 1
+            hawaiiResidualValue *= Math.pow(0.92, 4); // Years 2-5 (8% depreciation = 92% retained)
+            const hawaiiDepreciationCost = hawaiiPurchasePrice - hawaiiResidualValue;
+
+            // 7. Financing cost (if applicable)
+            let hawaiiFinancingCost = 0;
+            if (hasFinancing) {
+                const monthlyRate = apr / 100 / 12;
+                const monthlyPayment = hawaiiPurchasePrice * (monthlyRate * Math.pow(1 + monthlyRate, loanTerm)) / (Math.pow(1 + monthlyRate, loanTerm) - 1);
+                hawaiiFinancingCost = (monthlyPayment * loanTerm) - hawaiiPurchasePrice;
+            }
+
+            // Total Hawaii cost
+            const hawaiiTotalCost = hawaiiPurchasePrice + hawaiiFuelCost + hawaiiInsuranceCost + hawaiiRegCost + hawaiiMaintenanceCost + hawaiiDepreciationCost + hawaiiFinancingCost;
+
+            // ============================================
+            // MAINLAND CALCULATIONS
+            // ============================================
+
+            // 1. Purchase Price (no premium)
+            const mainlandPurchasePrice = purchasePrice;
+
+            // 2. Fuel costs (5 years)
+            let mainlandFuelCost = 0;
+            if (fuelType === 'electric') {
+                // EV: $0.13/kWh mainland, 3.5 miles per kWh
+                const mainlandElectricity = 0.13;
+                mainlandFuelCost = (annualMiles * 5) / 3.5 * mainlandElectricity;
+            } else {
+                // Gas: $3.15/gal mainland
+                const mainlandGasPrice = 3.15;
+                mainlandFuelCost = (annualMiles * 5) / mpg[vehicleType] * mainlandGasPrice;
+            }
+
+            // 3. Insurance (5 years)
+            const mainlandInsuranceAnnual = mainlandInsurance[vehicleType];
+            const mainlandInsuranceCost = mainlandInsuranceAnnual * 5;
+
+            // 4. Registration & taxes (5 years)
+            const mainlandRegCost = mainlandRegistration * 5;
+
+            // 5. Maintenance (5 years, standard rate)
+            const mainlandMaintenanceCost = maintenanceBase[vehicleType] * 5;
+
+            // 6. Depreciation
+            // Mainland: 15% year 1, 10% years 2-5
+            let mainlandResidualValue = mainlandPurchasePrice;
+            mainlandResidualValue *= (1 - 0.15); // Year 1
+            mainlandResidualValue *= Math.pow(0.90, 4); // Years 2-5 (10% depreciation = 90% retained)
+            const mainlandDepreciationCost = mainlandPurchasePrice - mainlandResidualValue;
+
+            // 7. Financing cost (if applicable)
+            let mainlandFinancingCost = 0;
+            if (hasFinancing) {
+                const monthlyRate = apr / 100 / 12;
+                const monthlyPayment = mainlandPurchasePrice * (monthlyRate * Math.pow(1 + monthlyRate, loanTerm)) / (Math.pow(1 + monthlyRate, loanTerm) - 1);
+                mainlandFinancingCost = (monthlyPayment * loanTerm) - mainlandPurchasePrice;
+            }
+
+            // Total mainland cost
+            const mainlandTotalCost = mainlandPurchasePrice + mainlandFuelCost + mainlandInsuranceCost + mainlandRegCost + mainlandMaintenanceCost + mainlandDepreciationCost + mainlandFinancingCost;
+
+            // ============================================
+            // UPDATE RESULTS
+            // ============================================
+
+            // Totals
+            document.getElementById('hawaiiTotal').textContent = formatCurrency(hawaiiTotalCost);
+            document.getElementById('mainlandTotal').textContent = formatCurrency(mainlandTotalCost);
+            document.getElementById('hawaiiMonthly').textContent = formatCurrency(hawaiiTotalCost / 60);
+            document.getElementById('mainlandMonthly').textContent = formatCurrency(mainlandTotalCost / 60);
+
+            // Hawaii Premium
+            const premium = hawaiiTotalCost - mainlandTotalCost;
+            document.getElementById('hawaiiPremium').textContent = formatCurrency(Math.max(0, premium));
+            document.getElementById('hawaiiPremiumText').textContent = premium > 0
+                ? `You'll pay $${formatCurrency(premium)} extra to own a car in Hawaii over 5 years compared to the mainland.`
+                : `You'll actually save $${formatCurrency(Math.abs(premium))} owning in Hawaii (due to better depreciation).`;
+
+            // Update breakdown bars and amounts
+            updateBreakdownBars(
+                hawaiiPurchasePrice, hawaiiFuelCost, hawaiiInsuranceCost, hawaiiRegCost, hawaiiMaintenanceCost, hawaiiDepreciationCost, hawaiiFinancingCost,
+                mainlandPurchasePrice, mainlandFuelCost, mainlandInsuranceCost, mainlandRegCost, mainlandMaintenanceCost, mainlandDepreciationCost, mainlandFinancingCost,
+                hawaiiTotalCost, mainlandTotalCost, hasFinancing
+            );
+
+            // Update share text
+            const vehicleTypeNames = { sedan: 'Sedan', suv: 'SUV', truck: 'Truck', ev: 'Electric Vehicle' };
+            document.getElementById('shareVehicle').textContent = vehicleTypeNames[vehicleType];
+            document.getElementById('sharePremium').textContent = formatCurrency(Math.max(0, premium));
+
+            // Show results
+            document.getElementById('resultsSection').classList.add('show');
+
+            // Smooth scroll to results
+            setTimeout(() => {
+                document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        // Update breakdown bars
+        function updateBreakdownBars(
+            hawaiiPurch, hawaiiFuel, hawaiiIns, hawaiiReg, hawaiiMaint, hawaiiDepr, hawaiiFin,
+            mainlandPurch, mainlandFuel, mainlandIns, mainlandReg, mainlandMaint, mainlandDepr, mainlandFin,
+            hawaiiTotal, mainlandTotal, hasFinancing
+        ) {
+            const maxValue = Math.max(hawaiiTotal, mainlandTotal);
+
+            // Helper to set bar width and amount
+            function setBar(barId, amountId, value, total) {
+                const percentage = (value / total) * 100;
+                const bar = document.getElementById(barId);
+                bar.style.width = percentage + '%';
+                document.getElementById(amountId).textContent = formatCurrency(value);
+            }
+
+            // Hawaii breakdown
+            setBar('hawaiiPurchaseBar', 'hawaiiPurchaseAmount', hawaiiPurch, hawaiiTotal);
+            setBar('hawaiiFuelBar', 'hawaiiFuelAmount', hawaiiFuel, hawaiiTotal);
+            setBar('hawaiiInsuranceBar', 'hawaiiInsuranceAmount', hawaiiIns, hawaiiTotal);
+            setBar('hawaiiRegistrationBar', 'hawaiiRegistrationAmount', hawaiiReg, hawaiiTotal);
+            setBar('hawaiiMaintenanceBar', 'hawaiiMaintenanceAmount', hawaiiMaint, hawaiiTotal);
+            setBar('hawaiiDepreciationBar', 'hawaiiDepreciationAmount', hawaiiDepr, hawaiiTotal);
+
+            if (hasFinancing) {
+                setBar('hawaiiFinancingBar', 'hawaiiFinancingAmount', hawaiiFin, hawaiiTotal);
+                document.getElementById('hawaiiFinancingCostItem').style.display = 'flex';
+            } else {
+                document.getElementById('hawaiiFinancingCostItem').style.display = 'none';
+            }
+
+            // Mainland breakdown
+            setBar('mainlandPurchaseBar', 'mainlandPurchaseAmount', mainlandPurch, mainlandTotal);
+            setBar('mainlandFuelBar', 'mainlandFuelAmount', mainlandFuel, mainlandTotal);
+            setBar('mainlandInsuranceBar', 'mainlandInsuranceAmount', mainlandIns, mainlandTotal);
+            setBar('mainlandRegistrationBar', 'mainlandRegistrationAmount', mainlandReg, mainlandTotal);
+            setBar('mainlandMaintenanceBar', 'mainlandMaintenanceAmount', mainlandMaint, mainlandTotal);
+            setBar('mainlandDepreciationBar', 'mainlandDepreciationAmount', mainlandDepr, mainlandTotal);
+
+            if (hasFinancing) {
+                setBar('mainlandFinancingBar', 'mainlandFinancingAmount', mainlandFin, mainlandTotal);
+                document.getElementById('mainlandFinancingCostItem').style.display = 'flex';
+            } else {
+                document.getElementById('mainlandFinancingCostItem').style.display = 'none';
+            }
+        }
+
+        // Share functions
+        function shareOnTwitter() {
+            const text = document.getElementById('shareText').textContent;
+            const url = 'https://hawaiicarpriceindex.com/cost-calculator';
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+            window.open(twitterUrl, '_blank', 'width=550,height=420');
+        }
+
+        function copyToClipboard() {
+            const url = 'https://hawaiicarpriceindex.com/cost-calculator';
+            navigator.clipboard.writeText(url).then(() => {
+                alert('Calculator link copied to clipboard!');
+            });
+        }
+
+        function shareViaEmail() {
+            const subject = 'Check out: True Cost of Owning a Car in Hawaii';
+            const body = 'I found this calculator that shows the real cost of owning a car in Hawaii vs the mainland. You should check it out: https://hawaiicarpriceindex.com/cost-calculator';
+            window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        // Initialize fuel type on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('vehicleType').dispatchEvent(new Event('change'));
+        });
+    </script>
+
+    <script defer src="/analytics.js"></script>
+</body>
+</html>
