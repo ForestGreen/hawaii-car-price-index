@@ -588,18 +588,23 @@
     <!-- Google Analytics 4 - Replace GA4_MEASUREMENT_ID with your actual ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","GA4_MEASUREMENT_ID");</script>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <nav style="background:#1a1a2e;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
-        <a href="/" style="color:#f4845f;font-weight:700;font-size:18px;text-decoration:none;">Hawaii<span style="color:white;">CarPrice</span>Index</a>
-        <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
-            <a href="/#calculator" style="color:#ccc;text-decoration:none;font-size:14px;">Calculator</a>
-            <a href="/guides/ship-vs-buy" style="color:#ccc;text-decoration:none;font-size:14px;">Ship vs Buy</a>
-            <a href="/guides/best-used-cars-hawaii" style="color:#ccc;text-decoration:none;font-size:14px;">Best Cars</a>
-            <a href="/oahu" style="color:#ccc;text-decoration:none;font-size:14px;">Oahu</a>
-            <a href="/maui" style="color:#ccc;text-decoration:none;font-size:14px;">Maui</a>
-            <a href="/big-island" style="color:#ccc;text-decoration:none;font-size:14px;">Big Island</a>
-            <a href="/kauai" style="color:#ccc;text-decoration:none;font-size:14px;">Kauai</a>
+    <nav class="site-nav">
+        <a href="/" class="nav-logo">Hawaii<span>CarPrice</span>Index</a>
+        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="nav-links">
+            <a href="/#calculator">Calculator</a>
+            <a href="/guides/best-used-cars-hawaii">Best Cars</a>
+            <a href="/guides/ship-vs-buy">Ship vs Buy</a>
+            <a href="/oahu">Oahu</a>
+            <a href="/maui">Maui</a>
+            <a href="/big-island">Big Island</a>
+            <a href="/kauai">Kauai</a>
+            <a href="/#alerts" class="nav-cta">Get Alerts</a>
         </div>
     </nav>
     <!-- Header -->
@@ -1128,17 +1133,38 @@
     </section>
 
     <!-- Footer -->
-    <footer style="background:#1a1a2e;color:#999;padding:24px;text-align:center;font-size:13px;margin-top:40px;">
-        <div style="margin-bottom:8px;">
-            <a href="/" style="color:#f4845f;text-decoration:none;font-weight:600;">HawaiiCarPriceIndex</a>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo" style="color:white">Hawaii<span>CarPrice</span>Index</a>
+                <p>The only used car pricing tool built for Hawaii. We track 1,000+ listings daily across all islands.</p>
+            </div>
+            <div class="footer-col">
+                <h4>By Island</h4>
+                <a href="/oahu">Oahu</a>
+                <a href="/maui">Maui</a>
+                <a href="/big-island">Big Island</a>
+                <a href="/kauai">Kauai</a>
+            </div>
+            <div class="footer-col">
+                <h4>Guides</h4>
+                <a href="/guides/best-used-cars-hawaii">Best Used Cars</a>
+                <a href="/guides/ship-vs-buy">Ship vs Buy</a>
+                <a href="/guides/why-cars-cost-more">Why Cars Cost More</a>
+                <a href="/guides/financing-used-car-hawaii">Financing</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="/#calculator">Price Calculator</a>
+                <a href="/about">About</a>
+                <a href="/privacy">Privacy</a>
+                <a href="/terms">Terms</a>
+            </div>
         </div>
-        <div style="margin-bottom:8px;">
-            <a href="/guides/why-cars-cost-more" style="color:#999;text-decoration:none;margin:0 8px;">Why Cars Cost More</a> ·
-            <a href="/guides/best-used-cars-hawaii" style="color:#999;text-decoration:none;margin:0 8px;">Best Used Cars</a> ·
-            <a href="/guides/hawaii-car-buying-checklist" style="color:#999;text-decoration:none;margin:0 8px;">Buying Checklist</a> ·
-            <a href="/guides/ship-vs-buy" style="color:#999;text-decoration:none;margin:0 8px;">Ship vs Buy</a>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Hawaii Car Price Index. Data updated daily.</span>
+            <span><a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></span>
         </div>
-        <div>© 2026 Hawaii Car Price Index · <a href="/privacy" style="color:#999;">Privacy</a> · <a href="/terms" style="color:#999;">Terms</a></div>
     </footer>
 
     <!-- Schema.org JSON-LD Markup -->
