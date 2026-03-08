@@ -98,6 +98,13 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- About -->
+  <url>
+    <loc>https://hawaiicarpriceindex.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Legal Pages -->
   <url>
     <loc>https://hawaiicarpriceindex.com/privacy</loc>
