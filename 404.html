@@ -3,12 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
     <title>Page Not Found | Hawaii Car Price Index</title>
+    <meta name="description" content="The page you're looking for has sailed away. Navigate back to the Hawaii Car Price Index to find used car prices and guides.">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --color-ocean: #0066CC;
+            --color-ocean-dark: #004C99;
+            --color-ocean-light: #E6F0FA;
+            --color-sunset: #FF6B35;
+            --color-sunset-dark: #E55A2B;
+            --color-palm: #2D8A4E;
+            --color-palm-light: #E8F5EC;
+            --color-sand: #F5E6D3;
+            --color-text-dark: #1A1A1A;
+            --color-text-light: #666666;
+            --color-border: #E0E0E0;
+            --color-bg: #F8F9FA;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -16,117 +36,407 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: #f8f9fa;
-            color: #333;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text-dark);
+            line-height: 1.6;
         }
 
+        /* Header / Navigation */
         header {
-            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
+            background: linear-gradient(135deg, var(--color-ocean) 0%, var(--color-ocean-dark) 100%);
             color: white;
-            padding: 20px 0;
-            text-align: center;
+            padding: 24px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        header a {
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header a.logo {
             color: white;
             text-decoration: none;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        header a:hover {
+        header a.logo:hover {
             opacity: 0.9;
         }
 
+        header nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        header nav a:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            header nav {
+                display: none;
+            }
+        }
+
+        /* Main Content */
         main {
             max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .error-section {
             text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .error-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         .error-code {
             font-size: 120px;
             font-weight: 700;
-            color: #0066cc;
-            margin-bottom: 10px;
+            color: var(--color-ocean);
+            margin-bottom: 16px;
+            line-height: 1;
         }
 
         h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #222;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--color-text-dark);
+            margin-bottom: 12px;
         }
 
         .message {
             font-size: 18px;
-            color: #666;
+            color: var(--color-text-light);
             margin-bottom: 40px;
-            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+        /* Quick Navigation */
+        .quick-nav {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .quick-nav h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--color-text-dark);
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .nav-card {
+            display: block;
+            padding: 16px;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--color-text-dark);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-card:hover {
+            background: var(--color-ocean-light);
+            border-color: var(--color-ocean);
+            transform: translateY(-2px);
+        }
+
+        .nav-card.primary {
+            background: var(--color-ocean);
+            color: white;
+            border-color: var(--color-ocean);
+        }
+
+        .nav-card.primary:hover {
+            background: var(--color-ocean-dark);
+            border-color: var(--color-ocean-dark);
+        }
+
+        /* Sections */
+        .section {
             margin-bottom: 60px;
         }
 
-        a.link-button {
+        .section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--color-ocean);
             display: inline-block;
-            padding: 12px 24px;
-            background: #0066cc;
-            color: white;
-            text-decoration: none;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .link-item {
+            display: block;
+            padding: 12px 16px;
+            background: white;
+            border: 1px solid var(--color-border);
             border-radius: 6px;
+            text-decoration: none;
+            color: var(--color-ocean);
             font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .link-item:hover {
+            background: var(--color-ocean-light);
+            border-color: var(--color-ocean);
+            transform: translateX(4px);
+        }
+
+        /* Email CTA */
+        .email-cta {
+            background: linear-gradient(135deg, var(--color-ocean) 0%, var(--color-ocean-dark) 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .email-cta h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .email-cta p {
+            font-size: 16px;
+            margin-bottom: 24px;
+            opacity: 0.95;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 8px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .email-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .email-form button {
+            padding: 12px 24px;
+            background: var(--color-sunset);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
             transition: background 0.2s;
+            font-family: 'Inter', sans-serif;
         }
 
-        a.link-button:hover {
-            background: #004a99;
+        .email-form button:hover {
+            background: var(--color-sunset-dark);
         }
 
-        a.link-button.secondary {
-            background: #e9f0ff;
-            color: #0066cc;
-        }
-
-        a.link-button.secondary:hover {
-            background: #d1e3ff;
-        }
-
+        /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
-            color: #999;
-            font-size: 14px;
-            border-top: 1px solid #e0e0e0;
+            color: var(--color-text-light);
+            font-size: 13px;
+            border-top: 1px solid var(--color-border);
             margin-top: 80px;
+        }
+
+        footer a {
+            color: var(--color-ocean);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            main {
+                padding: 40px 16px;
+            }
+
+            .error-code {
+                font-size: 80px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .message {
+                font-size: 16px;
+            }
+
+            .quick-nav {
+                padding: 24px;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .email-cta {
+                padding: 32px 20px;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-form input,
+            .email-form button {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <a href="/">🌺 Hawaii Car Price Index</a>
+        <div class="container">
+            <a href="/" class="logo">🌺 Hawaii Car Price Index</a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/#calculator">Calculator</a>
+                <a href="/#guides">Guides</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <div class="error-code">404</div>
-        <h1>Page Not Found</h1>
-        <p class="message">Looks like this road doesn't go through. Let's get you back on track.</p>
+        <!-- Error Section -->
+        <div class="error-section">
+            <div class="error-icon">⛵</div>
+            <div class="error-code">404</div>
+            <h1>Lost at Sea?</h1>
+            <p class="message">The page you're looking for has sailed away. Let's get you back to shore with the information you need.</p>
+        </div>
 
-        <div class="nav-links">
-            <a href="/" class="link-button">Home</a>
-            <a href="/#calculator" class="link-button">Price Calculator</a>
-            <a href="/#guides" class="link-button secondary">Popular Guides</a>
+        <!-- Quick Navigation -->
+        <div class="quick-nav">
+            <h2>Get Started</h2>
+            <div class="nav-grid">
+                <a href="/" class="nav-card primary">Home / Calculator</a>
+                <a href="/oahu" class="nav-card">Oahu Prices</a>
+                <a href="/maui" class="nav-card">Maui Prices</a>
+                <a href="/big-island" class="nav-card">Big Island Prices</a>
+                <a href="/kauai" class="nav-card">Kauai Prices</a>
+            </div>
+        </div>
+
+        <!-- Popular Car Models -->
+        <div class="section">
+            <h3>Popular Models</h3>
+            <div class="links-grid">
+                <a href="/prices/toyota-tacoma" class="link-item">Toyota Tacoma</a>
+                <a href="/prices/toyota-4runner" class="link-item">Toyota 4Runner</a>
+                <a href="/prices/honda-crv" class="link-item">Honda CR-V</a>
+                <a href="/prices/toyota-rav4" class="link-item">Toyota RAV4</a>
+                <a href="/prices/honda-civic" class="link-item">Honda Civic</a>
+                <a href="/prices/subaru-outback" class="link-item">Subaru Outback</a>
+            </div>
+        </div>
+
+        <!-- Guides & Resources -->
+        <div class="section">
+            <h3>Guides & Resources</h3>
+            <div class="links-grid">
+                <a href="/guides/ship-vs-buy" class="link-item">Ship vs. Buy Guide</a>
+                <a href="/guides/first-time-buyers" class="link-item">First-Time Buyers</a>
+                <a href="/guides/best-deals" class="link-item">Finding Best Deals</a>
+                <a href="/guides/ev-hawaii" class="link-item">EV Buyers Guide</a>
+            </div>
+        </div>
+
+        <!-- Email CTA -->
+        <div class="email-cta">
+            <h2>Get Price Updates</h2>
+            <p>Stay informed about Hawaii car prices with our weekly email digest.</p>
+            <form class="email-form" onsubmit="handleEmailSignup(event)">
+                <input type="email" placeholder="your@email.com" required aria-label="Email address">
+                <button type="submit">Subscribe</button>
+            </form>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 Hawaii Car Price Index. All rights reserved.</p>
+        <p>&copy; 2026 Hawaii Car Price Index. All rights reserved. | <a href="/">Home</a> | Privacy Policy</p>
     </footer>
+
+    <script>
+        function handleEmailSignup(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            // Client-side handler - you can extend this with analytics or localStorage
+            console.log('Email signup:', email);
+            alert('Thank you! Check your email for updates.');
+            event.target.reset();
+        }
+    </script>
 </body>
 </html>
