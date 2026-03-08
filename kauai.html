@@ -4,41 +4,206 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover current used car prices on Kauai's Garden Isle. Compare market data across popular models, explore local dealers, and understand Kauai-specific considerations for buying a vehicle in Hawaii's smallest major island.">
-    <meta name="keywords" content="Kauai used car prices, Hawaii car market, Lihue car dealers, used cars Kauai, vehicle prices Garden Isle">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Hawaii Car Price Index">
+    <title>Used Car Prices on Kauai — 2026 Market Guide</title>
+    <meta name="description" content="Browse used car prices on Kauai, Hawaii. See 2026 market overview, popular models, dealer directory, and island-specific buying tips.">
     <link rel="canonical" href="https://hawaiicarpriceindex.com/kauai">
-
-    <!-- Open Graph Tags -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Used Car Prices on Kauai — 2026 Market Guide | Hawaii Car Price Index">
-    <meta property="og:description" content="Discover current used car prices on Kauai's Garden Isle. Compare market data across popular models and explore local dealers.">
+    <meta property="og:title" content="Used Cars for Sale on Kauai — 2026 Market Guide">
+    <meta property="og:description" content="Complete market overview, pricing trends, and dealer directory for used cars on Kauai. Find the best deals and expert buying tips.">
     <meta property="og:url" content="https://hawaiicarpriceindex.com/kauai">
-    <meta property="og:site_name" content="Hawaii Car Price Index">
     <meta property="og:image" content="https://hawaiicarpriceindex.com/og-image.png">
-
-    <!-- Twitter Card Tags -->
+    <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Used Car Prices on Kauai — 2026 Market Guide">
-    <meta name="twitter:description" content="Current Kauai car prices, dealer info, and island-specific buying considerations">
     <meta name="twitter:image" content="https://hawaiicarpriceindex.com/og-image.png">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* Page-specific styles for Kauai */
+        .market-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
 
-    <!-- Structured Data (Schema.org) -->
+        .stat {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-ocean);
+            text-align: center;
+        }
+
+        .stat strong {
+            display: block;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .stat span {
+            display: block;
+            font-size: 1.8em;
+            color: var(--color-ocean);
+            font-weight: bold;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .section-card > section {
+            padding: 40px;
+        }
+
+        .section-card h2 {
+            font-size: 1.8em;
+            color: var(--color-ocean);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--color-ocean);
+        }
+
+        .popular-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .popular-list li {
+            background: var(--color-gray-100);
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--color-ocean);
+            border-radius: 4px;
+        }
+
+        .popular-list strong {
+            color: var(--color-ocean);
+        }
+
+        .info-box-custom {
+            background-color: var(--color-ocean-light);
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .info-box-custom a {
+            color: var(--color-ocean);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .info-box-custom a:hover {
+            text-decoration: underline;
+        }
+
+        .disclaimer {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+
+        .dealer-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-ocean);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .dealer-card h3 {
+            color: var(--color-ocean);
+            margin-top: 0;
+        }
+
+        .dealer-card .location {
+            color: #666;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        .dealer-card .description {
+            margin: 10px 0;
+        }
+
+        .buying-tips ol {
+            margin-left: 25px;
+            margin-top: 20px;
+        }
+
+        .buying-tips li {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .faq-list-custom > div {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-left: 4px solid var(--color-ocean);
+            border-radius: 4px;
+        }
+
+        .faq-list-custom h3 {
+            color: var(--color-ocean);
+            margin-top: 0;
+        }
+
+        .faq-list-custom p {
+            margin: 0;
+            color: #555;
+        }
+
+        .internal-links-section ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .internal-links-section li {
+            margin-bottom: 12px;
+        }
+
+        .internal-links-section a {
+            color: var(--color-ocean);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .internal-links-section a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .market-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-card > section {
+                padding: 25px 15px;
+            }
+        }
+    </style>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Used Car Prices on Kauai — 2026 Market Guide",
-        "description": "Comprehensive guide to used car prices on Kauai, including market analysis, dealer information, and local considerations",
+        "headline": "Used Cars for Sale on Kauai — 2026 Market Guide",
+        "description": "Browse used car prices on Kauai, Hawaii. See 2026 market overview, popular models, dealer directory, and island-specific buying tips.",
+        "url": "https://hawaiicarpriceindex.com/kauai",
+        "datePublished": "2026-03-01T00:00:00Z",
+        "dateModified": "2026-03-06T00:00:00Z",
         "author": {
             "@type": "Organization",
-            "name": "Hawaii Car Price Index"
+            "name": "Hawaii Car Price Index",
+            "url": "https://hawaiicarpriceindex.com"
         },
-        "datePublished": "2026-03-01",
-        "dateModified": "2026-03-06",
-        "image": "https://hawaiicarpriceindex.com/og-kauai.jpg",
-        "url": "https://hawaiicarpriceindex.com/kauai",
         "publisher": {
             "@type": "Organization",
             "name": "Hawaii Car Price Index",
@@ -49,8 +214,6 @@
         }
     }
     </script>
-
-    <!-- FAQPage Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -123,727 +286,88 @@
         ]
     }
     </script>
-
-    <title>Used Car Prices on Kauai — 2026 Market Guide | Hawaii Car Price Index</title>
-
-    <style>
-        :root {
-            --color-ocean: #0066CC;
-            --color-ocean-dark: #004C99;
-            --color-sunset: #FF6B35;
-            --color-palm: #2D8A4E;
-            --color-gray-900: #1A1A2E;
-            --color-gray-800: #2D2D44;
-            --color-gray-700: #4A4A5E;
-            --color-gray-600: #6B6B7D;
-            --color-gray-300: #D0D0D8;
-            --color-gray-100: #F5F5F7;
-            --color-white: #FFFFFF;
-            --color-success: #2D8A4E;
-            --color-warning: #FF6B35;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            color: var(--color-gray-900);
-            background-color: var(--color-white);
-            line-height: 1.6;
-        }
-
-        a {
-            color: var(--color-ocean);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        a:hover {
-            color: var(--color-ocean-dark);
-            text-decoration: underline;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: var(--color-white);
-            border-bottom: 1px solid var(--color-gray-100);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: var(--shadow-sm);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-ocean);
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--color-gray-700);
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--color-ocean);
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-        }
-
-        /* Breadcrumbs */
-        .breadcrumb {
-            padding: 1.5rem 0;
-            font-size: 0.9rem;
-            color: var(--color-gray-600);
-        }
-
-        .breadcrumb a {
-            color: var(--color-ocean);
-            margin: 0 0.5rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
-            color: var(--color-white);
-            padding: 4rem 1.5rem;
-            margin-bottom: 3rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-            line-height: 1.1;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            font-weight: 300;
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 8px;
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-        }
-
-        /* Section Styling */
-        section {
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-size: 2.25rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            color: var(--color-gray-900);
-            letter-spacing: -0.5px;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--color-gray-600);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        /* Cards */
-        .card {
-            background: var(--color-white);
-            border: 1px solid var(--color-gray-100);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow-sm);
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-
-        .card:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--color-gray-900);
-        }
-
-        .card-text {
-            color: var(--color-gray-700);
-            line-height: 1.7;
-        }
-
-        /* Grid Layouts */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Tables */
-        .table-wrapper {
-            overflow-x: auto;
-            margin-bottom: 2rem;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--color-white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-
-        thead {
-            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
-            color: var(--color-white);
-        }
-
-        th {
-            padding: 1.25rem;
-            text-align: left;
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-        }
-
-        td {
-            padding: 1.25rem;
-            border-bottom: 1px solid var(--color-gray-100);
-        }
-
-        tbody tr:hover {
-            background-color: var(--color-gray-100);
-        }
-
-        tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .price {
-            font-weight: 700;
-            color: var(--color-ocean);
-            font-size: 1.05rem;
-        }
-
-        /* Comparison Grid */
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .comparison-card {
-            background: var(--color-white);
-            border: 2px solid var(--color-gray-100);
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .comparison-card:hover {
-            border-color: var(--color-ocean);
-            box-shadow: var(--shadow-md);
-        }
-
-        .comparison-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-gray-900);
-        }
-
-        .comparison-metric {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--color-gray-100);
-        }
-
-        .comparison-metric:last-child {
-            border-bottom: none;
-        }
-
-        .metric-label {
-            color: var(--color-gray-600);
-            font-weight: 500;
-        }
-
-        .metric-value {
-            font-weight: 700;
-            color: var(--color-gray-900);
-        }
-
-        /* Feature Lists */
-        .feature-list {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .feature-list li {
-            padding: 0.75rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: var(--color-gray-700);
-        }
-
-        .feature-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--color-palm);
-            font-weight: 700;
-            font-size: 1.25rem;
-        }
-
-        /* Callout Boxes */
-        .callout {
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(45, 138, 78, 0.05) 100%);
-            border-left: 4px solid var(--color-ocean);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-        }
-
-        .callout-title {
-            font-weight: 700;
-            color: var(--color-gray-900);
-            margin-bottom: 0.5rem;
-        }
-
-        .callout-text {
-            color: var(--color-gray-700);
-            line-height: 1.7;
-        }
-
-        /* FAQ Section */
-        .faq-item {
-            background: var(--color-white);
-            border: 1px solid var(--color-gray-100);
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .faq-question {
-            padding: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 700;
-            color: var(--color-gray-900);
-            background: var(--color-gray-100);
-            transition: background-color 0.2s ease;
-        }
-
-        .faq-question:hover {
-            background-color: var(--color-gray-200);
-        }
-
-        .faq-toggle {
-            font-size: 1.5rem;
-            color: var(--color-ocean);
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.open .faq-toggle {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-item.open .faq-answer {
-            max-height: 500px;
-        }
-
-        .faq-answer-content {
-            padding: 1.5rem;
-            color: var(--color-gray-700);
-            line-height: 1.7;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 2rem;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
-            letter-spacing: 0.3px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
-            color: var(--color-white);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-            text-decoration: none;
-        }
-
-        .btn-secondary {
-            background: var(--color-gray-100);
-            color: var(--color-ocean);
-            border: 2px solid var(--color-ocean);
-        }
-
-        .btn-secondary:hover {
-            background: var(--color-ocean);
-            color: var(--color-white);
-            text-decoration: none;
-        }
-
-        .btn-block {
-            display: block;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
-            color: var(--color-white);
-            padding: 3rem 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--color-gray-900);
-            color: var(--color-gray-300);
-            padding: 3rem 1.5rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            color: var(--color-white);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            font-weight: 700;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-section a {
-            color: var(--color-gray-300);
-        }
-
-        .footer-section a:hover {
-            color: var(--color-ocean);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--color-gray-700);
-            padding-top: 2rem;
-            text-align: center;
-            color: var(--color-gray-600);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 1.75rem;
-            }
-
-            .hero-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .hero-stats .stat {
-                padding: 1rem;
-            }
-
-            table {
-                font-size: 0.9rem;
-            }
-
-            th, td {
-                padding: 0.75rem;
-            }
-
-            .cta-section {
-                padding: 2rem 1.5rem;
-            }
-
-            .cta-section h2 {
-                font-size: 1.5rem;
-            }
-        }
-
-        /* Utility Classes */
-        .text-center {
-            text-align: center;
-        }
-
-        .text-muted {
-            color: var(--color-gray-600);
-        }
-
-        .mb-2 {
-            margin-bottom: 1rem;
-        }
-
-        .mb-3 {
-            margin-bottom: 2rem;
-        }
-
-        .mt-3 {
-            margin-top: 2rem;
-        }
-    </style>
-    <!-- Google Analytics 4 - Replace GA4_MEASUREMENT_ID with your actual ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","GA4_MEASUREMENT_ID");</script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://hawaiicarpriceindex.com"},
-            {"@type": "ListItem", "position": 2, "name": "Kauai", "item": "https://hawaiicarpriceindex.com/kauai"}
-        ]
-    }
-    </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Kauai Used Car Prices & Market Data",
-        "description": "Used car prices, dealer directory, and market data for Kauai, Hawaii. Compare Kauai prices to mainland averages.",
+        "description": "Used car prices, dealer directory, and market data for Kauai, Hawaii. Compare Kauai prices to other islands.",
         "url": "https://hawaiicarpriceindex.com/kauai",
         "isPartOf": {"@type": "WebSite", "name": "Hawaii Car Price Index", "url": "https://hawaiicarpriceindex.com"}
     }
     </script>
 </head>
 <body>
-    <nav style="background:#1a1a2e;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
-        <a href="/" style="color:#f4845f;font-weight:700;font-size:18px;text-decoration:none;">Hawaii<span style="color:white;">CarPrice</span>Index</a>
-        <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
-            <a href="/#calculator" style="color:#ccc;text-decoration:none;font-size:14px;">Calculator</a>
-            <a href="/guides/ship-vs-buy" style="color:#ccc;text-decoration:none;font-size:14px;">Ship vs Buy</a>
-            <a href="/guides/best-used-cars-hawaii" style="color:#ccc;text-decoration:none;font-size:14px;">Best Cars</a>
-            <a href="/oahu" style="color:#ccc;text-decoration:none;font-size:14px;">Oahu</a>
-            <a href="/maui" style="color:#ccc;text-decoration:none;font-size:14px;">Maui</a>
-            <a href="/big-island" style="color:#ccc;text-decoration:none;font-size:14px;">Big Island</a>
-            <a href="/kauai" style="color:#ccc;text-decoration:none;font-size:14px;">Kauai</a>
+    <nav class="site-nav">
+        <a href="/" class="nav-logo">Hawaii<span>CarPrice</span>Index</a>
+        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="nav-links">
+            <a href="/#calculator">Calculator</a>
+            <a href="/guides/best-used-cars-hawaii">Best Cars</a>
+            <a href="/guides/ship-vs-buy">Ship vs Buy</a>
+            <a href="/oahu">Oahu</a>
+            <a href="/maui">Maui</a>
+            <a href="/big-island">Big Island</a>
+            <a href="/kauai">Kauai</a>
+            <a href="/#alerts" class="nav-cta">Get Alerts</a>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">🌺 Hawaii Car Price Index</div>
-                <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/oahu">Oahu</a></li>
-                    <li><a href="/maui">Maui</a></li>
-                    <li><a href="/big-island">Big Island</a></li>
-                    <li><a href="/kauai">Kauai</a></li>
-                </ul>
-            </nav>
+    <header class="page-hero">
+        <div class="hero-inner">
+            <div class="breadcrumb">
+                <a href="/">Home</a>
+                <span>&gt;</span>
+                <a href="/#islands">Islands</a>
+                <span>&gt;</span>
+                <span>Kauai</span>
+            </div>
+            <h1>Used Cars for Sale on Kauai — 2026 Market Guide</h1>
+            <p>Complete market overview, pricing trends, and dealer directory for used cars on Kauai. Find the best deals and expert buying tips for Hawaii's most intimate island car market.</p>
         </div>
     </header>
 
-    <main>
-        <div class="container">
-            <!-- Breadcrumb -->
-            <div class="breadcrumb">
-                <a href="/">Home</a> > <span>Kauai</span>
+    <main class="content-wrap">
+        <article itemscope itemtype="https://schema.org/Article">
+            <meta itemprop="headline" content="Used Cars for Sale on Kauai — 2026 Market Guide">
+            <meta itemprop="description" content="Complete market overview, pricing trends, and dealer directory for used cars on Kauai.">
+            <meta itemprop="datePublished" content="2026-03-01T00:00:00Z">
+
+            <div class="section-card">
+                <section class="market-overview">
+                    <h2>Kauai Used Car Market Overview</h2>
+                    <p>Kauai's used car market reflects a small, close-knit community with unique environmental and infrastructural demands. With only 2-3 major dealerships and limited private inventory, Kauai offers fewer options than larger islands but maintains competitive pricing. The market is characterized by careful curation of vehicles suited to island living: all-wheel drive capability, rust resistance, compact size, and proven reliability are paramount.</p>
+
+                    <p>The average used car on Kauai costs around $23,500, making it accessible while reflecting the island's smaller scale. Subarus represent approximately 18% of the market—nearly double the national average—due to their exceptional suitability for Kauai's wet climate and unpaved roads. Recent market trends show steady pricing with strong demand for weather-appropriate vehicles.</p>
+
+                    <div class="market-stats">
+                        <div class="stat">
+                            <strong>Average Price</strong>
+                            <span>$23,500</span>
+                        </div>
+                        <div class="stat">
+                            <strong>Price Range</strong>
+                            <span>$18,000 - $28,000</span>
+                        </div>
+                        <div class="stat">
+                            <strong>Monthly Inventory</strong>
+                            <span>150-200</span>
+                        </div>
+                        <div class="stat">
+                            <strong>Major Dealers</strong>
+                            <span>2-3</span>
+                        </div>
+                    </div>
+                </section>
             </div>
 
-            <!-- Hero Section -->
-            <section class="hero">
-                <div class="hero-content">
-                    <h1>Used Car Prices on Kauai</h1>
-                    <p class="hero-subtitle">Your comprehensive guide to the Garden Isle's automotive market in 2026</p>
-
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <div class="stat-value">$23,500</div>
-                            <div class="stat-label">Average Price</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">2-3</div>
-                            <div class="stat-label">Major Dealers</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">Limited</div>
-                            <div class="stat-label">Monthly Inventory</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">5,000+</div>
-                            <div class="stat-label">Daily Searches</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Market Overview -->
-            <section>
-                <h2 class="section-title">Kauai's Automotive Market</h2>
-                <p class="section-subtitle">Understanding Hawaii's most intimate island car market</p>
-
-                <div class="grid-2">
-                    <div class="card">
-                        <h3 class="card-title">The Garden Isle Advantage</h3>
-                        <p class="card-text">Kauai is Hawaii's smallest major island with a population of about 73,000. This intimate market means a carefully curated selection of vehicles, with dealers and private sellers focusing on models that thrive in the island's unique environment. While inventory is limited compared to Oahu, prices often reflect the lower competition and tighter community nature of the island.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3 class="card-title">Limited Inventory, Curated Selection</h3>
-                        <p class="card-text">With only 2-3 major dealerships and a smaller private market, Kauai vehicle inventory is significantly more limited than Oahu. This means faster turnover on popular models and higher per-unit attention from dealerships. Buyers benefit from personal service but should expect fewer options and may need patience to find the perfect vehicle.</p>
-                    </div>
-                </div>
-
-                <div class="callout">
-                    <div class="callout-title">Pro Tip: The Kauai Advantage</div>
-                    <div class="callout-text">While Kauai's inventory is smaller, the community-focused market means dealers know their vehicles intimately. Service history is often transparent, and the island's tight-knit nature means word-of-mouth recommendations carry significant weight. Building relationships with local dealers can unlock opportunities not advertised publicly.</div>
-                </div>
-            </section>
-
-            <!-- Price Table -->
-            <section>
-                <h2 class="section-title">Top 10 Popular Models on Kauai</h2>
-                <p class="section-subtitle">2024-2025 used vehicles with average Kauai pricing</p>
-
-                <div class="table-wrapper">
-                    <table>
+            <div class="section-card">
+                <section class="prices-by-category">
+                    <h2>Top 10 Popular Models on Kauai</h2>
+                    <p>These vehicles dominate Kauai's market because they excel in the island's unique environment. High demand for AWD capability and compact design means strong local pricing for these models.</p>
+                    <table class="data-table">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -858,351 +382,212 @@
                                 <td>1</td>
                                 <td>Subaru Outback</td>
                                 <td>2020-2023</td>
-                                <td class="price">$26,400</td>
+                                <td>$26,400</td>
                                 <td>⭐⭐⭐⭐⭐</td>
                             </tr>
                             <tr>
                                 <td>2</td>
                                 <td>Toyota RAV4</td>
                                 <td>2019-2022</td>
-                                <td class="price">$25,800</td>
+                                <td>$25,800</td>
                                 <td>⭐⭐⭐⭐⭐</td>
                             </tr>
                             <tr>
                                 <td>3</td>
                                 <td>Honda Civic</td>
                                 <td>2019-2023</td>
-                                <td class="price">$20,100</td>
+                                <td>$20,100</td>
                                 <td>⭐⭐⭐⭐⭐</td>
                             </tr>
                             <tr>
                                 <td>4</td>
                                 <td>Toyota Corolla</td>
                                 <td>2019-2023</td>
-                                <td class="price">$19,700</td>
+                                <td>$19,700</td>
                                 <td>⭐⭐⭐⭐⭐</td>
                             </tr>
                             <tr>
                                 <td>5</td>
                                 <td>Subaru Crosstrek</td>
                                 <td>2020-2023</td>
-                                <td class="price">$23,600</td>
+                                <td>$23,600</td>
                                 <td>⭐⭐⭐⭐</td>
                             </tr>
                             <tr>
                                 <td>6</td>
                                 <td>Honda CR-V</td>
                                 <td>2019-2022</td>
-                                <td class="price">$24,300</td>
+                                <td>$24,300</td>
                                 <td>⭐⭐⭐⭐</td>
                             </tr>
                             <tr>
                                 <td>7</td>
                                 <td>Toyota 4Runner</td>
                                 <td>2016-2020</td>
-                                <td class="price">$28,900</td>
+                                <td>$28,900</td>
                                 <td>⭐⭐⭐⭐</td>
                             </tr>
                             <tr>
                                 <td>8</td>
                                 <td>Mazda3</td>
                                 <td>2019-2023</td>
-                                <td class="price">$19,200</td>
+                                <td>$19,200</td>
                                 <td>⭐⭐⭐⭐</td>
                             </tr>
                             <tr>
                                 <td>9</td>
                                 <td>Subaru Impreza</td>
                                 <td>2019-2022</td>
-                                <td class="price">$18,800</td>
+                                <td>$18,800</td>
                                 <td>⭐⭐⭐</td>
                             </tr>
                             <tr>
                                 <td>10</td>
                                 <td>Toyota Camry</td>
                                 <td>2018-2022</td>
-                                <td class="price">$21,500</td>
+                                <td>$21,500</td>
                                 <td>⭐⭐⭐</td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                    <p class="info-box-custom">See our <a href="/guides/best-used-cars-hawaii" class="text-link">complete guide to the best used cars for Hawaii living</a> for detailed analysis and recommendations for all islands.</p>
+                </section>
+            </div>
 
-                <div class="callout">
-                    <div class="callout-title">Market Insight: The Subaru Dominance</div>
-                    <div class="callout-text">Subarus represent approximately 18% of Kauai's used car market—nearly double the national average. Their all-wheel-drive capability, reliability, and fuel efficiency make them perfectly suited to the island's wet climate, unpaved roads, and narrow passages. Expect premium pricing for Subarus compared to other brands.</div>
-                </div>
-            </section>
-
-            <!-- Kauai vs Other Islands -->
-            <section>
-                <h2 class="section-title">Kauai vs Oahu vs Mainland</h2>
-                <p class="section-subtitle">How Kauai's market compares to Hawaii's larger markets and the U.S. mainland</p>
-
-                <div class="comparison-grid">
-                    <div class="comparison-card">
-                        <h3>Kauai</h3>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Avg Price (Toyota Corolla)</span>
-                            <span class="metric-value">$19,700</span>
+            <div class="section-card">
+                <section class="island-comparison">
+                    <h2>How Kauai Prices Compare to Other Islands</h2>
+                    <p>Kauai has distinct market characteristics compared to larger Hawaiian islands and the mainland. Understanding these differences helps inform whether to buy locally or consider shipping.</p>
+                    <div class="card-grid">
+                        <div class="card">
+                            <h3>Kauai vs Oahu</h3>
+                            <p>Oahu has 10-15 times more active listings and 20+ major dealers compared to Kauai's 2-3. However, Kauai prices average comparable or slightly lower due to less competition. Oahu offers more selection and negotiating power, but Kauai provides personalized service and local convenience.</p>
                         </div>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Monthly Inventory</span>
-                            <span class="metric-value">150-200</span>
+                        <div class="card">
+                            <h3>Kauai vs Mainland</h3>
+                            <p>Mainland prices average $2,000-$5,000 less than Kauai for identical vehicles. However, shipping costs of $800-$1,500 can offset savings. Local Kauai purchase offers the advantage of in-person inspection and avoiding shipping logistics.</p>
                         </div>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Avg Interest Rate</span>
-                            <span class="metric-value">7.2%</span>
-                        </div>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Market Type</span>
-                            <span class="metric-value">Limited, Local</span>
-                        </div>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Dealer Options</span>
-                            <span class="metric-value">2-3 Major</span>
+                        <div class="card">
+                            <h3>The Kauai Sweet Spot</h3>
+                            <p>While limited in inventory, Kauai's prices remain competitive and actually more affordable than Oahu on average. The tight community market means dealers know their vehicles intimately, and word-of-mouth reputation carries significant weight in purchasing decisions.</p>
                         </div>
                     </div>
+                </section>
+            </div>
 
-                    <div class="comparison-card">
-                        <h3>Oahu</h3>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Avg Price (Toyota Corolla)</span>
-                            <span class="metric-value">$20,300</span>
+            <div class="section-card">
+                <section class="dealer-directory">
+                    <h2>Used Car Dealers on Kauai</h2>
+                    <p>Kauai's dealership market concentrates in Lihue, the commercial hub of the island. Here's what to expect when shopping locally.</p>
+                    <div class="dealer-list">
+                        <div class="dealer-card">
+                            <h3>Lihue Dealership District</h3>
+                            <p class="location">Location: Lihue (Central Kauai)</p>
+                            <p class="description">Lihue is home to most of the island's established dealerships, including Honda, Toyota, and Suzuki franchises, plus several independent dealers. The commercial hub offers certified pre-owned vehicles with warranty coverage, financing options, trade-in valuations, and on-island service departments.</p>
                         </div>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Monthly Inventory</span>
-                            <span class="metric-value">1,200-1,500</span>
+                        <div class="dealer-card">
+                            <h3>Private Party Sales</h3>
+                            <p class="location">Location: Throughout Kauai</p>
+                            <p class="description">Kauai's close-knit community makes private party sales common and often more affordable than dealerships. Find vehicles through the Kauai Community Bulletin Board (Facebook), Craigslist Hawaii, Facebook Marketplace, and word-of-mouth connections in the local community.</p>
                         </div>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Avg Interest Rate</span>
-                            <span class="metric-value">7.0%</span>
-                        </div>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Market Type</span>
-                            <span class="metric-value">Competitive</span>
-                        </div>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Dealer Options</span>
-                            <span class="metric-value">20+ Major</span>
-                        </div>
-                    </div>
-
-                    <div class="comparison-card">
-                        <h3>U.S. Mainland</h3>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Avg Price (Toyota Corolla)</span>
-                            <span class="metric-value">$18,200</span>
-                        </div>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Monthly Inventory</span>
-                            <span class="metric-value">5,000+</span>
-                        </div>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Avg Interest Rate</span>
-                            <span class="metric-value">6.5%</span>
-                        </div>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Market Type</span>
-                            <span class="metric-value">Abundant</span>
-                        </div>
-                        <div class="comparison-metric">
-                            <span class="metric-label">Dealer Options</span>
-                            <span class="metric-value">100+ in metro</span>
+                        <div class="dealer-card">
+                            <h3>Inter-Island Options from Oahu</h3>
+                            <p class="location">Location: Oahu dealers with inter-island shipping</p>
+                            <p class="description">If better pricing or specific models aren't available on Kauai, shipping from Oahu is straightforward. Inter-island shipping companies operate weekly services with typical costs of $800-$1,000 for compact cars to $1,400-$1,500 for full-size vehicles, with delivery in 3-5 business days.</p>
                         </div>
                     </div>
-                </div>
+                    <p class="disclaimer"><strong>Important:</strong> This is a sample dealer reference. Conduct thorough independent research when selecting a dealer. Verify dealer licensing and reputation before committing to purchase. Ask local community members for recommendations—word-of-mouth is powerful on Kauai.</p>
+                </section>
+            </div>
 
-                <div class="callout">
-                    <div class="callout-title">The Kauai Sweet Spot</div>
-                    <div class="callout-text">While Kauai prices are slightly higher than mainland, they're actually more affordable than Oahu on average. The island's limited inventory means you won't find the same selection, but prices are competitive, and you get the benefit of personalized service and the ability to inspect vehicles in person before purchase.</div>
-                </div>
-            </section>
+            <div class="section-card">
+                <section class="buying-tips">
+                    <h2>Tips for Buying Used Cars on Kauai</h2>
+                    <ol>
+                        <li><strong>Prioritize All-Wheel Drive:</strong> Kauai's wet climate and unpaved North Shore roads make AWD essential for many parts of the island. Resale value holds strong for AWD vehicles on Kauai.</li>
+                        <li><strong>Inspect for Rust Thoroughly:</strong> Salt air and humidity accelerate rust formation. Have any potential purchase professionally inspected for undercarriage rust and corrosion before committing.</li>
+                        <li><strong>Consider Subarus First:</strong> With 18% of the market, Subarus dominate Kauai for excellent reasons. The Outback and Crosstrek represent the ideal vehicle formula for the island.</li>
+                        <li><strong>Embrace the Community Market:</strong> Kauai's tight-knit nature means personal relationships matter. Building connections with local dealers and community members can unlock opportunities not advertised publicly.</li>
+                        <li><strong>Factor in Service Limitations:</strong> Kauai's limited repair options make vehicle reliability paramount. Choose brands with strong local service availability and proven track records.</li>
+                        <li><strong>Test Drive Extensively:</strong> Drive any potential purchase on various road types: wet conditions, unpaved surfaces, uphill/downhill sections, and tight parking scenarios to evaluate handling.</li>
+                        <li><strong>Evaluate Hidden Costs:</strong> Insurance, maintenance, and fuel costs vary significantly. Get comprehensive quotes before purchase to factor total cost of ownership.</li>
+                        <li><strong>Leverage Smaller Market Advantages:</strong> With fewer listings, visit dealerships frequently. Personal attention from dealers is higher, and you may learn about incoming inventory before public listing.</li>
+                        <li><strong>Use Oahu as Price Reference:</strong> If considering Oahu shipping, use Oahu prices as a baseline. Only ship if total savings exceed the $800-$1,500 shipping cost plus your time investment.</li>
+                        <li><strong>Document Everything:</strong> Get detailed inspection reports, service records, and title history. Documentation matters more on smaller islands where community reputation is paramount.</li>
+                    </ol>
+                </section>
+            </div>
 
-            <!-- Where to Buy -->
-            <section>
-                <h2 class="section-title">Where to Buy Used Cars on Kauai</h2>
-                <p class="section-subtitle">Dealer, private, and shipping options for the Garden Isle</p>
+            <div class="section-card">
+                <section class="kauai-specific">
+                    <h2>Kauai-Specific Buying Considerations</h2>
+                    <p>The Garden Isle presents unique environmental and infrastructural factors that should guide your vehicle selection and maintenance approach.</p>
 
-                <div class="grid-2">
-                    <div class="card">
-                        <h3 class="card-title">Major Dealerships in Lihue</h3>
-                        <p class="card-text">The commercial hub of Kauai, Lihue is home to most of the island's established dealerships. You'll find Honda, Toyota, Suzuki, and several independent dealers here. Dealerships offer:</p>
-                        <ul class="feature-list">
-                            <li>Certified pre-owned vehicles with warranty coverage</li>
-                            <li>Financing and lease options</li>
-                            <li>Trade-in valuations</li>
-                            <li>Extended warranty and service plans</li>
-                            <li>On-island service departments</li>
-                        </ul>
+                    <div style="margin-top: 30px;">
+                        <h3 style="font-size: 1.3em; color: var(--color-ocean); margin-bottom: 15px;">Environmental Factors</h3>
+                        <p><strong>Rainfall & Humidity:</strong> Kauai is Hawaii's wettest island, with the Hanalei side receiving 450+ inches annually. This extreme moisture accelerates rust formation and electrical corrosion. Choose vehicles with rust-resistant undercarriage, good drainage systems, regular undercoating, and sealed electrical connectors.</p>
+                        <p style="margin-top: 15px;"><strong>Salt Air Exposure:</strong> Ocean proximity accelerates corrosion significantly. Protect your investment by washing your vehicle weekly with fresh water, applying professional undercoating annually, and using protective wax every 3 months.</p>
                     </div>
 
-                    <div class="card">
-                        <h3 class="card-title">Private Party Sales</h3>
-                        <p class="card-text">Kauai's close-knit community means private party sales often offer better deals than dealerships. Common ways to find private vehicles:</p>
-                        <ul class="feature-list">
-                            <li>Kauai Community Bulletin Board (Facebook)</li>
-                            <li>Craigslist Hawaii and Facebook Marketplace</li>
-                            <li>Word-of-mouth from locals</li>
-                            <li>Church and community notice boards</li>
-                            <li>Local newspapers (Kauai Times)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card mb-3">
-                    <h3 class="card-title">Inter-Island Shipping from Oahu</h3>
-                    <p class="card-text">If you find better pricing or selection on Oahu, shipping a vehicle to Kauai is straightforward and increasingly common. Shipping companies operate weekly inter-island services:</p>
-
-                    <div style="margin-top: 1.5rem;">
-                        <h4 style="font-weight: 700; margin-bottom: 1rem;">Typical Shipping Costs:</h4>
-                        <table style="width: 100%; margin-bottom: 1.5rem;">
-                            <tr style="border-bottom: 1px solid var(--color-gray-100);">
-                                <td style="padding: 0.5rem 0;"><strong>Compact Car</strong></td>
-                                <td style="text-align: right; padding: 0.5rem 0;">$800 - $1,000</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--color-gray-100);">
-                                <td style="padding: 0.5rem 0;"><strong>Mid-size SUV</strong></td>
-                                <td style="text-align: right; padding: 0.5rem 0;">$1,100 - $1,300</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--color-gray-100);">
-                                <td style="padding: 0.5rem 0;"><strong>Full-size SUV/Truck</strong></td>
-                                <td style="text-align: right; padding: 0.5rem 0;">$1,400 - $1,500</td>
-                            </tr>
-                        </table>
+                    <div style="margin-top: 30px;">
+                        <h3 style="font-size: 1.3em; color: var(--color-ocean); margin-bottom: 15px;">Road & Infrastructure Factors</h3>
+                        <p><strong>Road Conditions:</strong> Kauai's North Shore and interior roads include unpaved surfaces and narrow passages. Ideal vehicles feature all-wheel drive, higher ground clearance, compact dimensions, and capable suspension. Check out our <a href="/guides/ship-vs-buy" class="text-link">ship vs buy guide</a> for more island-specific considerations.</p>
+                        <p style="margin-top: 15px;"><strong>Vehicle Size:</strong> Compact and small vehicles dominate Kauai for practical reasons: they navigate narrow plantation roads easily, fit in limited parking spaces, offer better fuel efficiency, and have lower maintenance costs.</p>
                     </div>
 
-                    <p class="card-text"><strong>Timeline:</strong> 3-5 business days from purchase to island arrival. Ships depart Honolulu every 3-5 days.</p>
-                    <p class="card-text"><strong>Worth Considering If:</strong> You find a vehicle 15% or more below Kauai market price, the total savings exceed shipping costs after accounting for your time.</p>
-                </div>
-            </section>
-
-            <!-- Kauai-Specific Considerations -->
-            <section>
-                <h2 class="section-title">Kauai-Specific Buying Considerations</h2>
-                <p class="section-subtitle">The Garden Isle presents unique environmental and infrastructural factors for vehicle selection</p>
-
-                <div class="grid-3">
-                    <div class="card">
-                        <h3 class="card-title">🌧️ Rainfall & Humidity</h3>
-                        <p class="card-text">Kauai is Hawaii's wettest island, with the Hanalei side receiving 450+ inches annually. Choose vehicles with:</p>
-                        <ul class="feature-list">
-                            <li>Rust-resistant undercarriage</li>
-                            <li>Good drainage systems</li>
-                            <li>Regular undercoating</li>
-                            <li>Sealed electrical connectors</li>
-                        </ul>
+                    <div style="margin-top: 30px;">
+                        <h3 style="font-size: 1.3em; color: var(--color-ocean); margin-bottom: 15px;">Service & Reliability Factors</h3>
+                        <p><strong>Service Limitations:</strong> Limited repair options make vehicle reliability critical. Prioritize brands with strong local service availability, good repair shop networks, excellent parts availability, and proven manufacturer reliability ratings.</p>
+                        <p style="margin-top: 15px;"><strong>The Ideal Kauai Vehicle:</strong> Combines compact dimensions (for narrow roads), all-wheel drive (for wet conditions and unpaved surfaces), excellent reliability (for limited service options), and proven durability in tropical/coastal environments. The Subaru Outback and Crosstrek epitomize this formula.</p>
                     </div>
+                </section>
+            </div>
 
-                    <div class="card">
-                        <h3 class="card-title">🏞️ Road Conditions</h3>
-                        <p class="card-text">Kauai's North Shore and interior roads include unpaved surfaces and narrow passages. Ideal vehicles feature:</p>
-                        <ul class="feature-list">
-                            <li>All-wheel drive capability</li>
-                            <li>Higher ground clearance</li>
-                            <li>Compact dimensions</li>
-                            <li>Capable suspension</li>
-                        </ul>
+            <div class="section-card">
+                <section class="recommended-models">
+                    <h2>Best Vehicle Models for Kauai Driving</h2>
+                    <p>These vehicles excel on Kauai due to their combination of reliability, practicality, and suitability for island conditions.</p>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h3>Compact Sedans</h3>
+                            <p><strong>Honda Civic</strong> — Reliable, fuel-efficient, tight turning radius for narrow roads, excellent service availability on-island.</p>
+                            <p style="margin-top: 12px;"><strong>Toyota Corolla</strong> — Legendary reliability, low maintenance, affordable repairs, strong resale value across all islands.</p>
+                            <p style="margin-top: 12px;"><strong>Mazda3</strong> — Engaging driving dynamics, good fuel economy, solid parts availability locally.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Subarus (Kauai Gold Standard)</h3>
+                            <p><strong>Subaru Outback</strong> — Gold standard for Kauai. AWD, high ground clearance, spacious interior, exceptional in wet conditions.</p>
+                            <p style="margin-top: 12px;"><strong>Subaru Crosstrek</strong> — Smaller Outback alternative. Perfect for tight roads while maintaining AWD capability and reliability.</p>
+                            <p style="margin-top: 12px;"><strong>Subaru Impreza</strong> — Budget-friendly AWD option with proven island reliability.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Compact SUVs</h3>
+                            <p><strong>Honda CR-V</strong> — Versatile compact SUV, excellent reliability, good storage, available AWD, strong local service network.</p>
+                            <p style="margin-top: 12px;"><strong>Toyota RAV4</strong> — Incredibly popular on Kauai. AWD available, proven in all conditions, fast resale value.</p>
+                            <p style="margin-top: 12px;"><strong>Mazda CX-5</strong> — Refined driving experience, good fuel economy, solid warranty coverage.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>For Adventure Seekers</h3>
+                            <p><strong>Toyota 4Runner</strong> — Unbeatable for serious off-roading toward Na Pali and interior areas. High resale value. Premium pricing reflects demand.</p>
+                            <p style="margin-top: 12px;"><strong>Toyota Tacoma</strong> — Lightweight truck perfect for island living. Excellent for unpaved areas. Strong parts availability.</p>
+                            <p style="margin-top: 12px;"><strong>Subaru Forester</strong> — AWD wagon bridging gap between car and SUV. Growing in popularity on Kauai.</p>
+                        </div>
                     </div>
+                </section>
+            </div>
 
-                    <div class="card">
-                        <h3 class="card-title">🔧 Service Limitations</h3>
-                        <p class="card-text">Limited service options mean reliability is critical. Prioritize:</p>
-                        <ul class="feature-list">
-                            <li>Brand availability locally</li>
-                            <li>Good repair shop network</li>
-                            <li>Parts availability</li>
-                            <li>Manufacturer reliability ratings</li>
-                        </ul>
-                    </div>
+            <div class="section-card">
+                <section class="maintenance">
+                    <h2>Maintaining Your Kauai Vehicle</h2>
+                    <p>Island living requires special attention to rust prevention and fluid maintenance. Here's what you need to know to protect your investment.</p>
 
-                    <div class="card">
-                        <h3 class="card-title">🗺️ Na Pali Coastal Access</h3>
-                        <p class="card-text">To reach iconic Na Pali and Kalalau areas, you need:</p>
-                        <ul class="feature-list">
-                            <li>High-clearance vehicles</li>
-                            <li>AWD/4WD preferred</li>
-                            <li>Good brakes (mountain roads)</li>
-                            <li>Reliable transmission</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3 class="card-title">⚙️ Vehicle Size</h3>
-                        <p class="card-text">Compact and small vehicles dominate Kauai for good reasons:</p>
-                        <ul class="feature-list">
-                            <li>Navigate narrow plantation roads</li>
-                            <li>Easier parking in Lihue</li>
-                            <li>Better fuel efficiency</li>
-                            <li>Lower maintenance costs</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3 class="card-title">💨 Salt Air Exposure</h3>
-                        <p class="card-text">Ocean proximity accelerates corrosion. Protect your investment with:</p>
-                        <ul class="feature-list">
-                            <li>Frequent fresh water washing</li>
-                            <li>Professional undercoating</li>
-                            <li>Protective wax applications</li>
-                            <li>Regular inspection</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="callout">
-                    <div class="callout-title">The Ideal Kauai Vehicle</div>
-                    <div class="callout-text">The perfect Kauai vehicle combines compact dimensions (for narrow roads), all-wheel drive (for wet conditions and unpaved surfaces), excellent reliability (for limited service options), and proven durability in tropical/coastal environments. The Subaru Outback and Crosstrek epitomize this formula—which explains their market dominance on the island.</div>
-                </div>
-            </section>
-
-            <!-- Best Models for Kauai -->
-            <section>
-                <h2 class="section-title">Best Vehicle Models for Kauai Driving</h2>
-                <p class="section-subtitle">Vehicles specifically suited to the Garden Isle's environment</p>
-
-                <div class="grid-2">
-                    <div class="card">
-                        <h3 class="card-title">Compact Cars</h3>
-                        <p class="card-text"><strong>Honda Civic</strong> — Reliable, fuel-efficient, tight turning radius for narrow roads, excellent service availability on-island.</p>
-                        <p class="card-text" style="margin-top: 1rem;"><strong>Toyota Corolla</strong> — Legendary reliability, low maintenance, affordable repairs, strong resale value.</p>
-                        <p class="card-text" style="margin-top: 1rem;"><strong>Mazda3</strong> — Engaging driving dynamics, good fuel economy, solid parts availability.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3 class="card-title">Subarus (Kauai Favorites)</h3>
-                        <p class="card-text"><strong>Subaru Outback</strong> — Gold standard for Kauai. AWD, high ground clearance, spacious interior, excellent in wet conditions.</p>
-                        <p class="card-text" style="margin-top: 1rem;"><strong>Subaru Crosstrek</strong> — Smaller Outback alternative. Perfect for tight roads while maintaining AWD capability and reliability.</p>
-                        <p class="card-text" style="margin-top: 1rem;"><strong>Subaru Impreza</strong> — Budget-friendly AWD option with proven island reliability.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3 class="card-title">Compact SUVs</h3>
-                        <p class="card-text"><strong>Honda CR-V</strong> — Versatile compact SUV, excellent reliability, good storage, available AWD, strong local service network.</p>
-                        <p class="card-text" style="margin-top: 1rem;"><strong>Toyota RAV4</strong> — Incredibly popular on Kauai. AWD available, proven in all conditions, fast resale.</p>
-                        <p class="card-text" style="margin-top: 1rem;"><strong>Mazda CX-5</strong> — Refined driving experience, good fuel economy, solid warranty coverage.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3 class="card-title">For Adventure Seekers</h3>
-                        <p class="card-text"><strong>Toyota 4Runner</strong> — Unbeatable for serious off-roading toward Na Pali and interior areas. High resale value. Premium pricing.</p>
-                        <p class="card-text" style="margin-top: 1rem;"><strong>Toyota Tacoma</strong> — Lightweight truck perfect for island living. Excellent for unpaved areas. Strong parts availability.</p>
-                        <p class="card-text" style="margin-top: 1rem;"><strong>Subaru Forester</strong> — AWD wagon that bridges the gap between car and SUV. Growing in popularity on Kauai.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Maintenance & Care -->
-            <section>
-                <h2 class="section-title">Maintaining Your Kauai Vehicle</h2>
-                <p class="section-subtitle">Protecting your investment in the island climate</p>
-
-                <div class="card">
-                    <h3 class="card-title">Critical Maintenance for Island Living</h3>
-
-                    <div style="margin-top: 1.5rem;">
-                        <h4 style="font-weight: 700; margin-bottom: 1rem;">Rust Prevention (Every Month)</h4>
-                        <ul class="feature-list">
+                    <div style="margin-top: 30px;">
+                        <h3 style="font-size: 1.2em; color: var(--color-ocean); margin-bottom: 15px;">Rust Prevention (Critical Monthly Task)</h3>
+                        <ul style="margin-left: 20px; line-height: 1.8;">
                             <li>Wash vehicle with fresh water weekly</li>
                             <li>Focus on undercarriage and wheel wells</li>
                             <li>Professional undercoating annually</li>
@@ -1210,9 +595,9 @@
                         </ul>
                     </div>
 
-                    <div style="margin-top: 2rem;">
-                        <h4 style="font-weight: 700; margin-bottom: 1rem;">Fluid & Battery Maintenance</h4>
-                        <ul class="feature-list">
+                    <div style="margin-top: 25px;">
+                        <h3 style="font-size: 1.2em; color: var(--color-ocean); margin-bottom: 15px;">Fluid & Battery Maintenance</h3>
+                        <ul style="margin-left: 20px; line-height: 1.8;">
                             <li>Check battery terminals monthly (corrosion from salt air)</li>
                             <li>Engine oil changes every 5,000-7,500 miles</li>
                             <li>Coolant flush every 2 years (humidity impacts cooling)</li>
@@ -1220,209 +605,140 @@
                         </ul>
                     </div>
 
-                    <div style="margin-top: 2rem;">
-                        <h4 style="font-weight: 700; margin-bottom: 1rem;">Tire & Brake Care</h4>
-                        <ul class="feature-list">
+                    <div style="margin-top: 25px;">
+                        <h3 style="font-size: 1.2em; color: var(--color-ocean); margin-bottom: 15px;">Tire & Brake Care</h3>
+                        <ul style="margin-left: 20px; line-height: 1.8;">
                             <li>Rotate tires every 5,000-7,000 miles</li>
                             <li>Check tread depth monthly (wet road safety critical)</li>
                             <li>AWD vehicles need equal tread depth for safety</li>
                             <li>Brake inspection twice yearly (mountain driving stress)</li>
                         </ul>
                     </div>
+                </section>
+            </div>
 
-                    <div style="margin-top: 2rem;">
-                        <h4 style="font-weight: 700; margin-bottom: 1rem;">Local Service Resources</h4>
-                        <p class="card-text">Kauai's service options are limited compared to Oahu. Know your nearest qualified mechanics:</p>
-                        <ul class="feature-list">
-                            <li>Toyota, Honda, Suzuki dealership services in Lihue</li>
-                            <li>Independent mechanics for most repairs</li>
-                            <li>Some systems may require Oahu service (specialty repairs)</li>
-                            <li>Warranty work typically available locally</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <div class="section-card">
+                <section class="faq">
+                    <h2>Frequently Asked Questions: Used Cars on Kauai</h2>
 
-            <!-- FAQ Section -->
-            <section>
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Everything you need to know about buying cars on Kauai</p>
+                    <div class="faq-list-custom">
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">What is the average used car price on Kauai?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">The average used car on Kauai costs around $23,500, with prices ranging from $18,000 to $28,000. Prices vary by vehicle type, age, and condition. Toyota Corolla averages $19,700 on Kauai, compared to $20,300 on Oahu and $18,200 on the mainland. Kauai's limited inventory makes certain models command premium pricing, particularly all-wheel drive vehicles.</p>
+                            </div>
+                        </div>
 
-                <div class="faq-item open">
-                    <div class="faq-question">
-                        <span>What is the average used car price on Kauai?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            The average used car price on Kauai ranges from $18,000 to $28,000, depending on the model, year, and mileage. For reference, a Toyota Corolla (2019-2023) averages $19,700 on Kauai, compared to $20,300 on Oahu and $18,200 on the mainland. Kauai's limited inventory and smaller market mean fewer options but generally more affordable pricing than Oahu while maintaining island convenience.
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">Where can I find used car dealers on Kauai?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Kauai has 2-3 major dealerships concentrated in Lihue, including Honda, Toyota, and Suzuki franchises, plus several independent dealers. Private party sales are also common and often offer better deals than dealerships. Online search through Craigslist Hawaii, Facebook Marketplace, and local community bulletin boards will show private vehicles. Inter-island shipping from Oahu is also an option if better pricing is available there.</p>
+                            </div>
+                        </div>
+
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">Why are Subarus so popular on Kauai?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Subarus represent approximately 18% of Kauai's used car market—nearly double the national average. Their all-wheel drive capability handles Kauai's wet climate and unpaved North Shore roads exceptionally well. Compact design navigates narrow plantation roads, and proven reliability means fewer service visits needed given Kauai's limited repair options. The Subaru Outback and Crosstrek are considered the de facto standard vehicles for island living.</p>
+                            </div>
+                        </div>
+
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">How do Kauai prices compare to other islands?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Kauai prices are actually comparable to or slightly lower than Oahu on average, despite limited inventory. This is because the smaller market has less competition between dealers. Mainland prices average $2,000-$5,000 less than Kauai, but shipping costs of $800-$1,500 can offset savings. Kauai prices serve as a good baseline for island car shopping.</p>
+                            </div>
+                        </div>
+
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">What should I watch out for when buying on Kauai?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Pay special attention to rust and corrosion from salt air exposure and extreme humidity—especially on undercarriage and door seals. Inspect vehicle history for flood damage on CARFAX/AutoCheck. Have a trusted mechanic inspect before purchase. Verify all documentation and title history carefully. Consider whether the vehicle's features suit Kauai's unique driving conditions, particularly AWD capability and ground clearance.</p>
+                            </div>
+                        </div>
+
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">Should I buy locally on Kauai or ship from Oahu?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Kauai's competitive pricing usually makes local purchase better value than shipping from mainland. However, compare specific scenarios: if you find a Oahu vehicle more than 15% cheaper after accounting for $800-$1,500 shipping costs, shipping may make sense. Local Kauai buying offers convenience, ability to inspect in person, and immediate ownership without logistics hassles.</p>
+                            </div>
+                        </div>
+
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">Can I negotiate better prices on Kauai?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Kauai's small dealer market means direct relationships matter more than Oahu's competitive volume. Building a relationship with local dealers, visiting regularly, and word-of-mouth reputation carry significant weight. Private party sales often offer better negotiating leverage than dealerships. Be prepared to walk away—the tight community means word-of-mouth reputation is paramount for dealers.</p>
+                            </div>
+                        </div>
+
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">What vehicle types work best on Kauai roads?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Compact cars and small SUVs dominate Kauai for excellent reasons. Popular models include Honda Civic, Toyota Corolla, Subaru Outback, Subaru Crosstrek, Honda CR-V, and Toyota RAV4. These vehicles excel on Kauai because they navigate narrow plantation roads easily, fit in limited parking spaces, offer good fuel efficiency, and provide lower maintenance costs. All-wheel drive is highly recommended for wet conditions and unpaved North Shore roads.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Where can I buy used cars on Kauai?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            The primary used car dealerships on Kauai are located in Lihue, including Honda, Toyota, and Suzuki dealerships. Private party sales are also common and often offer better deals. You can find private vehicles on the Kauai Community Bulletin Board (Facebook), Craigslist Hawaii, Facebook Marketplace, and through word-of-mouth connections. Some residents also purchase from Oahu dealers and arrange inter-island shipping for approximately $800-$1,500.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Why are Subarus so popular on Kauai?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Subarus represent approximately 18% of Kauai's used car market—nearly double the national average. Their popularity stems from three key factors: (1) all-wheel drive capability handles Kauai's wet climate and unpaved North Shore roads exceptionally well, (2) compact design navigates narrow plantation roads and tight parking spaces, and (3) proven reliability means fewer service visits needed given Kauai's limited repair options. The Subaru Outback and Crosstrek are considered the de facto standard vehicles for island living.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What should I consider when buying a car on Kauai?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Key considerations for Kauai vehicle purchases include: (1) rust and corrosion risk from heavy rainfall and salt air—inspect undercarriage carefully, (2) all-wheel drive capability for unpaved roads and wet conditions, (3) compact size for narrow roads and tight parking, (4) vehicle reliability due to limited local service options, (5) fuel efficiency for island living with limited refueling stations, and (6) ground clearance for interior and Na Pali area access. Have any potential purchase professionally inspected before committing.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Is it cheaper to buy a car on Kauai or Oahu?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Kauai prices are often comparable to or slightly lower than Oahu, despite limited inventory. However, Oahu offers significantly more selection and competitive pricing due to higher population and dealer competition. If you find an Oahu vehicle 15% or more below Kauai pricing, shipping costs ($800-$1,500) may still result in overall savings. Local Kauai buying offers convenience and the ability to inspect vehicles in person, which many residents value over chasing Oahu deals.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How do I handle rust and corrosion on Kauai vehicles?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Salt air and Kauai's humid climate accelerate rust formation significantly. When purchasing, have the vehicle professionally inspected specifically for undercarriage rust and corrosion. After purchase, protect your investment by: (1) washing your vehicle weekly with fresh water, (2) applying professional undercoating annually, (3) using protective wax every 3 months, (4) drying the vehicle after washing, and (5) inspecting regularly for new rust spots. Address any surface rust immediately to prevent spreading.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Can I ship a car from Oahu to Kauai?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Yes, inter-island car shipping from Oahu to Kauai is available and increasingly common. Shipping companies operate weekly inter-island services with typical costs of $800-$1,000 for compact cars, $1,100-$1,300 for mid-size SUVs, and $1,400-$1,500 for full-size vehicles. Transit time is typically 3-5 business days from purchase to island arrival. This option works well if you find significantly better pricing or a specific model unavailable on Kauai.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What vehicle types work best on Kauai roads?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Compact cars and small SUVs dominate Kauai for excellent reasons. Popular models include Honda Civic, Toyota Corolla, Subaru Outback, Subaru Crosstrek, Honda CR-V, and Toyota RAV4. These vehicles excel on Kauai because they navigate narrow plantation roads easily, fit well in limited parking spaces, offer good fuel efficiency, and provide lower maintenance costs. All-wheel drive is highly recommended for wet conditions and unpaved North Shore roads. Larger vehicles (full-size trucks, large SUVs) are uncommon and less practical on Kauai.
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CTA Section -->
-            <section class="cta-section">
-                <h2>Ready to Find Your Perfect Kauai Vehicle?</h2>
-                <p>Use our Kauai car price calculator to estimate current market values and compare popular models</p>
-                <a href="/calculator?island=kauai" class="btn btn-secondary">Open Price Calculator</a>
-            </section>
-        </div>
+            <div class="section-card">
+                <section class="internal-links-section">
+                    <h2>Other Island Markets & Guides</h2>
+                    <ul>
+                        <li><a href="/oahu" class="text-link">Used Cars on Oahu</a> — Oahu's complete market report with more inventory and competitive pricing</li>
+                        <li><a href="/maui" class="text-link">Used Cars on Maui</a> — Maui's complete market report and island-specific considerations</li>
+                        <li><a href="/big-island" class="text-link">Used Cars on Big Island</a> — Hawaii Island pricing and inventory across Hilo and Kona markets</li>
+                        <li><a href="/guides/ship-vs-buy" class="text-link">Ship vs Buy Guide</a> — Compare your purchasing options with our interactive calculator</li>
+                        <li><a href="/guides/best-used-cars-hawaii" class="text-link">Best Used Cars for Hawaii</a> — Model recommendations specific to island living and conditions</li>
+                        <li><a href="/guides/why-cars-cost-more-hawaii" class="text-link">Why Cars Cost More in Hawaii</a> — Deep dive into market dynamics and import costs</li>
+                    </ul>
+                </section>
+            </div>
+        </article>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Hawaii Islands</h3>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/oahu">Oahu</a></li>
-                    <li><a href="/maui">Maui</a></li>
-                    <li><a href="/big-island">Big Island</a></li>
-                    <li><a href="/kauai">Kauai</a></li>
-                </ul>
-            </div>
+    <section class="cta-bar">
+        <h2>Get Kauai Used Car Price Alerts</h2>
+        <p>Subscribe to get notifications when matching inventory arrives on Kauai.</p>
+        <form class="cta-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=\"color: #2D8A4E; font-weight: 600;\">You\'re on the list! We\'ll notify you when matching vehicles arrive.</p>';">
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <input type="hidden" name="island" value="Kauai">
+            <button type="submit" class="btn btn-primary">Subscribe to Price Alerts</button>
+        </form>
+    </section>
 
-            <div class="footer-section">
-                <h3>Guides</h3>
-                <ul>
-                    <li><a href="/price-guides">Price Guides</a></li>
-                    <li><a href="/buying-guides">Buying Guides</a></li>
-                    <li><a href="/calculator">Price Calculator</a></li>
-                    <li><a href="/market-trends">Market Trends</a></li>
-                </ul>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo" style="color:white">Hawaii<span>CarPrice</span>Index</a>
+                <p>The only used car pricing tool built for Hawaii. We track 1,000+ listings daily across all islands.</p>
             </div>
-
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="/financing">Financing Options</a></li>
-                    <li><a href="/dealers">Find Dealers</a></li>
-                    <li><a href="/maintenance">Maintenance Tips</a></li>
-                    <li><a href="/contact">Contact Us</a></li>
-                </ul>
+            <div class="footer-col">
+                <h4>By Island</h4>
+                <a href="/oahu">Oahu</a>
+                <a href="/maui">Maui</a>
+                <a href="/big-island">Big Island</a>
+                <a href="/kauai">Kauai</a>
             </div>
-
-            <div class="footer-section">
-                <h3>About</h3>
-                <ul>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/methodology">Our Methodology</a></li>
-                    <li><a href="/privacy">Privacy Policy</a></li>
-                    <li><a href="/terms">Terms of Service</a></li>
-                </ul>
+            <div class="footer-col">
+                <h4>Guides</h4>
+                <a href="/guides/best-used-cars-hawaii">Best Used Cars</a>
+                <a href="/guides/ship-vs-buy">Ship vs Buy</a>
+                <a href="/guides/why-cars-cost-more">Why Cars Cost More</a>
+                <a href="/guides/financing-used-car-hawaii">Financing</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="/#calculator">Price Calculator</a>
+                <a href="/about">About</a>
+                <a href="/privacy">Privacy</a>
+                <a href="/terms">Terms</a>
             </div>
         </div>
-
         <div class="footer-bottom">
-            <p>&copy; 2026 Hawaii Car Price Index. All rights reserved. Market data updated March 6, 2026.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.85rem;">Dedicated to helping Hawaii residents navigate the islands' unique automotive markets.</p>
+            <span>© 2026 Hawaii Car Price Index. Data updated daily.</span>
+            <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
         </div>
     </footer>
-
-    <!-- FAQ Interactivity -->
-    <script>
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
-                const item = this.parentElement;
-                const isOpen = item.classList.contains('open');
-
-                // Close all other items
-                document.querySelectorAll('.faq-item').forEach(faq => {
-                    faq.classList.remove('open');
-                });
-
-                // Toggle current item
-                if (!isOpen) {
-                    item.classList.add('open');
-                }
-            });
-        });
-    </script>
 </body>
 </html>

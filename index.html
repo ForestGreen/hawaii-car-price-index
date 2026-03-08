@@ -699,6 +699,17 @@
             justify-content: space-between;
         }
 
+        /* ── HAMBURGER ── */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            color: var(--color-gray-700);
+        }
+        .hamburger svg { display: block; }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
             .hero { padding: 48px 16px 40px; }
@@ -706,11 +717,28 @@
             .calc-row { grid-template-columns: 1fr; }
             .price-cards { grid-template-columns: 1fr; }
             .stats-row { gap: 32px; }
-            .nav-links { display: none; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 16px 24px;
+                gap: 12px;
+                border-bottom: 1px solid var(--color-gray-100);
+                box-shadow: var(--shadow-md);
+            }
+            .nav-links.open { display: flex; }
+            .hamburger { display: block; }
+            .nav-links a { font-size: 16px; padding: 8px 0; }
+            .nav-cta { text-align: center; display: block !important; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .lead-capture-form { flex-direction: column; }
             .bottom-cta-form { flex-direction: column; }
             .cars-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr !important; }
         }
     </style>
     <!-- Google Analytics 4 - Uncomment and replace G-XXXXXXXXXX with your GA4 Measurement ID -->
@@ -728,11 +756,14 @@
      ═══════════════════════════════════════════ -->
 <nav>
     <a href="/" class="nav-logo">Hawaii<span>CarPrice</span>Index</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
     <div class="nav-links">
         <a href="#calculator">Price Check</a>
         <a href="#market">Market Data</a>
         <a href="#popular">Popular Cars</a>
-        <a href="#why">Why More?</a>
+        <a href="#guides">Guides</a>
         <a href="#faq">FAQ</a>
         <a href="#alerts" class="nav-cta">Get Price Alerts</a>
     </div>

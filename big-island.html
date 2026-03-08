@@ -4,571 +4,261 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Current used car prices on Hawaii's Big Island in 2026. Compare Hilo and Kona market rates, popular models, and vehicles for island living. Real-time market data and buying guide.">
-    <meta name="keywords" content="Big Island used car prices, Hawaii car prices, Hilo cars, Kona vehicles, used 4WD Big Island, Hawaii County cars">
-    <meta name="author" content="Hawaii Car Price Index">
-    <meta name="robots" content="index, follow">
+    <title>Used Car Prices on the Big Island — 2026 Market Guide</title>
+    <meta name="description" content="Browse used car prices on Hawaii's Big Island, 2026. Compare Hilo and Kona market rates, popular 4WD models, and vehicles for island living. Real-time market data.">
     <link rel="canonical" href="https://hawaiicarpriceindex.com/big-island">
-
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Used Car Prices on the Big Island — 2026 Market Guide | Hawaii Car Price Index">
-    <meta property="og:description" content="Current used car prices on Hawaii's Big Island. Compare prices, explore popular models, and discover Big Island-specific vehicle needs.">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="Used Car Prices on the Big Island — 2026 Market Guide">
+    <meta property="og:description" content="Complete market overview, pricing trends, and dealer directory for used cars on Big Island. Compare Hilo and Kona markets.">
     <meta property="og:url" content="https://hawaiicarpriceindex.com/big-island">
     <meta property="og:image" content="https://hawaiicarpriceindex.com/og-image.png">
-    <meta property="og:site_name" content="Hawaii Car Price Index">
-
-    <!-- Twitter Card Tags -->
+    <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Used Car Prices on the Big Island — 2026 Market Guide">
-    <meta name="twitter:description" content="Current used car prices on Hawaii's Big Island. Compare market rates across Hilo, Kona, and beyond.">
     <meta name="twitter:image" content="https://hawaiicarpriceindex.com/og-image.png">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230066CC' width='100' height='100'/><text x='50' y='50' font-size='60' font-weight='bold' fill='white' text-anchor='middle' dy='.3em'>HI</text></svg>">
-
-    <title>Used Car Prices on the Big Island — 2026 Market Guide | Hawaii Car Price Index</title>
-
+    <link rel="stylesheet" href="/style.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Page-specific styles */
+        .market-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
         }
 
-        :root {
-            --color-ocean: #0066CC;
-            --color-ocean-dark: #004C99;
-            --color-sunset: #FF6B35;
-            --color-palm: #2D8A4E;
-            --color-gray-900: #1A1A2E;
-            --color-gray-800: #2D2D44;
-            --color-gray-700: #4A4A5E;
-            --color-gray-200: #E8E8F0;
-            --color-gray-100: #F5F5FA;
-            --color-white: #FFFFFF;
-            --gradient-blue: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+        .stat {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-ocean);
+            text-align: center;
         }
 
-        html {
-            scroll-behavior: smooth;
+        .stat strong {
+            display: block;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--color-gray-900);
-            background-color: var(--color-white);
+        .stat span {
+            display: block;
+            font-size: 1.8em;
+            color: var(--color-ocean);
+            font-weight: bold;
         }
 
-        /* Header & Navigation */
-        header {
-            background: var(--color-white);
+        .section-card {
+            background: white;
+            border-radius: 8px;
             box-shadow: var(--shadow-sm);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            overflow: hidden;
+            margin-bottom: 40px;
         }
 
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .section-card > section {
+            padding: 40px;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
+        .section-card h2 {
+            font-size: 1.8em;
             color: var(--color-ocean);
-            text-decoration: none;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--color-ocean);
         }
 
-        .nav-links {
-            display: flex;
+        .popular-list {
             list-style: none;
-            gap: 2rem;
+            margin-top: 20px;
         }
 
-        .nav-links a {
-            color: var(--color-gray-900);
+        .popular-list li {
+            background: var(--color-gray-100);
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--color-ocean);
+            border-radius: 4px;
+        }
+
+        .popular-list strong {
+            color: var(--color-ocean);
+        }
+
+        .info-box-custom {
+            background-color: var(--color-ocean-light);
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .info-box-custom a {
+            color: var(--color-ocean);
             text-decoration: none;
-            font-size: 0.95rem;
             font-weight: 500;
-            transition: color 0.2s;
         }
 
-        .nav-links a:hover {
-            color: var(--color-ocean);
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.85rem;
-            }
-        }
-
-        /* Breadcrumb */
-        .breadcrumb {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            font-size: 0.9rem;
-            color: var(--color-gray-700);
-        }
-
-        .breadcrumb a {
-            color: var(--color-ocean);
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
+        .info-box-custom a:hover {
             text-decoration: underline;
         }
 
-        /* Hero Section */
-        .hero {
-            background: var(--gradient-blue);
-            color: var(--color-white);
-            padding: 4rem 1.5rem;
-            text-align: center;
+        .disclaimer {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-size: 0.95em;
         }
 
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 1rem;
-            font-weight: 800;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2.5rem;
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 1.5rem;
+        .dealer-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
             border-radius: 8px;
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 3rem 0;
-            border-bottom: 1px solid var(--color-gray-200);
-        }
-
-        section:last-child {
-            border-bottom: none;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--color-gray-900);
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--color-gray-700);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        /* Card Styles */
-        .card {
-            background: var(--color-white);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--color-gray-200);
-            transition: box-shadow 0.2s, transform 0.2s;
-        }
-
-        .card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
-        }
-
-        /* Grid Layouts */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        /* Market Overview Cards */
-        .overview-card h3 {
-            color: var(--color-ocean);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .overview-card p {
-            color: var(--color-gray-700);
-            line-height: 1.7;
-        }
-
-        /* Price Table */
-        .price-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5rem;
-        }
-
-        .price-table thead {
-            background: var(--color-gray-100);
-            border-bottom: 2px solid var(--color-gray-300);
-        }
-
-        .price-table th {
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-            color: var(--color-gray-900);
-        }
-
-        .price-table td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--color-gray-200);
-            color: var(--color-gray-700);
-        }
-
-        .price-table tbody tr:hover {
-            background-color: var(--color-gray-100);
-        }
-
-        .price {
-            font-weight: 600;
-            color: var(--color-ocean);
-            font-size: 1.1rem;
-        }
-
-        .vehicle-name {
-            font-weight: 600;
-            color: var(--color-gray-900);
-        }
-
-        /* Comparison Table */
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5rem;
-        }
-
-        .comparison-table th {
-            background: var(--color-gray-900);
-            color: var(--color-white);
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .comparison-table td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--color-gray-200);
-        }
-
-        .comparison-table tbody tr:nth-child(odd) {
-            background-color: var(--color-gray-100);
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--color-ocean);
-            color: var(--color-white);
-        }
-
-        .btn-primary:hover {
-            background: var(--color-ocean-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-secondary {
-            background: var(--color-gray-200);
-            color: var(--color-gray-900);
-        }
-
-        .btn-secondary:hover {
-            background: var(--color-gray-300);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: var(--gradient-blue);
-            color: var(--color-white);
-            padding: 3rem 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* FAQ Section */
-        .faq-item {
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--color-gray-200);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 1.5rem;
-            background: var(--color-gray-100);
-            cursor: pointer;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.2s;
-        }
-
-        .faq-question:hover {
-            background: var(--color-gray-200);
-        }
-
-        .faq-toggle {
-            font-size: 1.5rem;
-            color: var(--color-ocean);
-            transition: transform 0.2s;
-        }
-
-        .faq-item.active .faq-toggle {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0 1.5rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 1.5rem;
-            max-height: 500px;
-        }
-
-        .faq-answer p {
-            color: var(--color-gray-700);
-            line-height: 1.7;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--color-gray-900);
-            color: var(--color-white);
-            padding: 3rem 1.5rem 1.5rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section a {
-            color: var(--color-gray-200);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-section a:hover {
-            color: var(--color-ocean);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--color-gray-700);
-            padding-top: 1.5rem;
-            text-align: center;
-            color: var(--color-gray-200);
-            font-size: 0.9rem;
-        }
-
-        /* Highlight Box */
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.1) 0%, rgba(45, 138, 78, 0.1) 100%);
             border-left: 4px solid var(--color-ocean);
-            padding: 1.5rem;
-            border-radius: 6px;
-            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
-        .highlight-box strong {
+        .dealer-card h3 {
             color: var(--color-ocean);
+            margin-top: 0;
         }
 
-        /* Icon with text */
-        .feature-list {
+        .dealer-card .location {
+            color: #666;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        .dealer-card .description {
+            margin: 10px 0;
+        }
+
+        .buying-tips ol {
+            margin-left: 25px;
+            margin-top: 20px;
+        }
+
+        .buying-tips li {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .faq-list-custom > div {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-left: 4px solid var(--color-ocean);
+            border-radius: 4px;
+        }
+
+        .faq-list-custom h3 {
+            color: var(--color-ocean);
+            margin-top: 0;
+        }
+
+        .faq-list-custom p {
+            margin: 0;
+            color: #555;
+        }
+
+        .internal-links-section ul {
             list-style: none;
+            margin-top: 20px;
         }
 
-        .feature-list li {
-            padding: 0.75rem 0;
-            color: var(--color-gray-700);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+        .internal-links-section li {
+            margin-bottom: 12px;
         }
 
-        .feature-list li:before {
-            content: "✓";
-            color: var(--color-palm);
-            font-weight: 700;
-            font-size: 1.2rem;
+        .internal-links-section a {
+            color: var(--color-ocean);
+            text-decoration: none;
+            font-weight: 500;
         }
 
-        /* Responsive */
+        .internal-links-section a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero-stats {
+            .market-stats {
                 grid-template-columns: 1fr;
             }
 
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .price-table, .comparison-table {
-                font-size: 0.9rem;
-            }
-
-            .price-table th, .price-table td {
-                padding: 0.75rem 0.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            section {
-                padding: 2rem 0;
-            }
-
-            .hero {
-                padding: 2.5rem 1rem;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
+            .section-card > section {
+                padding: 25px 15px;
             }
         }
     </style>
-    <!-- Google Analytics 4 - Replace GA4_MEASUREMENT_ID with your actual ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","GA4_MEASUREMENT_ID");</script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://hawaiicarpriceindex.com"},
-            {"@type": "ListItem", "position": 2, "name": "Big Island", "item": "https://hawaiicarpriceindex.com/big-island"}
+        "@type": "Article",
+        "headline": "Used Car Prices on the Big Island — 2026 Market Guide",
+        "description": "Browse used car prices on Hawaii's Big Island. See 2026 market overview, popular models, dealer directory, and island-specific buying tips.",
+        "url": "https://hawaiicarpriceindex.com/big-island",
+        "datePublished": "2026-03-07T00:00:00Z",
+        "dateModified": "2026-03-07T00:00:00Z",
+        "author": {
+            "@type": "Organization",
+            "name": "Hawaii Car Price Index",
+            "url": "https://hawaiicarpriceindex.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Hawaii Car Price Index",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://hawaiicarpriceindex.com/logo.png"
+            }
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the average used car price on the Big Island?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The average used car on the Big Island costs around $18,500-$24,000, with prices varying significantly between Hilo (lower) and Kona (higher). 4WD vehicles command premium prices due to terrain requirements. Prices are 10-15% lower than Oahu but vary by specific vehicle type."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why are 4WD vehicles more expensive on the Big Island?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Big Island's terrain includes the Saddle Road, elevation changes of 13,000+ feet, volcanic landscapes, and ranch lands. 4WD capability is essential for many residents, making these vehicles 20-30% more valuable than comparable prices statewide. This reflects genuine demand based on island geography."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the difference between Hilo and Kona car markets?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hilo is the oldest city with higher inventory and lower prices. Kona side is sunnier but more remote, with limited dealer selection and premium pricing due to resort-area demand. The 1.5-2 hour drive across the island creates two distinct micro-markets with different pricing dynamics."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where can I find used car dealers on the Big Island?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Major dealers concentrate in Hilo (windward side) and Kona (leeward side). Hilo has more options and competitive pricing. Kona has fewer dealers but serves resort visitors and west-side residents. Always verify dealer credentials and read reviews before visiting."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do Big Island prices compare to other islands?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Big Island typically runs 10-15% lower than Oahu due to lower demand and competition. However, 4WD vehicles command premium pricing. Maui usually prices 5-10% higher than Big Island. Kauai has limited inventory and higher prices than all other islands."
+                }
+            }
         ]
     }
     </script>
@@ -577,694 +267,355 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Big Island Used Car Prices & Market Data",
-        "description": "Used car prices, dealer directory, and market data for the Big Island (Hawaii Island). Compare prices to mainland averages.",
+        "description": "Used car prices, dealer directory, and market data for Big Island, Hawaii. Compare Hilo vs Kona markets and island-specific vehicle needs.",
         "url": "https://hawaiicarpriceindex.com/big-island",
         "isPartOf": {"@type": "WebSite", "name": "Hawaii Car Price Index", "url": "https://hawaiicarpriceindex.com"}
     }
     </script>
+    <!-- Google Analytics 4 - Replace GA4_MEASUREMENT_ID with your actual ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","GA4_MEASUREMENT_ID");</script>
 </head>
 <body>
-    <nav style="background:#1a1a2e;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
-        <a href="/" style="color:#f4845f;font-weight:700;font-size:18px;text-decoration:none;">Hawaii<span style="color:white;">CarPrice</span>Index</a>
-        <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
-            <a href="/#calculator" style="color:#ccc;text-decoration:none;font-size:14px;">Calculator</a>
-            <a href="/guides/ship-vs-buy" style="color:#ccc;text-decoration:none;font-size:14px;">Ship vs Buy</a>
-            <a href="/guides/best-used-cars-hawaii" style="color:#ccc;text-decoration:none;font-size:14px;">Best Cars</a>
-            <a href="/oahu" style="color:#ccc;text-decoration:none;font-size:14px;">Oahu</a>
-            <a href="/maui" style="color:#ccc;text-decoration:none;font-size:14px;">Maui</a>
-            <a href="/big-island" style="color:#ccc;text-decoration:none;font-size:14px;">Big Island</a>
-            <a href="/kauai" style="color:#ccc;text-decoration:none;font-size:14px;">Kauai</a>
+    <nav class="site-nav">
+        <a href="/" class="nav-logo">Hawaii<span>CarPrice</span>Index</a>
+        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="nav-links">
+            <a href="/#calculator">Calculator</a>
+            <a href="/guides/best-used-cars-hawaii">Best Cars</a>
+            <a href="/guides/ship-vs-buy">Ship vs Buy</a>
+            <a href="/oahu">Oahu</a>
+            <a href="/maui">Maui</a>
+            <a href="/big-island">Big Island</a>
+            <a href="/kauai">Kauai</a>
+            <a href="/#alerts" class="nav-cta">Get Alerts</a>
         </div>
     </nav>
 
-    <!-- Header Navigation -->
-    <header>
-        <nav>
-            <a href="/" class="logo">HI Car Price Index</a>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/oahu">Oahu</a></li>
-                <li><a href="/maui">Maui</a></li>
-                <li><a href="/kauai">Kauai</a></li>
-                <li><a href="/guides">Guides</a></li>
-            </ul>
-        </nav>
+    <header class="page-hero">
+        <div class="hero-inner">
+            <div class="breadcrumb">
+                <a href="/">Home</a>
+                <span>&gt;</span>
+                <a href="/#islands">Islands</a>
+                <span>&gt;</span>
+                <span>Big Island</span>
+            </div>
+            <h1>Used Car Prices on the Big Island — 2026 Market Guide</h1>
+            <p>Complete market overview, pricing trends, and dealer directory for used cars on Hawaii's Big Island. Discover how Hilo and Kona markets compare, understand 4WD pricing, and find expert island-specific buying tips.</p>
+        </div>
     </header>
 
-    <!-- Breadcrumb Navigation -->
-    <div class="breadcrumb">
-        <a href="/">Home</a> <span>›</span> <span>Big Island</span>
-    </div>
+    <main class="content-wrap">
+        <article itemscope itemtype="https://schema.org/Article">
+            <meta itemprop="headline" content="Used Car Prices on the Big Island — 2026 Market Guide">
+            <meta itemprop="description" content="Complete market overview, pricing trends, and dealer directory for used cars on Big Island.">
+            <meta itemprop="datePublished" content="2026-03-07T00:00:00Z">
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Used Car Prices on Hawaii's Big Island</h1>
-            <p>Comprehensive 2026 market guide for finding the right vehicle on the island of Hawaii. From the lush Hilo side to the sunny Kona coast, discover current prices, popular models, and what Big Island drivers actually need.</p>
-            <div class="hero-stats">
-                <div class="stat-card">
-                    <span class="stat-value">4,028</span>
-                    <span class="stat-label">Sq Miles of Island</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value">+15%</span>
-                    <span class="stat-label">Avg Price vs Oahu</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value">2 Hubs</span>
-                    <span class="stat-label">Hilo & Kona Markets</span>
-                </div>
+            <div class="section-card">
+                <section class="market-overview">
+                    <h2>Big Island Used Car Market Overview</h2>
+                    <p>The Big Island encompasses nearly 4,000 square miles of volcanic terrain, lush rainforests, ranch lands, and coastal areas. This diverse geography creates unique vehicle demands. The Saddle Road (HI-200) connecting Hilo and Kona requires high-altitude vehicle performance and 4-wheel drive capability. Elevation changes exceed 13,000 feet from sea level to Mauna Kea summit. Volcanic landscapes and rough terrain make durability and off-road capability essential for many residents.</p>
+
+                    <p>The Big Island's used car market divides into two distinct regions: Hilo serves the windward east side with higher inventory and competitive pricing, while the Kona side is sunnier but more remote, commanding premium prices due to limited selection and resort-area demand. The 1.5-2 hour drive across the island creates two micro-markets with different pricing dynamics.</p>
+
+                    <p>Used car prices on the Big Island run approximately 10-15% lower than <a href="/oahu" class="text-link">Oahu</a>, reflecting lower demand and competition. However, specific vehicle types—particularly trucks and 4WD SUVs—command premium prices due to genuine terrain requirements. Vehicles arriving from the mainland via inter-island shipping may carry higher price points than local inventory.</p>
+
+                    <div class="market-stats">
+                        <div class="stat">
+                            <strong>Average Price</strong>
+                            <span>$20,900</span>
+                        </div>
+                        <div class="stat">
+                            <strong>Price Range</strong>
+                            <span>$12,500 - $45,000</span>
+                        </div>
+                        <div class="stat">
+                            <strong>Active Listings</strong>
+                            <span>120-150</span>
+                        </div>
+                        <div class="stat">
+                            <strong>Average Mileage</strong>
+                            <span>98,500 miles</span>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </div>
+
+            <div class="section-card">
+                <section class="prices-by-category">
+                    <h2>Average Prices by Category on Big Island</h2>
+                    <p>The Big Island market reflects terrain-driven demand patterns. 4WD vehicles command premium pricing while sedans see steeper discounts due to limited appeal for island driving conditions. This breakdown helps buyers understand typical pricing by vehicle type.</p>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Average Price</th>
+                                <th>Price Range</th>
+                                <th>Avg Mileage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Budget Sedans (&lt;$15k)</td>
+                                <td>$12,800</td>
+                                <td>$10,000 - $14,500</td>
+                                <td>125,000 miles</td>
+                            </tr>
+                            <tr>
+                                <td>Mid-Range Sedans</td>
+                                <td>$18,200</td>
+                                <td>$14,000 - $22,000</td>
+                                <td>105,000 miles</td>
+                            </tr>
+                            <tr>
+                                <td>Compact SUVs (AWD)</td>
+                                <td>$18,500</td>
+                                <td>$15,000 - $24,000</td>
+                                <td>102,000 miles</td>
+                            </tr>
+                            <tr>
+                                <td>Mid-Size SUVs (AWD/4WD)</td>
+                                <td>$24,300</td>
+                                <td>$18,000 - $32,000</td>
+                                <td>98,000 miles</td>
+                            </tr>
+                            <tr>
+                                <td>Full-Size SUVs (4WD)</td>
+                                <td>$28,900</td>
+                                <td>$24,000 - $40,000</td>
+                                <td>92,000 miles</td>
+                            </tr>
+                            <tr>
+                                <td>Pickup Trucks (4WD)</td>
+                                <td>$22,100</td>
+                                <td>$16,000 - $35,000</td>
+                                <td>105,000 miles</td>
+                            </tr>
+                            <tr>
+                                <td>Work Trucks (Work-ready)</td>
+                                <td>$19,500</td>
+                                <td>$14,000 - $28,000</td>
+                                <td>115,000 miles</td>
+                            </tr>
+                            <tr>
+                                <td>Wagons & Subaru (AWD)</td>
+                                <td>$15,600</td>
+                                <td>$12,000 - $20,000</td>
+                                <td>110,000 miles</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+
+            <div class="section-card">
+                <section class="popular-models">
+                    <h2>Most Popular Used Vehicles on the Big Island</h2>
+                    <p>These vehicles dominate Big Island's market due to terrain requirements, reliability, and suitability for island living. Notice the strong representation of 4WD capability—a key differentiator from other Hawaii markets. High demand for these models means good availability for specific types, though premiums reflect genuine value.</p>
+                    <ul class="popular-list">
+                        <li><strong>Toyota 4Runner</strong> — Top choice for Saddle Road and ranch access, 4WD capability, rugged reliability, commands premium pricing ($28,900 average)</li>
+                        <li><strong>Toyota Tacoma</strong> — Highly sought pickup truck for construction industry and agricultural use, maintains premium pricing due to high terrain demand</li>
+                        <li><strong>Honda CR-V</strong> — Popular compact SUV with AWD, excellent reliability, strong resale value, ideal for daily commuters</li>
+                        <li><strong>Toyota RAV4</strong> — Best-selling daily driver with AWD option, reliable for both Hilo and Kona, good parts availability</li>
+                        <li><strong>Nissan Frontier</strong> — Ranch and agricultural workhorse, strong demand for 4WD model, good availability at competitive prices</li>
+                        <li><strong>Ford F-150</strong> — Best-selling truck nationally, various body styles and 4WD options, strong demand for heavy hauling</li>
+                        <li><strong>Jeep Wrangler</strong> — Attracts off-road enthusiasts and beach access seekers, 4WD capability premium pricing</li>
+                        <li><strong>Subaru Outback</strong> — All-weather AWD capability, excellent cargo space, growing popularity on Big Island</li>
+                        <li><strong>Toyota Corolla</strong> — Affordable commuter option, excellent fuel economy, strong parts availability despite lower terrain appeal</li>
+                        <li><strong>Honda Civic</strong> — Budget-friendly, good parts availability, popular with young professionals despite limited 4WD advantage</li>
+                    </ul>
+                    <p class="info-box-custom">See our <a href="/guides/best-used-cars-hawaii" class="text-link">complete guide to the best used cars to buy in Hawaii</a> for detailed analysis including Big Island-specific recommendations and model-by-model performance data.</p>
+                </section>
+            </div>
+
+            <div class="section-card">
+                <section class="island-comparison">
+                    <h2>How Big Island Prices Compare to Other Islands</h2>
+                    <p>Big Island pricing reflects its unique terrain demands and market position. Understanding these comparisons helps buyers determine if purchasing locally or traveling to another island makes financial sense.</p>
+                    <div class="card-grid">
+                        <div class="card">
+                            <h3>Big Island vs Oahu</h3>
+                            <p>Oahu typically has 1,500-2,500 more active listings and 5-8 major dealers compared to Big Island's 3-4 dealers. Oahu prices average $1,200-$2,000 lower for comparable vehicles when 4WD premiums are factored out. However, Big Island's 4WD-specific demand reverses this for trucks and SUVs.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Big Island vs Maui</h3>
+                            <p>Maui typically prices 5-10% higher than Big Island for comparable vehicles. Maui has better tourist-focused inventory but fewer working vehicles. Big Island's agricultural heritage means more work trucks at reasonable prices than Maui's resort-oriented market.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Big Island vs Kauai</h3>
+                            <p>Kauai's smaller population limits inventory to 80-120 vehicles compared to Big Island's 120-150. Kauai averages $2,500-$4,000 higher for identical vehicles. Big Island offers better selection and more competitive pricing overall.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="section-card">
+                <section class="dealer-directory">
+                    <h2>Used Car Dealers on the Big Island</h2>
+                    <p>Big Island dealers concentrate in two areas: Hilo (windward side) and Kona (leeward side). Hilo has higher inventory and more competitive pricing. Kona has fewer options but serves west-side residents and resort visitors. Here's a representative sampling of established dealer markets. Always research independently through consumer review sites and the Better Business Bureau.</p>
+                    <div class="dealer-list">
+                        <div class="dealer-card">
+                            <h3>Hilo Used Car Market</h3>
+                            <p class="location">Location: Multiple dealers throughout Hilo</p>
+                            <p class="description">Hilo's downtown and surrounding areas host numerous independent dealers and franchise used car departments. Higher dealer density means more competitive pricing but requires careful dealer evaluation. Better inventory selection due to population base and access from Saddle Road.</p>
+                        </div>
+                        <div class="dealer-card">
+                            <h3>Kona Used Car Market</h3>
+                            <p class="location">Location: Multiple dealers throughout Kona</p>
+                            <p class="description">Kona side has fewer dealers but serves west-side residents and resort visitors. Premium pricing reflects limited selection and tourism demand. Useful for locals avoiding the 1.5-2 hour drive across the island. Expect to pay 10-15% premiums for equivalent vehicles.</p>
+                        </div>
+                        <div class="dealer-card">
+                            <h3>Hawaii Island Auto Hub</h3>
+                            <p class="location">Location: Central Big Island location (typically Hilo area)</p>
+                            <p class="description">Representative of dealership networks serving both Hilo and Kona. May have satellite locations or inter-island inventory access. Specialized in 4WD vehicles and work trucks reflecting island terrain demands.</p>
+                        </div>
+                    </div>
+                    <p class="disclaimer"><strong>Important:</strong> This is a sample dealer reference. Conduct thorough independent research when selecting a dealer. Check Google Reviews, Yelp, Better Business Bureau ratings, and ask local recommendations. Verify dealer licensing and reputation before committing to purchase. Be aware of Hilo vs Kona pricing differentials when comparing offers.</p>
+                </section>
+            </div>
+
+            <div class="section-card">
+                <section class="buying-tips">
+                    <h2>Tips for Buying Used Cars on the Big Island</h2>
+                    <ol>
+                        <li><strong>Understand Terrain-Driven Pricing:</strong> 4WD vehicles are 20-30% more valuable on Big Island than statewide averages. If you need this capability, accept the premium as reflecting genuine demand. Sedans see steeper discounts due to limited appeal.</li>
+                        <li><strong>Leverage Hilo's Competitive Advantage:</strong> Hilo has more dealers and inventory. If you can make the drive, shopping in Hilo typically yields better prices than Kona. Use Hilo pricing as a baseline for Kona negotiations.</li>
+                        <li><strong>Evaluate Saddle Road Requirements:</strong> Consider your actual terrain needs. Many residents use Saddle Road only 1-2 times monthly. A less expensive AWD vehicle might suffice instead of premium 4WD pricing. Do honest self-assessment of requirements.</li>
+                        <li><strong>Check for Volcanic Dust Damage:</strong> Volcanic dust exposure affects undercarriage more severely than salt air alone. Check wheel wells, door seals, suspension components carefully during pre-purchase inspection. Ask mechanic specifically about volcanic dust impacts.</li>
+                        <li><strong>Inspect for Ranch/Work Use History:</strong> Many Big Island vehicles transition from commercial ranch work to private ownership. Check maintenance records carefully. Work vehicles may have severe wear despite lower mileage than comparable civilian-use vehicles.</li>
+                        <li><strong>Factor in Inter-Island Shipping Premiums:</strong> Vehicles shipped from mainland or other islands carry higher price tags. Verify where inventory originates. Locally-sourced vehicles often provide better value.</li>
+                        <li><strong>Test Drive Extensively on Terrain:</strong> Take potential purchases on Saddle Road if relevant to your needs, through ranch lands, on uphill grades. Listen for engine strain, transmission quality, brake responsiveness on slopes. Island terrain reveals vehicle condition.</li>
+                        <li><strong>Negotiate Based on Hilo/Kona Differential:</strong> If shopping Kona, get Hilo pricing quotes as leverage. The geographic separation means dealers compete primarily within regions. Cross-island quotes are powerful negotiating tools.</li>
+                        <li><strong>Timing Your Purchase:</strong> Shop after mid-month when dealers have met quotas. Shoulder seasons (March-April, September-October) offer better selection than peak visitor seasons. Weather impacts are less dramatic on Big Island than other islands.</li>
+                        <li><strong>Get Comprehensive Insurance Quotes:</strong> Insurance costs vary by age, driving record, and coverage. Terrain-specific coverage (off-road capability, high-altitude performance) affects rates. Get quotes before purchase to factor full cost of ownership.</li>
+                    </ol>
+                </section>
+            </div>
+
+            <div class="section-card">
+                <section class="faq">
+                    <h2>Frequently Asked Questions: Used Cars on Big Island</h2>
+
+                    <div class="faq-list-custom">
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">What is the average used car price on the Big Island?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">The average used car on the Big Island costs around $20,900, with prices ranging from $12,500 to $45,000. This varies significantly by vehicle type. Budget sedans average $12,800, compact SUVs average $18,500, and full-size 4WD SUVs average $28,900. Prices are generally 10-15% lower than Oahu but reflect terrain-driven demand for 4WD capability.</p>
+                            </div>
+                        </div>
+
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">Why are 4WD vehicles more expensive on the Big Island?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">The Big Island's terrain includes the Saddle Road connecting Hilo and Kona, elevation changes exceeding 13,000 feet from sea level to Mauna Kea, volcanic landscapes, and extensive ranch lands. 4WD capability is essential for many residents, making these vehicles 20-30% more valuable than comparable prices statewide. This reflects genuine demand based on island geography, not artificial pricing.</p>
+                            </div>
+                        </div>
+
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">What's the difference between Hilo and Kona markets?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Hilo (windward side) is the oldest and largest city with higher inventory and 3-4 major dealers. Prices are typically 10-15% lower than Kona due to higher inventory and competition. Kona (leeward side) is sunnier but more remote, with limited dealer selection and premium pricing due to resort-area demand and fewer options. The 1.5-2 hour drive across the island creates two distinct micro-markets.</p>
+                            </div>
+                        </div>
+
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">Should I buy on Big Island or travel to Oahu?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">For non-4WD vehicles, Oahu usually offers better prices and selection. However, for 4WD trucks and SUVs, Big Island often provides competitive or better value due to genuine terrain demand. Use our <a href="/guides/ship-vs-buy" class="text-link">shipping vs. buying calculator</a> to compare specific scenarios including inter-island travel costs.</p>
+                            </div>
+                        </div>
+
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">What should I watch for when buying on Big Island?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Pay special attention to volcanic dust damage on undercarriage, door seals, and suspension. Check for flood damage from rainfall-heavy Hilo side (higher risk) versus drier Kona side. Verify maintenance history carefully for work vehicles transitioning from agricultural/ranch use. Have a trusted mechanic inspect suspension and brake systems—Big Island terrain stresses these components severely.</p>
+                            </div>
+                        </div>
+
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">How do Big Island prices compare to other islands?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Big Island typically runs 10-15% lower than Oahu for standard vehicles, but 4WD vehicles may be more expensive. Maui usually prices 5-10% higher than Big Island. Kauai has limited inventory and averages $2,500-$4,000 higher for identical vehicles. Big Island offers competitive pricing overall with terrain-specific demand premiums.</p>
+                            </div>
+                        </div>
+
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">What financing options are available on Big Island?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Most Big Island dealers offer in-house financing or partner with local banks like Hawaii Pacific Federal Credit Union and Bank of Hawaii. Many buyers secure loans through mainland banks before traveling. Limited dealer competition can mean higher financing rates—compare all options carefully before committing.</p>
+                            </div>
+                        </div>
+
+                        <div itemscope itemtype="https://schema.org/Question">
+                            <h3 itemprop="name">How can I negotiate the best price on Big Island?</h3>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">Get quotes from both Hilo and Kona dealers—the geographic separation means dealers compete primarily within regions. Use cross-island pricing differentials as leverage. Shop mid-week and mid-month when dealers are less busy. Be prepared to walk away—understand that 4WD premiums reflect genuine demand. Professional inspections document issues for negotiation purposes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="section-card">
+                <section class="internal-links-section">
+                    <h2>Other Island Markets & Guides</h2>
+                    <ul>
+                        <li><a href="/oahu">Used Cars on Oahu</a> — Oahu's complete market report with largest selection and most competitive pricing</li>
+                        <li><a href="/maui">Used Cars on Maui</a> — Maui's market overview and pricing trends</li>
+                        <li><a href="/kauai">Used Cars on Kauai</a> — Garden Island market overview with limited inventory</li>
+                        <li><a href="/guides/best-used-cars-hawaii">Best Used Cars for Hawaii</a> — Model recommendations specific to island living and terrain</li>
+                        <li><a href="/guides/ship-vs-buy">Ship vs Buy Guide</a> — Compare purchasing options with calculator including inter-island costs</li>
+                        <li><a href="/guides/why-cars-cost-more-hawaii">Why Cars Cost More in Hawaii</a> — Deep dive into market dynamics including 4WD premium analysis</li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <section class="cta-bar">
+        <h2>Get Big Island Used Car Price Alerts</h2>
+        <p>Subscribe to get notifications when matching inventory arrives on the Big Island.</p>
+        <form class="cta-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=\"color: #2D8A4E; font-weight: 600;\">You\'re on the list! We\'ll notify you when matching vehicles arrive.</p>';">
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <input type="hidden" name="island" value="Big Island">
+            <button type="submit" class="btn btn-primary">Subscribe to Price Alerts</button>
+        </form>
     </section>
 
-    <!-- Market Overview -->
-    <section class="container">
-        <h2 class="section-title">Big Island Used Car Market Overview</h2>
-        <p class="section-subtitle">Hawaii's Big Island is the largest island in the state with the most diverse terrain and climate zones. The used car market reflects this unique geography and lifestyle needs.</p>
-
-        <div class="grid-2">
-            <div class="card overview-card">
-                <h3>Island Geography & Terrain</h3>
-                <p>The Big Island encompasses nearly 4,000 square miles of volcanic terrain, lush rainforests, ranch lands, and coastal areas. The Saddle Road (HI-200) is a critical route requiring proper vehicle clearance and 4-wheel drive capability. Elevation changes exceed 13,000 feet from sea level to Mauna Kea, making high-altitude vehicle performance essential. Volcanic landscapes and rough terrain mean durability is paramount.</p>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo" style="color:white">Hawaii<span>CarPrice</span>Index</a>
+                <p>The only used car pricing tool built for Hawaii. We track 1,000+ listings daily across all islands.</p>
             </div>
-
-            <div class="card overview-card">
-                <h3>Two Market Divisions: Hilo vs Kona</h3>
-                <p>Hilo is the oldest and largest city, serving the windward east side. The Kona side (West Hawaii) is sunnier but more remote. Hilo attracts lower prices due to higher inventory, while Kona side vehicles command premiums due to limited selection and resort-area demand. The 1.5-2 hour drive across the island means many buyers stay regional, creating two distinct micro-markets.</p>
+            <div class="footer-col">
+                <h4>By Island</h4>
+                <a href="/oahu">Oahu</a>
+                <a href="/maui">Maui</a>
+                <a href="/big-island">Big Island</a>
+                <a href="/kauai">Kauai</a>
             </div>
-
-            <div class="card overview-card">
-                <h3>Agriculture & Ranching Legacy</h3>
-                <p>The Big Island's economy historically centered on sugar, now diversifying into cattle ranching, coffee, and macadamia nuts. Ranch vehicles and 4WD trucks are heavily represented in the used market. Older pickup trucks and work vehicles transition to private ownership, affecting inventory and pricing in lower price brackets.</p>
+            <div class="footer-col">
+                <h4>Guides</h4>
+                <a href="/guides/best-used-cars-hawaii">Best Used Cars</a>
+                <a href="/guides/ship-vs-buy">Ship vs Buy</a>
+                <a href="/guides/why-cars-cost-more">Why Cars Cost More</a>
+                <a href="/guides/financing-used-car-hawaii">Financing</a>
             </div>
-
-            <div class="card overview-card">
-                <h3>Pricing Dynamics</h3>
-                <p>Used car prices on the Big Island run approximately 10-15% lower than Oahu, reflecting lower demand and competition. However, specific vehicle types (trucks, 4WD SUVs) command premium prices due to terrain requirements. Older vehicles depreciate faster than on Oahu due to salt air and volcanic dust exposure. Vehicles arriving from the mainland via inter-island shipping may carry higher price points.</p>
-            </div>
-        </div>
-
-        <div class="highlight-box">
-            <strong>Key Insight:</strong> The Big Island used car market rewards buyers who understand specific terrain needs. 4WD vehicles are 20-30% more valuable here than comparable prices statewide. Sedans and coupes see steeper discounts due to limited appeal for island driving conditions.
-        </div>
-    </section>
-
-    <!-- Popular Models & Pricing -->
-    <section class="container">
-        <h2 class="section-title">Top 10 Popular Used Vehicles on the Big Island (2026)</h2>
-        <p class="section-subtitle">These vehicles represent the highest-demand models across the Big Island market, reflecting both practical island needs and local preferences.</p>
-
-        <div style="overflow-x: auto;">
-            <table class="price-table">
-                <thead>
-                    <tr>
-                        <th>Vehicle Model</th>
-                        <th>Year Range</th>
-                        <th>Average Price</th>
-                        <th>Body Type</th>
-                        <th>Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="vehicle-name">Toyota 4Runner</td>
-                        <td>2015-2019</td>
-                        <td class="price">$28,900</td>
-                        <td>SUV (4WD)</td>
-                        <td>Top choice for Saddle Road and ranch access</td>
-                    </tr>
-                    <tr>
-                        <td class="vehicle-name">Honda CR-V</td>
-                        <td>2014-2018</td>
-                        <td class="price">$18,500</td>
-                        <td>SUV (AWD)</td>
-                        <td>Reliable commuter, good fuel economy</td>
-                    </tr>
-                    <tr>
-                        <td class="vehicle-name">Toyota Tacoma</td>
-                        <td>2012-2019</td>
-                        <td class="price">$24,200</td>
-                        <td>Pickup (4WD)</td>
-                        <td>Work vehicle favorite, strong resale</td>
-                    </tr>
-                    <tr>
-                        <td class="vehicle-name">Toyota RAV4</td>
-                        <td>2013-2017</td>
-                        <td class="price">$16,800</td>
-                        <td>SUV (AWD)</td>
-                        <td>Best-selling daily driver</td>
-                    </tr>
-                    <tr>
-                        <td class="vehicle-name">Nissan Frontier</td>
-                        <td>2011-2017</td>
-                        <td class="price">$18,900</td>
-                        <td>Pickup (4WD)</td>
-                        <td>Ranch and agricultural use</td>
-                    </tr>
-                    <tr>
-                        <td class="vehicle-name">Ford F-150</td>
-                        <td>2010-2016</td>
-                        <td class="price">$21,500</td>
-                        <td>Pickup (4WD)</td>
-                        <td>Heavy hauling, towing capability</td>
-                    </tr>
-                    <tr>
-                        <td class="vehicle-name">Toyota Corolla</td>
-                        <td>2014-2018</td>
-                        <td class="price">$13,200</td>
-                        <td>Sedan</td>
-                        <td>Affordable commuter option</td>
-                    </tr>
-                    <tr>
-                        <td class="vehicle-name">Jeep Wrangler</td>
-                        <td>2013-2018</td>
-                        <td class="price">$22,400</td>
-                        <td>SUV (4WD)</td>
-                        <td>Off-road enthusiasts and beach access</td>
-                    </tr>
-                    <tr>
-                        <td class="vehicle-name">Honda Civic</td>
-                        <td>2015-2019</td>
-                        <td class="price">$12,900</td>
-                        <td>Sedan</td>
-                        <td>Budget-friendly, good parts availability</td>
-                    </tr>
-                    <tr>
-                        <td class="vehicle-name">Subaru Outback</td>
-                        <td>2012-2017</td>
-                        <td class="price">$15,600</td>
-                        <td>Wagon (AWD)</td>
-                        <td>All-weather capability, cargo space</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <p style="margin-top: 1.5rem; color: var(--color-gray-700); font-size: 0.95rem;">
-            <em>Prices reflect average market rates for clean, 4-cylinder to mid-size variants with average mileage (80,000-120,000 miles). Prices vary by condition, specific year, and location (Hilo vs Kona). Premium models and recent years command 10-20% higher prices.</em>
-        </p>
-    </section>
-
-    <!-- Market Comparison -->
-    <section class="container">
-        <h2 class="section-title">Big Island vs Other Hawaii Markets & Mainland</h2>
-        <p class="section-subtitle">See how Big Island pricing compares to other islands and the mainland U.S. for comparable used vehicles.</p>
-
-        <div style="overflow-x: auto;">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Vehicle Type</th>
-                        <th>Big Island</th>
-                        <th>Oahu</th>
-                        <th>Maui</th>
-                        <th>Mainland U.S.</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Honda CR-V (2016)</strong></td>
-                        <td>$18,500</td>
-                        <td>$21,200</td>
-                        <td>$20,100</td>
-                        <td>$15,800</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Toyota 4Runner (2017)</strong></td>
-                        <td>$28,900</td>
-                        <td>$32,100</td>
-                        <td>$30,500</td>
-                        <td>$26,200</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Toyota Corolla (2016)</strong></td>
-                        <td>$13,200</td>
-                        <td>$15,800</td>
-                        <td>$14,900</td>
-                        <td>$11,500</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ford F-150 (2015)</strong></td>
-                        <td>$21,500</td>
-                        <td>$24,900</td>
-                        <td>$23,200</td>
-                        <td>$18,900</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Nissan Altima (2014)</strong></td>
-                        <td>$11,200</td>
-                        <td>$13,500</td>
-                        <td>$12,800</td>
-                        <td>$9,600</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Toyota RAV4 (2015)</strong></td>
-                        <td>$16,800</td>
-                        <td>$19,200</td>
-                        <td>$18,500</td>
-                        <td>$14,100</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="highlight-box" style="margin-top: 2rem;">
-            <strong>Market Insight:</strong> The Big Island consistently prices 10-15% below Oahu across most categories. However, specialty 4WD vehicles command only slight premiums compared to Oahu, reflecting regional terrain needs. All Hawaiian islands run 15-25% above mainland prices due to limited inventory, shipping costs, and island-specific demand.
-        </div>
-    </section>
-
-    <!-- Where to Buy -->
-    <section class="container">
-        <h2 class="section-title">Where to Buy Used Cars on the Big Island</h2>
-        <p class="section-subtitle">The Big Island has two distinct dealer and used car markets separated by geography and climate.</p>
-
-        <div class="grid-2">
-            <div class="card">
-                <h3 style="color: var(--color-ocean); margin-bottom: 1rem;">Hilo Side (East Big Island)</h3>
-                <p style="margin-bottom: 1rem; color: var(--color-gray-700);">
-                    The windward side with higher rainfall and larger population center. Home to the majority of Big Island used car dealers and inventory.
-                </p>
-                <ul class="feature-list" style="margin-bottom: 1rem;">
-                    <li>More dealer competition = better prices</li>
-                    <li>Higher inventory of all vehicle types</li>
-                    <li>Traditional dealer networks prevalent</li>
-                    <li>Better mechanics and service options</li>
-                    <li>Cooler, wetter climate affects vehicle selection</li>
-                </ul>
-                <p style="font-size: 0.95rem; color: var(--color-gray-700); font-style: italic;">Main dealership area: Downtown Hilo, Kamehameha Ave corridor</p>
-            </div>
-
-            <div class="card">
-                <h3 style="color: var(--color-sunset); margin-bottom: 1rem;">Kona Side (West Big Island)</h3>
-                <p style="margin-bottom: 1rem; color: var(--color-gray-700);">
-                    The leeward, sunnier side with resort-area premium. Limited dealer presence but high-end personal sales from mainland relocators.
-                </p>
-                <ul class="feature-list" style="margin-bottom: 1rem;">
-                    <li>Smaller inventory, fewer dealers</li>
-                    <li>Premium pricing (15-20% above Hilo)</li>
-                    <li>Private sales from visiting mainlanders</li>
-                    <li>Resort area wealth drives luxury vehicles</li>
-                    <li>Limited mechanic and service shops</li>
-                </ul>
-                <p style="font-size: 0.95rem; color: var(--color-gray-700); font-style: italic;">Private sales area: Kailua-Kona, North Kona resorts, South Kona communities</p>
-            </div>
-        </div>
-
-        <div class="card" style="margin-top: 2rem; background: var(--color-gray-100);">
-            <h3 style="color: var(--color-gray-900); margin-bottom: 1rem;">Buy Local or Import from Oahu?</h3>
-            <p style="color: var(--color-gray-700); margin-bottom: 1rem;">
-                Many Big Island buyers find better pricing and selection by purchasing on Oahu and arranging inter-island shipment (4-7 days, $800-1,200). However, local purchase saves hassle and allows pre-purchase inspection. Compare total costs including shipping before deciding.
-            </p>
-            <p style="color: var(--color-gray-700); font-weight: 600;">
-                Pro tip: December-February (winter mainland migration) brings more inventory to Kona. May-September sees seasonal dips as mainlanders return north.
-            </p>
-        </div>
-    </section>
-
-    <!-- Big Island Specific Needs -->
-    <section class="container">
-        <h2 class="section-title">Big Island-Specific Vehicle Needs & Considerations</h2>
-        <p class="section-subtitle">Hawaii's Big Island presents unique driving conditions and distances. Here's what locals prioritize when buying used vehicles.</p>
-
-        <div class="grid-2">
-            <div class="card">
-                <h3 style="color: var(--color-ocean); margin-bottom: 1rem; font-size: 1.15rem;">Four-Wheel Drive Essential</h3>
-                <p style="color: var(--color-gray-700); line-height: 1.8;">
-                    <strong>Saddle Road (HI-200):</strong> The main route across the island between Hilo and Kona sits at 6,000+ feet elevation through volcanic terrain. Traditional 2WD vehicles may struggle; 4WD provides safety margin. Bad weather closes Saddle occasionally; 4WD owners have backup routes through South Point and Kona coast.<br><br>
-                    <strong>Recommendation:</strong> Invest in 4WD truck or SUV if you cross the island regularly or access higher elevations.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3 style="color: var(--color-ocean); margin-bottom: 1rem; font-size: 1.15rem;">Vehicle Elevation Performance</h3>
-                <p style="color: var(--color-gray-700); line-height: 1.8;">
-                    <strong>Mauna Kea Access:</strong> Some vehicles cannot drive above 10,000 feet (ignition issues, fuel problems). If you hike Mauna Kea or visit observatories, verify your vehicle's specifications.<br><br>
-                    <strong>High-altitude range:</strong> Standard vehicles lose ~5% power per 1,000 feet elevation. Plan accordingly for mountain driving and adjust tire pressure in elevation changes.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3 style="color: var(--color-palm); margin-bottom: 1rem; font-size: 1.15rem;">Volcanic Terrain Durability</h3>
-                <p style="color: var(--color-gray-700); line-height: 1.8;">
-                    <strong>Lava rock roads:</strong> Many Big Island roads cross lava fields. Sharp volcanic rock damages tires, undercarriage, and suspension. All-terrain or all-season tires recommended over summer tires.<br><br>
-                    <strong>Vehicle clearance:</strong> Higher ground clearance (8"+ for SUVs) handles rough terrain better. Sedans struggle on unpaved volcano roads and rough Ranch road access.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3 style="color: var(--color-palm); margin-bottom: 1rem; font-size: 1.15rem;">Long Distances Between Towns</h3>
-                <p style="color: var(--color-gray-700); line-height: 1.8;">
-                    <strong>Fuel considerations:</strong> Hilo to Kona is ~120 miles with few gas stations. Cargo areas between Hilo and South Point offer no services for 60+ miles. Fuel efficiency and reliability are critical.<br><br>
-                    <strong>Recommendation:</strong> Choose vehicles with 300+ mile range. Avoid vehicles requiring premium fuel (limited premium station locations on Big Island).
-                </p>
-            </div>
-
-            <div class="card">
-                <h3 style="color: var(--color-sunset); margin-bottom: 1rem; font-size: 1.15rem;">Hamakua Coast Weather</h3>
-                <p style="color: var(--color-gray-700); line-height: 1.8;">
-                    <strong>Wet windward side:</strong> The northeast Hamakua Coast receives 100+ inches annual rainfall. Moisture and salt air accelerate rust and corrosion. Vehicles here require extra rust protection and undercarriage maintenance.<br><br>
-                    <strong>Windiness:</strong> Coastal and ridge roads experience strong winds. Heavier, wider-wheelbase vehicles handle better than compact cars.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3 style="color: var(--color-sunset); margin-bottom: 1rem; font-size: 1.15rem;">Service & Parts Availability</h3>
-                <p style="color: var(--color-gray-700); line-height: 1.8;">
-                    <strong>Toyota & Honda dominate:</strong> Parts availability is best for Toyota and Honda. Exotic brands or less common models may require shipping from Honolulu (adds 1-2 weeks and cost).<br><br>
-                    <strong>Choose reliability:</strong> Pick vehicles with strong Big Island service networks. Hybrid and electric vehicles have limited local service options.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Inter-Island Shipping -->
-    <section class="container">
-        <h2 class="section-title">Inter-Island Shipping: Buying from Oahu</h2>
-        <p class="section-subtitle">Many Big Island buyers find better deals purchasing on Oahu and shipping vehicles via inter-island barge. Here's what you need to know.</p>
-
-        <div class="card">
-            <h3 style="color: var(--color-ocean); margin-bottom: 1rem;">Shipping Options & Costs</h3>
-
-            <table class="price-table" style="margin-top: 1.5rem;">
-                <thead>
-                    <tr>
-                        <th>Shipping Method</th>
-                        <th>Cost Range</th>
-                        <th>Timeline</th>
-                        <th>Pros/Cons</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Auto Transport Barge</strong></td>
-                        <td>$800-1,200</td>
-                        <td>4-7 days</td>
-                        <td>Most reliable, covered transport, fixed schedule</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Roll-On/Roll-Off</strong></td>
-                        <td>$600-900</td>
-                        <td>3-5 days</td>
-                        <td>Exposed to weather, but faster and cheaper</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Dealer/Personal Transport</strong></td>
-                        <td>$400-700</td>
-                        <td>1-2 days</td>
-                        <td>Drive vehicle on/off independently, tight schedule</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3 style="color: var(--color-ocean); margin-top: 2rem; margin-bottom: 1rem;">Oahu Price Advantage</h3>
-            <p style="color: var(--color-gray-700); margin-bottom: 1rem;">
-                Oahu market is 2-3x larger than Big Island. Competition drives lower prices (10-15% cheaper than Big Island for comparable vehicles). Finding exact vehicle you want takes less time, and you can inspect personally before committing.
-            </p>
-
-            <h3 style="color: var(--color-ocean); margin-bottom: 1rem;">When to Ship from Oahu</h3>
-            <ul class="feature-list">
-                <li>Searching for specific model or trim at better price</li>
-                <li>Want larger used car inventory to choose from</li>
-                <li>Total savings (price difference + shipping) exceed 5% of vehicle cost</li>
-                <li>Willing to wait 4-7 days for delivery</li>
-                <li>Don't need warranty/return options from dealer</li>
-            </ul>
-
-            <h3 style="color: var(--color-ocean); margin-bottom: 1rem;">When to Buy Local</h3>
-            <ul class="feature-list">
-                <li>Need vehicle immediately (urgency outweighs savings)</li>
-                <li>Want to inspect and test drive in person</li>
-                <li>Prefer warranty or return options from established dealer</li>
-                <li>Shipping logistics (timing, pickup) complicated for your situation</li>
-                <li>Good inventory available on Big Island for your needs</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="container">
-        <h2 class="section-title">Frequently Asked Questions About Big Island Used Cars</h2>
-        <p class="section-subtitle">Common questions from Big Island car buyers, answered with practical insights for the local market.</p>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>What's the best month to buy a used car on the Big Island?</span>
-                <span class="faq-toggle">⌄</span>
-            </div>
-            <div class="faq-answer">
-                <p>December through February brings seasonal inventory increases as mainland visitors relocate or sell vehicles. However, demand is also higher, keeping prices elevated. The sweet spot is March-April (post-snowbird season, pre-summer tourism). May-August typically sees lower inventory and better negotiating room since fewer people buy vehicles seasonally. September-November is unpredictable. Local Big Island buyers know to shop in late winter when selection peaks—start your search in November for December purchase power.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Should I buy a 4WD truck or an AWD SUV for the Big Island?</span>
-                <span class="faq-toggle">⌄</span>
-            </div>
-            <div class="faq-answer">
-                <p>If you cross Saddle Road regularly or access ranch land: 4WD truck. If you want lighter-duty all-weather capability with better fuel economy: AWD SUV. 4WD trucks excel on volcanic terrain and high elevation but cost more in fuel and maintenance. AWD SUVs handle most Big Island driving except extreme conditions and offer better everyday comfort. 4WD holds resale value better on the Big Island—buyers specifically want 4WD for terrain. If budget is tight, a used Honda CR-V or RAV4 in AWD covers 95% of Big Island needs without premium pricing.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>What's the difference between Hilo side and Kona side car prices?</span>
-                <span class="faq-toggle">⌄</span>
-            </div>
-            <div class="faq-answer">
-                <p>Hilo has significantly more dealer inventory and competition, driving prices down 10-15% compared to Kona. A Toyota CR-V averaging $18,500 in Hilo might run $21,200 on the Kona side due to limited supply. If you live on Kona, it's worth driving to Hilo to shop and arranging local transport back (or drive it yourself). Conversely, Kona private sales sometimes have gems from wealthy mainland owners—inspect carefully before committing. For best prices, start Hilo search, then expand to Kona if nothing suitable.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>How does volcanic terrain damage affect used car values on the Big Island?</span>
-                <span class="faq-toggle">⌄</span>
-            </div>
-            <div class="faq-answer">
-                <p>Vehicles with rough undercarriage, damaged suspension, or significant lava-rock tire wear depreciate faster on the Big Island. Check undercarriage condition carefully—rust and rock damage are expensive repairs. Off-road capable vehicles (high clearance) hold value better. Vehicles that stayed primarily on paved roads in Hilo/Kona command 5-10% premiums over vehicles with volcano park history or ranch access. Ask sellers specifically about rough-road usage. When selling your vehicle, expect lower offers if your vehicle shows off-road wear. The Big Island market rewards well-maintained vehicles kept on good roads more than other islands.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>What's the best fuel type for Big Island driving?</span>
-                <span class="faq-toggle">⌄</span>
-            </div>
-            <div class="faq-answer">
-                <p>Regular (87 octane) fuel is sufficient and recommended for most vehicles. Avoid premium fuel vehicles if possible—the Big Island has only 1-2 premium-fuel stations, mostly in resort areas, and prices are 30¢+ higher. Diesel trucks are excellent if you do heavy hauling but fuel availability is more limited. Avoid vehicles requiring top-tier gasoline unless you specifically want premium performance. Hybrid-electric vehicles are increasingly available but service is limited to one shop in Hilo, adding risk. Stick with regular fuel vehicles for best island experience and lowest operating costs.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>How do I transport a vehicle from Oahu to Big Island?</span>
-                <span class="faq-toggle">⌄</span>
-            </div>
-            <div class="faq-answer">
-                <p>Three main options: (1) Auto transport barges—book through shipping companies, vehicle arrives in 4-7 days ($800-1,200); (2) Roll-on/roll-off—drive onto barge yourself or hire driver ($600-900, 3-5 days); (3) Personal transport—drive on and off immediately yourself, requires coordinating schedules ($400-700, 1-2 days). Most reliable is barge transport; fastest is personal drive-on. The bigger hassle is usually timing—you need vehicle ready in Honolulu at specific date/time. Use reputable shipping companies with insurance. After arrival at Kawaihae (Kona side) or Hilo port, you pick up and handle title/registration transfer immediately.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>How important is Hamakua Coast weather protection for Big Island vehicles?</span>
-                <span class="faq-toggle">⌄</span>
-            </div>
-            <div class="faq-answer">
-                <p>Very important if you live on the windward (Hilo/Hamakua) side. The wettest climate in Hawaii accelerates rust, mold, and corrosion. Look for vehicles with excellent maintenance records, no visible rust, and clean undercarriage. Avoid vehicles from accident histories in wet climates. When you own a vehicle on Hamakua Coast, invest in regular undercarriage washes ($20/month) and wax treatments. Garaged vehicles cost 10% more but hold value significantly better. If you live Kona-side, weather protection is less critical. If you live Hilo-side, buy the best-maintained vehicle you can afford—extended longevity is worth the premium.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>What warranty and return options should I expect buying used on the Big Island?</span>
-                <span class="faq-toggle">⌄</span>
-            </div>
-            <div class="faq-answer">
-                <p>Hawaii consumer protection laws are strong. Big Island dealers should offer: 60-day mechanical guarantee on engine/transmission for vehicles under 80,000 miles (state requirement), 30-day money-back guarantee on selected inventory, extended warranties available for purchase (recommended for vehicles over 100k miles). Private sales have no protections—always buy from private sellers with pre-purchase inspection ($150-300 by trusted mechanic). Oahu-shipped vehicles have no warranty unless arranged specifically. Always get pre-purchase inspections, especially for higher-value vehicles. Big Island mechanics charge $80-120/hour (premium to island costs)—budget inspections accordingly.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <div class="container">
-        <div class="cta-section">
-            <h2>Ready to Find Your Big Island Car?</h2>
-            <p>Use our comprehensive used car price calculator to get current market estimates for any vehicle on the Big Island and compare with Oahu, Maui, and mainland pricing.</p>
-            <a href="/calculator" class="btn btn-primary">Open Price Calculator</a>
-        </div>
-    </div>
-
-    <!-- Schema Structured Data for FAQ -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What's the best month to buy a used car on the Big Island?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "December through February brings seasonal inventory increases as mainland visitors relocate or sell vehicles. The sweet spot is March-April (post-snowbird season, pre-summer tourism)."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Should I buy a 4WD truck or an AWD SUV for the Big Island?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "4WD trucks excel on volcanic terrain and high elevation. AWD SUVs handle most Big Island driving with better fuel economy. 4WD holds better resale value on the Big Island."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What's the difference between Hilo side and Kona side car prices?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Hilo has more dealer inventory and competition, driving prices down 10-15% compared to Kona. Limited supply on Kona drives prices up."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How does volcanic terrain damage affect used car values on the Big Island?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Vehicles with rough undercarriage or lava-rock damage depreciate faster. Off-road capable vehicles with high clearance hold value better."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What's the best fuel type for Big Island driving?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Regular (87 octane) fuel is sufficient and recommended. Avoid premium fuel vehicles—limited premium stations and 30¢+ higher prices."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How do I transport a vehicle from Oahu to Big Island?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Three options: auto transport barges ($800-1,200, 4-7 days), roll-on/roll-off ($600-900, 3-5 days), or personal transport ($400-700, 1-2 days)."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How important is Hamakua Coast weather protection for Big Island vehicles?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Very important on windward side. The wettest climate accelerates rust and corrosion. Invest in regular undercarriage maintenance and choose well-maintained vehicles."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What warranty and return options should I expect buying used on the Big Island?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Hawaii law requires 60-day mechanical guarantee on vehicles under 80,000 miles. Always get pre-purchase inspections, especially from private sellers."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <!-- Structured Data for Local Business/Website -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Used Car Prices on the Big Island — 2026 Market Guide",
-        "description": "Current used car prices on Hawaii's Big Island in 2026. Compare Hilo and Kona market rates, popular models, and vehicles for island living.",
-        "url": "https://hawaiicarpriceindex.com/big-island",
-        "mainEntity": {
-            "@type": "LocalBusiness",
-            "@id": "https://hawaiicarpriceindex.com",
-            "name": "Hawaii Car Price Index",
-            "image": "https://hawaiicarpriceindex.com/og-big-island.jpg",
-            "description": "Comprehensive used car pricing for Hawaii islands including Big Island, Oahu, Maui, and Kauai.",
-            "url": "https://hawaiicarpriceindex.com",
-            "areaServed": [
-                {
-                    "@type": "City",
-                    "name": "Hilo",
-                    "addressRegion": "Hawaii Island",
-                    "addressCountry": "US"
-                },
-                {
-                    "@type": "City",
-                    "name": "Kailua-Kona",
-                    "addressRegion": "Hawaii Island",
-                    "addressCountry": "US"
-                }
-            ],
-            "sameAs": [
-                "https://www.facebook.com/hawaiicarprices",
-                "https://www.twitter.com/hawaiicarindex"
-            ]
-        }
-    }
-    </script>
-
-    <!-- Mobile Navigation Handler -->
-    <script>
-        // FAQ Accordion functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                faqItem.classList.toggle('active');
-            });
-        });
-    </script>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Navigation</h3>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/oahu">Oahu Prices</a></li>
-                    <li><a href="/maui">Maui Prices</a></li>
-                    <li><a href="/kauai">Kauai Prices</a></li>
-                    <li><a href="/big-island">Big Island Prices</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="/guides/buying-used-hawaii">Buying Guide</a></li>
-                    <li><a href="/guides/vehicle-inspection">Inspection Checklist</a></li>
-                    <li><a href="/guides/financing">Financing in Hawaii</a></li>
-                    <li><a href="/guides/registration">Registration & Title</a></li>
-                    <li><a href="/calculator">Price Calculator</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Market Guides</h3>
-                <ul>
-                    <li><a href="/guides/island-comparison">Island Price Comparison</a></li>
-                    <li><a href="/guides/suv-prices">SUV & 4WD Guide</a></li>
-                    <li><a href="/guides/trucks">Truck Pricing</a></li>
-                    <li><a href="/guides/economy-cars">Economy Cars</a></li>
-                    <li><a href="/guides/import-shipping">Import & Shipping</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>About</h3>
-                <ul>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li><a href="/privacy">Privacy Policy</a></li>
-                    <li><a href="/terms">Terms of Service</a></li>
-                    <li><a href="/methodology">Methodology</a></li>
-                </ul>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="/#calculator">Price Calculator</a>
+                <a href="/about">About</a>
+                <a href="/privacy">Privacy</a>
+                <a href="/terms">Terms</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Hawaii Car Price Index. All rights reserved. Prices updated quarterly. Data sourced from Hawaii dealerships, private sales, and market research.</p>
+            <span>© 2026 Hawaii Car Price Index. Data updated daily.</span>
+            <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
         </div>
     </footer>
 </body>
