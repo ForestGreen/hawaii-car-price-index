@@ -107,6 +107,21 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://hawaiicarpriceindex.com/guides/best-time-to-buy-hawaii</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hawaiicarpriceindex.com/guides/car-maintenance-hawaii</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hawaiicarpriceindex.com/guides/inter-island-car-shipping</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- About -->
   <url>
