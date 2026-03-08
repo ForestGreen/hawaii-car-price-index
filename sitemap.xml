@@ -166,6 +166,23 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Comparison Pages -->
+  <url>
+    <loc>https://hawaiicarpriceindex.com/compare/tacoma-vs-4runner</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hawaiicarpriceindex.com/compare/crv-vs-rav4</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hawaiicarpriceindex.com/compare/best-suvs-under-30k</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Tools -->
   <url>
     <loc>https://hawaiicarpriceindex.com/cost-calculator</loc>
