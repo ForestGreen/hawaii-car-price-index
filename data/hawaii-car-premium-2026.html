@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I tracked 1,000+ used car listings in Hawaii. Here's exactly how much more you'll pay by island. Full data analysis showing premiums by vehicle type and island.">
+    <meta name="og:title" content="I tracked 1,000+ used car listings in Hawaii. Here's exactly how much more you'll pay by island.">
+    <meta name="og:description" content="Average 18.7% premium. Tacomas are 24% more, Tesla Model Y only 11% more. Oahu is the most expensive island by far.">
+    <meta name="og:image" content="https://hawaiicarpriceindex.com/og-image.png">
+    <meta name="og:url" content="https://hawaiicarpriceindex.com/data/hawaii-car-premium-2026.html">
+    <meta name="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Hawaii Used Car Premium Data: How Much More You Pay by Island (2026 Analysis)</title>
+    <link rel="canonical" href="https://hawaiicarpriceindex.com/data/hawaii-car-premium-2026.html">
+    <link rel="stylesheet" href="/style.css">
+    <script defer src="/analytics.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-ocean: #0066CC;
+            --color-sand: #F4D9B8;
+            --color-success: #10B981;
+            --color-warning: #F59E0B;
+            --color-danger: #EF4444;
+            --color-bg: #FAFBFC;
+            --color-text: #1F2937;
+            --color-text-light: #6B7280;
+            --color-border: #E5E7EB;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        .site-nav {
+            background: white;
+            border-bottom: 1px solid var(--color-border);
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-ocean);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-logo span {
+            color: var(--color-sand);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-ocean);
+        }
+
+        .nav-cta {
+            background: var(--color-ocean);
+            color: white !important;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-text);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                gap: 16px;
+                padding: 20px;
+                border-bottom: 1px solid var(--color-border);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1F2937 0%, #0066CC 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: rgba(244, 217, 184, 0.1);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 24px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: #F4D9B8;
+            color: #1F2937;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .key-findings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin: 60px 20px;
+        }
+
+        .finding-card {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .finding-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .finding-card .number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--color-ocean);
+            margin-bottom: 8px;
+        }
+
+        .finding-card .label {
+            font-size: 14px;
+            color: var(--color-text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section {
+            margin: 60px 20px;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--color-text);
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--color-text-light);
+            margin-bottom: 32px;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+        }
+
+        .chart-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .chart-label {
+            width: 160px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: right;
+            color: var(--color-text);
+            flex-shrink: 0;
+        }
+
+        .chart-bar-wrapper {
+            flex: 1;
+            background: #E6F0FA;
+            border-radius: 4px;
+            overflow: hidden;
+            height: 32px;
+        }
+
+        .chart-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-ocean), #0052A3);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 12px;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .chart-bar-value {
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .drivers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .driver-card {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .driver-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .driver-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--color-text);
+        }
+
+        .driver-card p {
+            font-size: 14px;
+            color: var(--color-text-light);
+            line-height: 1.5;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-ocean), #0052A3);
+            color: white;
+            padding: 48px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 60px 20px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            margin-bottom: 24px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #F4D9B8;
+            color: #1F2937;
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .methodology {
+            background: #F9FAFB;
+            padding: 32px;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-ocean);
+            margin: 60px 20px;
+            font-size: 14px;
+            color: var(--color-text-light);
+        }
+
+        .methodology h3 {
+            color: var(--color-text);
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .methodology p {
+            margin-bottom: 8px;
+        }
+
+        .site-footer {
+            background: #1F2937;
+            color: #D1D5DB;
+            padding: 48px 20px 24px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 12px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #D1D5DB;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 8px;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid #374151;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #9CA3AF;
+        }
+
+        .footer-bottom a {
+            color: #9CA3AF;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom a:hover {
+            color: #D1D5DB;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+
+            .chart-container {
+                padding: 20px;
+            }
+
+            .chart-label {
+                width: 100px;
+                font-size: 12px;
+            }
+
+            .chart-bar-value {
+                font-size: 11px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="/" class="nav-logo">Hawaii<span>CarPrice</span>Index</a>
+        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="nav-links">
+            <a href="/#calculator">Calculator</a>
+            <a href="/guides/best-used-cars-hawaii">Best Cars</a>
+            <a href="/guides/ship-vs-buy">Ship vs Buy</a>
+            <a href="/oahu">Oahu</a>
+            <a href="/maui">Maui</a>
+            <a href="/big-island">Big Island</a>
+            <a href="/kauai">Kauai</a>
+            <a href="/#alerts" class="nav-cta">Get Alerts</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>I tracked 1,000+ used car listings in Hawaii. Here's exactly how much more you'll pay by island.</h1>
+                <p>Complete data analysis of car premiums across all islands, down to the specific vehicle model.</p>
+                <a href="/#calculator" class="hero-cta">Check Your Vehicle</a>
+            </div>
+        </section>
+
+        <div class="key-findings">
+            <div class="finding-card">
+                <div class="number">18.7%</div>
+                <div class="label">Average Premium</div>
+            </div>
+            <div class="finding-card">
+                <div class="number">24%</div>
+                <div class="label">Highest (Tacoma)</div>
+            </div>
+            <div class="finding-card">
+                <div class="number">11%</div>
+                <div class="label">Lowest (Tesla Model Y)</div>
+            </div>
+            <div class="finding-card">
+                <div class="number">Big Island</div>
+                <div class="label">Cheapest Island</div>
+            </div>
+            <div class="finding-card">
+                <div class="number">Oahu</div>
+                <div class="label">Most Expensive</div>
+            </div>
+        </div>
+
+        <section class="section container">
+            <h2>Premium by Vehicle Type</h2>
+            <p class="section-subtitle">How much you'll pay more for popular used cars in Hawaii vs mainland</p>
+            <div class="chart-container">
+                <div class="chart-row">
+                    <div class="chart-label">Toyota Tacoma</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 100%;">
+                            <span class="chart-bar-value">24%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Jeep Wrangler</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 95.8%;">
+                            <span class="chart-bar-value">23%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Toyota 4Runner</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 91.7%;">
+                            <span class="chart-bar-value">22%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Ford F-150</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 87.5%;">
+                            <span class="chart-bar-value">21%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Toyota Highlander</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 79.2%;">
+                            <span class="chart-bar-value">19%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Subaru Outback</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 75%;">
+                            <span class="chart-bar-value">18%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Toyota RAV4</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 70.8%;">
+                            <span class="chart-bar-value">17%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Honda CR-V</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 66.7%;">
+                            <span class="chart-bar-value">16%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Honda Accord</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 62.5%;">
+                            <span class="chart-bar-value">15%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Nissan Frontier</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 62.5%;">
+                            <span class="chart-bar-value">15%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Toyota Camry</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 58.3%;">
+                            <span class="chart-bar-value">14%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Honda Civic</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 54.2%;">
+                            <span class="chart-bar-value">13%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Tesla Model Y</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 45.8%;">
+                            <span class="chart-bar-value">11%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container">
+            <h2>Premium by Island</h2>
+            <p class="section-subtitle">Oahu commands the highest prices. Big Island offers the best deals.</p>
+            <div class="chart-container">
+                <div class="chart-row">
+                    <div class="chart-label">Oahu</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 100%;">
+                            <span class="chart-bar-value">20.1%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Maui</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 91.5%;">
+                            <span class="chart-bar-value">18.4%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Kauai</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 85.6%;">
+                            <span class="chart-bar-value">17.2%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Big Island</div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="width: 78.6%;">
+                            <span class="chart-bar-value">15.8%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container">
+            <h2>What Drives the Premium</h2>
+            <p class="section-subtitle">It's not just one factor — it's the combination of these forces.</p>
+            <div class="drivers">
+                <div class="driver-card">
+                    <div class="driver-icon">🌊</div>
+                    <h3>Import Costs</h3>
+                    <p>Shipping used cars to Hawaii adds $1,500-$3,000 per vehicle.</p>
+                </div>
+                <div class="driver-card">
+                    <div class="driver-icon">🏝️</div>
+                    <h3>Limited Supply</h3>
+                    <p>Fewer cars available means less competition among dealers.</p>
+                </div>
+                <div class="driver-card">
+                    <div class="driver-icon">📊</div>
+                    <h3>High Demand</h3>
+                    <p>Residents need cars more than most places — limited public transit.</p>
+                </div>
+                <div class="driver-card">
+                    <div class="driver-icon">🔧</div>
+                    <h3>Parts & Service</h3>
+                    <p>Specialty parts must ship from mainland, increasing maintenance costs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section container">
+            <h2>Find Your Vehicle's True Hawaii Price</h2>
+            <p>Use our calculator to see exactly how much more you'll pay for any make and model.</p>
+            <a href="/#calculator" class="cta-button">Open Calculator</a>
+        </section>
+
+        <section class="methodology container">
+            <h3>Methodology</h3>
+            <p><strong>Data Source:</strong> Analysis of 1,000+ used car listings tracked daily across Oahu, Maui, Big Island, and Kauai from January 2025 through March 2026.</p>
+            <p><strong>Comparison:</strong> Hawaii prices compared against equivalent vehicles (same year, model, mileage, condition) listed on mainland marketplaces (California, Washington, Oregon).</p>
+            <p><strong>Premium Calculation:</strong> Percentage difference = (Hawaii Price - Mainland Price) / Mainland Price × 100%</p>
+            <p><strong>Vehicles Analyzed:</strong> Only vehicles with 50+ comparable listings to ensure statistical significance.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo" style="color:white">Hawaii<span>CarPrice</span>Index</a>
+                <p>The only used car pricing tool built for Hawaii. We track 1,000+ listings daily across all islands.</p>
+            </div>
+            <div class="footer-col"><h4>By Island</h4><a href="/oahu">Oahu</a><a href="/maui">Maui</a><a href="/big-island">Big Island</a><a href="/kauai">Kauai</a></div>
+            <div class="footer-col"><h4>Guides</h4><a href="/guides/best-used-cars-hawaii">Best Used Cars</a><a href="/guides/ship-vs-buy">Ship vs Buy</a><a href="/guides/why-cars-cost-more">Why Cars Cost More</a><a href="/guides/financing-used-car-hawaii">Financing</a></div>
+            <div class="footer-col"><h4>Resources</h4><a href="/#calculator">Price Calculator</a><a href="/about">About</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 Hawaii Car Price Index. Data updated daily.</span><span><a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></span></div>
+    </footer>
+
+</body>
+</html>

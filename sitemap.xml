@@ -183,6 +183,18 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Data / Social Pages -->
+  <url>
+    <loc>https://hawaiicarpriceindex.com/data/hawaii-car-premium-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hawaiicarpriceindex.com/data/true-cost-car-hawaii</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Tools -->
   <url>
     <loc>https://hawaiicarpriceindex.com/cost-calculator</loc>
