@@ -122,6 +122,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://hawaiicarpriceindex.com/guides/car-insurance-hawaii</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Additional Price Pages -->
+  <url>
+    <loc>https://hawaiicarpriceindex.com/prices/toyota-camry</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hawaiicarpriceindex.com/prices/honda-accord</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hawaiicarpriceindex.com/prices/ford-f150</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- About -->
   <url>
