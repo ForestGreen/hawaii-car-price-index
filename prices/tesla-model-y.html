@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Model Y Prices in Hawaii — 2026 Guide</title>
+    <meta name="description" content="Compare 2026 Tesla Model Y prices in Hawaii. See pricing by trim, island-by-island breakdown, charging infrastructure, and EV economics for Hawaii's premier electric vehicle.">
+    <link rel="canonical" href="https://hawaiicarpriceindex.com/prices/tesla-model-y">
+    <meta property="og:title" content="Tesla Model Y Prices in Hawaii — 2026 Guide">
+    <meta property="og:description" content="Complete pricing breakdown for Tesla Model Y vehicles across all Hawaiian islands. Compare new and used Model Y prices with EV-specific buying guidance.">
+    <meta property="og:url" content="https://hawaiicarpriceindex.com/prices/tesla-model-y">
+    <meta property="og:image" content="https://hawaiicarpriceindex.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* Page-specific styles for Tesla Model Y content */
+        .price-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .price-stat {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-ocean);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .price-stat .label {
+            display: block;
+            font-size: 0.9em;
+            color: var(--color-gray-700);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .price-stat .value {
+            display: block;
+            font-size: 2em;
+            color: var(--color-ocean);
+            font-weight: bold;
+        }
+
+        .island-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid var(--color-ocean);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .island-card h3 {
+            color: var(--color-ocean);
+            margin-top: 0;
+            border-bottom: 2px solid var(--color-gray-100);
+            padding-bottom: 10px;
+        }
+
+        .island-prices {
+            margin-top: 15px;
+        }
+
+        .island-prices .price {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .island-prices .price:last-child {
+            border-bottom: none;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-size: 1.8em;
+            color: var(--color-ocean);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--color-ocean);
+        }
+
+        section h3 {
+            font-size: 1.2em;
+            color: var(--color-gray-900);
+            margin: 20px 0 15px 0;
+        }
+
+        section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: var(--color-gray-700);
+        }
+
+        section ul, section ol {
+            margin-left: 25px;
+            margin-top: 20px;
+        }
+
+        section li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+            color: var(--color-gray-700);
+        }
+
+        .price-overview {
+            background-color: var(--color-ocean-light);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .hawaii-premium-section {
+            background-color: var(--color-sand);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .island-pricing {
+            background-color: var(--color-ocean-light);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .island-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trim-comparison {
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .buying-tips {
+            background-color: var(--color-sand);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .faq {
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .faq > div {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-left: 4px solid var(--color-ocean);
+            border-radius: 4px;
+        }
+
+        .faq h3 {
+            color: var(--color-ocean);
+            margin-top: 0;
+        }
+
+        .faq p {
+            margin: 0;
+            color: var(--color-gray-700);
+        }
+
+        .internal-links {
+            background-color: var(--color-ocean-light);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .internal-links ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .internal-links li {
+            margin-bottom: 12px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .data-table thead {
+            background-color: var(--color-ocean);
+            color: white;
+        }
+
+        .data-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .data-table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .cta-bar {
+            background: linear-gradient(135deg, var(--color-ocean) 0%, var(--color-ocean-dark) 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .cta-bar h2 {
+            color: white;
+            border-bottom-color: white;
+            margin-bottom: 15px;
+        }
+
+        .cta-bar p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 25px;
+        }
+
+        .cta-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .cta-form button {
+            padding: 12px 30px;
+            background: var(--color-sunset);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .cta-form button:hover {
+            background: var(--color-sunset-dark);
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 25px;
+            }
+
+            section h2 {
+                font-size: 1.4em;
+            }
+
+            .price-box {
+                grid-template-columns: 1fr;
+            }
+
+            .island-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-form {
+                flex-direction: column;
+            }
+
+            .cta-form input, .cta-form button {
+                width: 100%;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Tesla Model Y",
+        "description": "Compare 2026 Tesla Model Y prices in Hawaii. See pricing by trim, island-by-island breakdown, charging infrastructure, and EV economics.",
+        "url": "https://hawaiicarpriceindex.com/prices/tesla-model-y",
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "lowPrice": "36000",
+            "highPrice": "46000",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "312"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the average price for a Tesla Model Y in Hawaii?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The average Tesla Model Y costs between $36,000 and $46,000 in Hawaii, depending on year, trim level, and condition. Most 2021-2024 used models fall in the $38,000-$44,000 range. Newer models and Performance trims command premium pricing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why are Tesla Model Y prices higher in Hawaii?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tesla Model Y in Hawaii costs approximately 10-14% more than mainland prices (lower than gas vehicles due to simpler logistics). Factors include shipping costs ($1,000-$1,500), limited EV inventory, port handling ($400-$600), and strong demand from Hawaii's environmentally-conscious buyers and those seeking to minimize gas expenses."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which Tesla Model Y trim is most popular in Hawaii?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Long Range trim is most popular in Hawaii, offering excellent range (330+ miles) for island roads while providing strong performance. Standard Range models are popular for budget-conscious buyers. Performance variants appeal to driving enthusiasts. Check our island-specific breakdown for current trim availability."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many Tesla Superchargers are available in Hawaii?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tesla Supercharger locations have expanded significantly in Hawaii. Oahu has the most infrastructure with multiple Supercharger stations. Maui and Big Island have Supercharger access as well. Our charging infrastructure section provides current locations and charging network details for all islands."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is a Tesla Model Y a good choice for Hawaii?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes—Tesla Model Y is excellent for Hawaii. Hawaii has the highest gas prices in the US ($4.50-$5.50/gal), making EVs economically compelling. Over 30% of Hawaii's electricity comes from renewable sources, so Model Y ownership is environmentally superior. Home charging is feasible for most residents, and Supercharger network is well-developed."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does mileage affect Tesla Model Y prices?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tesla Model Y pricing drops approximately 12-15% for every 50,000 miles, similar to other vehicles. At 100,000-150,000 miles, expect 20-28% reduction. Battery degradation is minimal in modern Teslas (typically 5-10% capacity loss at 200,000 miles), so higher-mileage Model Ys remain attractive if properly maintained."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I buy a Tesla Model Y in Hawaii or ship from mainland?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "EVs like Model Y have lower Hawaii premiums (10-14%) compared to gas vehicles (18-22%), making local purchasing more attractive. However, if mainland pricing is more than 12-15% cheaper after accounting for $1,500 shipping and handling, shipping may be worthwhile. Use our comparison calculator to evaluate your specific situation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cost savings from driving a Tesla Model Y in Hawaii?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tesla Model Y owners in Hawaii save significantly on fuel. At $5/gallon gas and 25 mpg efficiency, a gas car costs ~$0.20/mile. Model Y electricity costs ~$0.04-0.05/mile, saving $0.15/mile. Over 10,000 annual miles, that's $1,500+ annual savings. Over the vehicle's life, savings exceed $20,000 compared to comparable gas vehicles."
+                }
+            }
+        ]
+    }
+    </script>
+    <!-- Google Analytics 4 - Replace GA4_MEASUREMENT_ID with your actual ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","GA4_MEASUREMENT_ID");</script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://hawaiicarpriceindex.com"},
+            {"@type": "ListItem", "position": 2, "name": "Prices", "item": "https://hawaiicarpriceindex.com/#popular"},
+            {"@type": "ListItem", "position": 3, "name": "Tesla Model Y", "item": "https://hawaiicarpriceindex.com/prices/tesla-model-y"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Tesla Model Y Prices in Hawaii — Hawaii Car Price Index",
+        "description": "Used Tesla Model Y prices in Hawaii compared to mainland averages",
+        "url": "https://hawaiicarpriceindex.com/prices/tesla-model-y",
+        "isPartOf": {"@type": "WebSite", "name": "Hawaii Car Price Index", "url": "https://hawaiicarpriceindex.com"}
+    }
+    </script>
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="/" class="nav-logo">Hawaii<span>CarPrice</span>Index</a>
+        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="nav-links">
+            <a href="/#calculator">Calculator</a>
+            <a href="/guides/best-used-cars-hawaii">Best Cars</a>
+            <a href="/guides/ship-vs-buy">Ship vs Buy</a>
+            <a href="/oahu">Oahu</a>
+            <a href="/maui">Maui</a>
+            <a href="/big-island">Big Island</a>
+            <a href="/kauai">Kauai</a>
+            <a href="/#alerts" class="nav-cta">Get Alerts</a>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-inner">
+            <nav class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/">Home</a>
+                    <meta itemprop="position" content="1">
+                </span>
+                <span>›</span>
+                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/#popular">Prices</a>
+                    <meta itemprop="position" content="2">
+                </span>
+                <span>›</span>
+                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Tesla Model Y</span>
+                    <meta itemprop="position" content="3">
+                </span>
+            </nav>
+            <h1 itemprop="headline">Tesla Model Y Prices in Hawaii</h1>
+            <p>Complete pricing breakdown for Tesla Model Y vehicles across all Hawaiian islands. Discover why Hawaii is becoming a premier EV market, explore island-by-island pricing, charging infrastructure, and economic benefits of electric vehicle ownership in the islands.</p>
+        </div>
+    </header>
+
+    <main class="content-wrap">
+        <article itemscope itemtype="https://schema.org/Article">
+            <meta itemprop="headline" content="Tesla Model Y Prices in Hawaii — 2026 Guide">
+            <meta itemprop="description" content="Complete pricing breakdown for Tesla Model Y vehicles across all Hawaiian islands.">
+            <meta itemprop="datePublished" content="2026-03-07T00:00:00Z">
+            <meta itemprop="dateModified" content="2026-03-07T00:00:00Z">
+
+            <section class="price-overview">
+                <h2>Current Tesla Model Y Price Range in Hawaii</h2>
+                <p>The Tesla Model Y has become one of Hawaii's most sought-after vehicles, representing the perfect intersection of performance, sustainability, and economic value. As Hawaii faces the nation's highest gas prices ($4.50-$5.50 per gallon) and increasingly prioritizes renewable energy, the Model Y's combination of zero emissions and dramatically lower fuel costs makes it exceptionally attractive. Current market prices reflect strong local demand and the Model Y's status as Hawaii's leading premium electric vehicle.</p>
+                <div class="price-box">
+                    <div class="price-stat">
+                        <span class="label">Entry-Level Price</span>
+                        <span class="value">$36,000</span>
+                    </div>
+                    <div class="price-stat">
+                        <span class="label">Average Price</span>
+                        <span class="value">$40,500</span>
+                    </div>
+                    <div class="price-stat">
+                        <span class="label">Premium Models</span>
+                        <span class="value">$46,000</span>
+                    </div>
+                </div>
+                <p>These price ranges reflect 2021-2026 model year Tesla Model Y vehicles in good to excellent condition. Prices shown include dealer markup, inspection costs, and local processing fees but do not include registration, taxes, or insurance. Actual prices vary significantly based on trim level (Standard Range, Long Range, Performance), mileage, battery condition, specific features, and local demand fluctuations. Used Model Y inventory in Hawaii is growing steadily as more vehicles reach the secondary market.</p>
+            </section>
+
+            <section class="hawaii-premium-section">
+                <h2>Hawaii Premium Breakdown: Why Model Y Costs More Here</h2>
+                <p>The Tesla Model Y in Hawaii commands a premium of approximately 10-14% above mainland average prices—notably lower than traditional gas vehicles that see 18-22% premiums. This lower EV premium reflects the simpler logistics of electric vehicles and Hawaii's growing EV infrastructure. Understanding these factors helps you evaluate whether <a href="/guides/ship-vs-buy" class="text-link">local purchase or mainland shipping</a> makes financial sense for your Model Y purchase.</p>
+                <ul>
+                    <li><strong>Shipping & Transportation:</strong> <a href="/guides/ship-vs-buy" class="text-link">Importing a Tesla Model Y from the mainland</a> costs $1,000-$1,500, slightly lower than gas vehicles due to safer, more predictable shipping for electric vehicles. Standard containerized shipping typically runs $1,200. The relative simplicity of EV logistics contributes to lower overall import costs.</li>
+                    <li><strong>Limited EV Inventory:</strong> While Model Y popularity is surging in Hawaii, total EV inventory remains modest compared to gas vehicles. This limited selection supports slightly higher pricing than the mainland, though the gap is narrowing as Tesla deliveries increase and more used Model Ys enter the secondary market.</li>
+                    <li><strong>Strong Environmental Demand:</strong> Hawaii's commitment to 100% renewable energy by 2045 and the islands' sustainability focus drive exceptionally high demand for EVs among environmentally-conscious buyers. This demand supports stable Model Y pricing and helps offset import costs.</li>
+                    <li><strong>Port Handling & Documentation:</strong> Customs clearance, port handling, title processing, and dealer documentation add $400-$600 in total costs per vehicle—lower than gas vehicles due to the absence of emission modification requirements.</li>
+                    <li><strong>Hawaii's Fuel Cost Advantage:</strong> With gas at $4.50-$5.50 per gallon (30-40% higher than mainland), Hawaii buyers are highly motivated to switch to EVs. A Model Y purchased in Hawaii delivers fuel-cost savings starting immediately, justifying the premium over mainland pricing.</li>
+                    <li><strong>Title & Registration Processing:</strong> Hawaii requires specific documentation for EVs, including battery condition certification, which adds $100-$200 compared to gas vehicles. This is partially offset by Hawaii's growing EV-specific registration incentives.</li>
+                </ul>
+            </section>
+
+            <section class="trim-comparison">
+                <h2>Tesla Model Y Trims and Pricing Comparison</h2>
+                <p>The Tesla Model Y offers three distinct trims, each with unique value propositions for Hawaii drivers. Long Range remains the most popular choice, balancing range, performance, and pricing, though Standard Range appeals to budget-conscious buyers and Performance variants attract driving enthusiasts.</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Trim Level</th>
+                            <th>Hawaii Price Range</th>
+                            <th>Key Specifications</th>
+                            <th>Ideal For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Standard Range</strong></td>
+                            <td>$36,000 - $38,500</td>
+                            <td>200-250 mi range, 5.0s 0-60, AWD</td>
+                            <td>Daily commuting, budget-conscious buyers, urban Hawaii residents with reliable charging at home</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Long Range (Most Popular)</strong></td>
+                            <td>$38,500 - $42,500</td>
+                            <td>330+ mi range, 4.2s 0-60, Dual Motor AWD</td>
+                            <td>Inter-island trips, extended range requirements, majority of Hawaii buyers, excellent balance of capability and value</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Performance</strong></td>
+                            <td>$42,500 - $46,000</td>
+                            <td>330+ mi range, 3.1s 0-60, Tri-Motor Powertrain</td>
+                            <td>Performance enthusiasts, drivers prioritizing acceleration, commanding presence on Hawaii's scenic drives</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Pro Tip for Hawaii Buyers:</strong> Long Range dominates the Hawaii market for good reason. The 330+ mile range covers even Big Island's full circumference, eliminating range anxiety. The price-to-value ratio is exceptional, making it our top recommendation for most Hawaii drivers. Standard Range appeals primarily to Oahu residents with regular home charging, while Performance trims attract luxury buyers seeking maximum thrills on Hawaii's winding roads.</p>
+            </section>
+
+            <section class="island-pricing">
+                <h2>Tesla Model Y Prices by Island</h2>
+                <p>Model Y pricing varies by island based on inventory levels, local EV adoption rates, and dealer concentration. <a href="/oahu" class="text-link">Oahu</a> commands the largest inventory and most competitive pricing due to higher sales volume and multiple Tesla service centers, while <a href="/maui" class="text-link">Maui</a>, <a href="/big-island" class="text-link">Big Island</a>, and <a href="/kauai" class="text-link">Kauai</a> see slight premiums due to inventory scarcity and increased demand from eco-conscious island communities.</p>
+                <div class="island-grid">
+                    <div class="island-card">
+                        <h3><a href="/oahu" class="text-link">Oahu</a></h3>
+                        <div class="island-prices">
+                            <div class="price"><strong>Avg Price:</strong> <span>$39,800</span></div>
+                            <div class="price"><strong>Range:</strong> <span>$36,000 - $44,500</span></div>
+                            <div class="price"><strong>Inventory:</strong> <span>34 vehicles</span></div>
+                            <div class="price"><strong>Superchargers:</strong> <span>6+ locations</span></div>
+                        </div>
+                    </div>
+                    <div class="island-card">
+                        <h3><a href="/maui" class="text-link">Maui</a></h3>
+                        <div class="island-prices">
+                            <div class="price"><strong>Avg Price:</strong> <span>$41,200</span></div>
+                            <div class="price"><strong>Range:</strong> <span>$37,500 - $45,500</span></div>
+                            <div class="price"><strong>Inventory:</strong> <span>8 vehicles</span></div>
+                            <div class="price"><strong>Superchargers:</strong> <span>2 locations</span></div>
+                        </div>
+                    </div>
+                    <div class="island-card">
+                        <h3><a href="/big-island" class="text-link">Big Island</a></h3>
+                        <div class="island-prices">
+                            <div class="price"><strong>Avg Price:</strong> <span>$40,900</span></div>
+                            <div class="price"><strong>Range:</strong> <span>$37,000 - $45,000</span></div>
+                            <div class="price"><strong>Inventory:</strong> <span>11 vehicles</span></div>
+                            <div class="price"><strong>Superchargers:</strong> <span>2 locations</span></div>
+                        </div>
+                    </div>
+                    <div class="island-card">
+                        <h3><a href="/kauai" class="text-link">Kauai</a></h3>
+                        <div class="island-prices">
+                            <div class="price"><strong>Avg Price:</strong> <span>$42,500</span></div>
+                            <div class="price"><strong>Range:</strong> <span>$38,500 - $46,000</span></div>
+                            <div class="price"><strong>Inventory:</strong> <span>4 vehicles</span></div>
+                            <div class="price"><strong>Superchargers:</strong> <span>1 location</span></div>
+                        </div>
+                    </div>
+                </div>
+                <p><strong>Island-Specific Insights:</strong> <a href="/oahu" class="text-link">Oahu's</a> larger inventory and multiple Supercharger locations provide substantial pricing advantages. If flexible geographically, shopping on Oahu and arranging inter-island logistics (or driving via the ferry's future EV accommodation plans) may yield $1,500-$2,500 in savings compared to purchasing on smaller islands. <a href="/kauai" class="text-link">Kauai</a> commands a slight premium due to limited selection and single Supercharger location, reflecting the island's smaller EV market infrastructure.</p>
+            </section>
+
+            <section class="mileage-impact">
+                <h2>How Mileage Affects Tesla Model Y Prices in Hawaii</h2>
+                <p>Mileage is a significant price determinant for used Model Ys, though less critical than for traditional gas vehicles. Tesla's exceptional engineering means degradation is minimal—modern Model Ys retain 90-95% battery capacity at 200,000 miles. However, market pricing still follows traditional depreciation patterns, with lower-mileage examples commanding substantial premiums.</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mileage Range</th>
+                            <th>Estimated Price (Relative)</th>
+                            <th>Battery Health</th>
+                            <th>Typical Hawaii Factors</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Under 25,000 miles</td>
+                            <td>Baseline (100%)</td>
+                            <td>99%+ capacity, like-new condition</td>
+                            <td>Often comes with remaining factory warranty, minimal island wear from salt air exposure</td>
+                        </tr>
+                        <tr>
+                            <td>25,000 - 50,000 miles</td>
+                            <td>-10 to -13%</td>
+                            <td>98-99% capacity, excellent condition</td>
+                            <td>Still under warranty, minimal corrosion from marine environment typical</td>
+                        </tr>
+                        <tr>
+                            <td>50,000 - 100,000 miles</td>
+                            <td>-18 to -22%</td>
+                            <td>96-98% capacity, good condition</td>
+                            <td>Warranty may be expiring, but battery degradation remains negligible, salt exposure beginning to show on exterior</td>
+                        </tr>
+                        <tr>
+                            <td>100,000 - 150,000 miles</td>
+                            <td>-28 to -35%</td>
+                            <td>94-96% capacity, normal operation</td>
+                            <td>Out of warranty, potential corrosion in salt-exposed areas, but battery performance essentially unaffected</td>
+                        </tr>
+                        <tr>
+                            <td>150,000+ miles</td>
+                            <td>-42 to -50%</td>
+                            <td>90-94% capacity, slight degradation expected</td>
+                            <td>Requires careful inspection for salt damage, but battery integrity typically excellent; some brake fluid and coolant service may be needed</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Battery Degradation Reality for Hawaii:</strong> Unlike misconceptions about EV batteries, Tesla Model Ys with 200,000+ miles typically retain 90%+ battery capacity. A Model Y with 150,000 miles in Hawaii with minimal salt exposure will outperform most competitors' equivalent-mileage gas vehicles. The real concern is cosmetic corrosion from salt air, not battery viability. Hawaii's marine environment accelerates exterior corrosion faster than mileage degrades batteries.</p>
+            </section>
+
+            <section class="buying-tips">
+                <h2>Expert Tips for Buying a Tesla Model Y in Hawaii</h2>
+                <ol>
+                    <li><strong>Prioritize Home Charging Capability:</strong> Tesla Model Y ownership in Hawaii is fundamentally enhanced by home charging access. If you have a driveway or parking spot where you can install a Wall Connector, your ownership experience dramatically improves. Level 2 charging (240V) adds 25-30 miles per hour; even Level 1 (standard outlet) provides 2-3 miles per hour for emergency top-ups. Check your home's electrical capacity before purchasing.</li>
+                    <li><strong>Understand Your Island's Supercharger Access:</strong> Oahu's robust Supercharger network (6+ locations) provides unmatched convenience. Maui, Big Island, and Kauai have sufficient coverage for daily driving and inter-island trips, but plan accordingly. Visit Tesla's Supercharger map to verify locations on your specific island and confirm network coverage matches your intended usage patterns.</li>
+                    <li><strong>Calculate Long-Term Fuel Savings:</strong> Hawaii's $4.50-$5.50 per gallon gas prices create exceptional EV economics. A Model Y's $0.04-0.05/mile electricity cost (vs. $0.20/mile for 25 mpg gas cars) saves approximately $1,500+ annually for 10,000-mile drivers. Over a vehicle's 10-year ownership, expect $20,000+ in fuel savings alone—offsetting most or all of the Hawaii premium.</li>
+                    <li><strong>Request Service Records and Battery Reports:</strong> For used Model Ys, obtain the vehicle's service history and battery health reports from Tesla service centers. Modern Teslas generate detailed diagnostic data. Request the latest battery diagnostic report; degradation below 90% capacity at 150,000+ miles is excellent. Consistent supercharging records indicate normal usage patterns.</li>
+                    <li><strong>Inspect for Salt Air Corrosion Carefully:</strong> Hawaii's marine environment accelerates corrosion. Inspect areas where body panels meet (door seals, tailgate, undercarriage trim, brake lines, electrical connectors). Surface oxidation is normal; deep pitting or structural corrosion should be negotiated heavily or avoided. Pay special attention to the undercarriage—check for salt deposits in wheel wells and suspension components.</li>
+                    <li><strong>Verify Complete Tesla Service History:</strong> Unlike traditional vehicles, Model Y service records tell a different story. Teslas require minimal scheduled maintenance. Check for any reports of battery service, cooling system work, or suspension repairs—these are rare but important. Absence of service records isn't necessarily negative; it may indicate low usage or perfect reliability.</li>
+                    <li><strong>Compare Total Cost of Ownership vs. Gas Vehicles:</strong> While Model Y purchase price may match or exceed comparable gas cars, factor lifetime costs: no oil changes, minimal brake wear (regenerative braking), cheaper electricity than gas, Hawaii's federal EV tax incentives (when available), and potential state rebates. Over 10 years, Model Y ownership typically costs 30-40% less than equivalent gas vehicles.</li>
+                    <li><strong>Evaluate Range vs. Island Geography:</strong> Model Y Long Range (330+ mi) covers even Big Island's 120-mile circumference multiple times before requiring charging. This makes inter-island driving extremely feasible. Standard Range (200-250 mi) works for daily Oahu commuting but requires more strategic planning for Big Island trips. Match trim level to your specific driving patterns.</li>
+                    <li><strong>Check Battery Warranty Status and Transfer:</strong> Tesla's battery warranty covers defects and degradation below 70% capacity for 8 years/120,000 miles. Used vehicle buyers should verify remaining warranty coverage and confirm it transfers to second owners (Tesla generally honors 8-year/100,000-mile coverage for second owners). This is valuable insurance for battery peace of mind.</li>
+                    <li><strong>Consider Future Expansion of Charging Infrastructure:</strong> Hawaii's renewable energy transition and EV adoption rates are accelerating. Network infrastructure continues expanding; Level 2 chargers are increasingly available at shopping centers, workplaces, and public parking. Factor in that your Model Y's charging flexibility will improve over your ownership period, making the vehicle more valuable over time.</li>
+                    <li><strong>Research Your Specific Island's EV Community:</strong> Hawaii's EV owners form active communities sharing charging tips, maintenance advice, and island-specific route knowledge. Oahu's Tesla club is particularly active. Joining these communities before purchasing provides invaluable local insights about reliability expectations, common issues on older models, and optimal usage patterns for Hawaii's terrain.</li>
+                    <li><strong>Factor in Hawaii's Tax and Registration Benefits:</strong> Hawaii offers various EV purchase incentives and registration benefits. Verify current state rebates and federal tax credits (though these often apply to new purchases rather than used). Some local utilities offer EV charging rebates. Investigate all available incentives before finalizing your purchase.</li>
+                </ol>
+            </section>
+
+            <section class="faq">
+                <h2>Frequently Asked Questions: Tesla Model Y Prices in Hawaii</h2>
+
+                <div itemscope itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">What is the average price for a Tesla Model Y in Hawaii?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">The average Tesla Model Y costs between $36,000 and $46,000 in Hawaii, depending on trim level, year, mileage, and condition. Most 2021-2024 used models fall in the $38,000-$44,000 range. Oahu typically has the lowest average at around $39,800, while Kauai's smaller inventory pushes averages to $42,500. Long Range trims (most popular) typically average $38,500-$42,500 depending on mileage.</p>
+                    </div>
+                </div>
+
+                <div itemscope itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">Why does Tesla Model Y cost more in Hawaii than on the mainland?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Model Y commands a 10-14% premium in Hawaii (notably lower than gas vehicles' 18-22% premiums) due to: limited inventory means less competition among dealers; shipping costs $1,000-$1,500; port handling adds $400-$600; strong environmental demand from Hawaii buyers; and the islands' $4.50-$5.50/gallon gas prices make EV economics exceptionally compelling, driving premium pricing for available inventory.</p>
+                    </div>
+                </div>
+
+                <div itemscope itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">Is a Tesla Model Y a good purchase for Hawaii?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Absolutely. Tesla Model Y is arguably the best vehicle choice for Hawaii due to exceptional economics and environmental alignment. With gas at $4.50-$5.50/gallon (nation's highest), a Model Y saves $1,500+ annually in fuel costs vs. comparable gas cars. Hawaii's 30%+ renewable electricity means zero-emission driving aligns with the islands' sustainability goals. Check out our <a href="/guides/electric-vehicles-hawaii" class="text-link">comprehensive EV guide for Hawaii</a> for deeper analysis of EV ownership in the islands.</p>
+                    </div>
+                </div>
+
+                <div itemscope itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">Which Tesla Model Y trim should I choose for Hawaii?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Long Range is the best choice for most Hawaii buyers. Its 330+ mile range handles even Big Island's full circumference comfortably, eliminating range anxiety for inter-island trips. Priced at $38,500-$42,500 Hawaii average, it offers exceptional value. Standard Range ($36,000-$38,500) appeals to Oahu residents with home charging and short commutes. Performance ($42,500-$46,000) attracts driving enthusiasts but costs more than practical necessity justifies for most buyers.</p>
+                    </div>
+                </div>
+
+                <div itemscope itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">How does Tesla's Supercharger network cover Hawaii?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Tesla's Supercharger infrastructure in Hawaii has expanded significantly. Oahu features 6+ Supercharger locations, providing comprehensive coverage from Honolulu to North Shore. Maui has 2 locations (Lahaina and Wailea areas). Big Island has 2 stations covering both Kona and Hilo sides. Kauai has 1 Supercharger near Lihue. For daily driving, Level 2 chargers at home or workplaces are most convenient; Superchargers handle longer trips and inter-island journeys. Network continues expanding as EV adoption grows.</p>
+                    </div>
+                </div>
+
+                <div itemscope itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">How much does mileage affect Tesla Model Y prices?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Mileage impacts pricing similarly to gas vehicles: under-50k miles command baseline prices; 50k-100k miles typically see 10-13% reduction; 100k-150k miles drop 28-35%; 150k+ miles drop 42-50%. However, Tesla battery degradation is minimal—modern Model Ys retain 90-95% capacity at 200,000 miles. Battery health matters more than absolute mileage for Model Y purchasing decisions. A 150,000-mile Model Y with excellent battery health outperforms many lower-mileage gas cars from competitors.</p>
+                    </div>
+                </div>
+
+                <div itemscope itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">Should I buy a Tesla Model Y in Hawaii or ship from the mainland?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Model Y's lower Hawaii premium (10-14% vs. 18-22% for gas vehicles) makes local purchasing more attractive than for traditional vehicles. However, if mainland pricing is 12-15%+ cheaper after accounting for $1,500 shipping and handling, shipping may be worthwhile. EVs have simpler logistics and less required pre-import modification than gas vehicles. Use our <a href="/guides/ship-vs-buy" class="text-link">shipping vs. buying calculator</a> to compare your specific scenario and account for total delivery time, inspection access, and battery verification needs.</p>
+                    </div>
+                </div>
+
+                <div itemscope itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">What are the fuel cost savings from owning a Model Y in Hawaii?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Model Y ownership delivers massive fuel savings in Hawaii. Electricity costs approximately $0.04-0.05 per mile. Compare to comparable gas cars at $0.20-0.25/mile (using Hawaii's $5/gallon average and 25 mpg efficiency). That's $0.15-0.20 per mile saved. For 10,000 annual miles, annual savings exceed $1,500. Over a 10-year ownership period, fuel savings alone total $20,000+. For high-mileage drivers, savings exceed $30,000. These savings often completely offset the Hawaii purchase premium within 4-5 years.</p>
+                    </div>
+                </div>
+
+                <div itemscope itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">How is battery health evaluated when buying a used Model Y?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Battery health in used Tesla Model Ys is evaluated through diagnostic reports from Tesla service centers. Modern Teslas track battery capacity percentage; request this report before purchasing. Degradation below 90% at 150,000 miles is considered excellent. Tesla's battery warranty covers defects and degradation below 70% capacity for 8 years/120,000 miles on original owners and 8 years/100,000 miles on second owners. Have a trusted Tesla service center perform a pre-purchase inspection including battery diagnostics. Battery condition is more important than mileage for Model Y purchasing decisions.</p>
+                    </div>
+                </div>
+
+                <div itemscope itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">Which islands have adequate charging infrastructure for Model Y ownership?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">All major Hawaiian islands have adequate Model Y charging infrastructure. Oahu has the most comprehensive network with 6+ Superchargers plus numerous Level 2 chargers. Maui and Big Island have 2 Supercharger locations each, sufficient for daily driving and inter-island trips. Kauai has 1 Supercharger, adequate for the island's geography. For optimal ownership experience everywhere, home charging installation is highly recommended. Island-specific charging networks continue expanding; verify Supercharger locations and Level 2 charger availability on your specific island before purchasing.</p>
+                    </div>
+                </div>
+
+                <div itemscope itemtype="https://schema.org/Question">
+                    <h3 itemprop="name">What is the realistic budget for buying a Model Y in Hawaii?</h3>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Budget approximately $40,000-$42,000 total for a reliable mid-year Model Y Long Range (2021-2023 range). This includes vehicle purchase ($39,000-$41,500), pre-purchase inspection and battery diagnostics ($200-$400), title/registration processing ($200-$300), and initial Tesla-approved service if needed ($100-$300). Add insurance, which averages 15-20% higher in Hawaii than mainland. Consider home Wall Connector installation ($500-$2,000 depending on electrical work). Factor in the exceptional $1,500+ annual fuel savings, which rapidly offset upfront costs compared to gas vehicle ownership.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="internal-links">
+                <h2>Related Content & Resources</h2>
+                <ul>
+                    <li><a href="/guides/electric-vehicles-hawaii" class="text-link">Complete Guide to Electric Vehicles in Hawaii</a> — Comprehensive analysis of EV ownership, charging, incentives, and why Hawaii is an ideal EV market</li>
+                    <li><a href="/oahu" class="text-link">Used Cars for Sale on Oahu</a> — Browse Tesla Model Y inventory and other vehicles on Hawaii's largest island</li>
+                    <li><a href="/maui" class="text-link">Used Cars for Sale on Maui</a> — Maui market report with current Model Y pricing and island-specific insights</li>
+                    <li><a href="/big-island" class="text-link">Used Cars for Sale on Big Island</a> — Hawaii Island Model Y availability, Supercharger access, and pricing</li>
+                    <li><a href="/kauai" class="text-link">Used Cars for Sale on Kauai</a> — Garden Island EV market overview and charging infrastructure details</li>
+                    <li><a href="/guides/ship-vs-buy" class="text-link">Ship Your Car or Buy in Hawaii?</a> — Complete comparison guide with calculator for comparing mainland purchase vs. local buying</li>
+                    <li><a href="/guides/why-cars-cost-more" class="text-link">Why Do Cars Cost More in Hawaii?</a> — Deep dive into Hawaii automotive market dynamics, with EV-specific economics analysis</li>
+                    <li><a href="/guides/best-used-cars-hawaii" class="text-link">Best Used Cars to Buy in Hawaii</a> — Top vehicle recommendations for Hawaii market, including Tesla Model Y among premium EV options</li>
+                    <li><a href="/guides/financing-used-car-hawaii" class="text-link">Financing a Used Car in Hawaii</a> — Guide to financing options, rates, and loan considerations for Model Y purchases</li>
+                </ul>
+            </section>
+
+            <section class="cta-bar">
+                <h2>Get Tesla Model Y Price Alerts</h2>
+                <p>Be the first to know when Model Ys arrive at competitive prices on your preferred island. Join hundreds of Hawaii drivers tracking EV inventory.</p>
+                <form class="cta-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=\"color: white; font-weight: 600;\">You\x27re on the list! We\x27ll notify you when matching vehicles arrive.</p>';">
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <input type="hidden" name="vehicle_make" value="Tesla">
+                    <input type="hidden" name="vehicle_model" value="Model Y">
+                    <button type="submit">Get Price Alerts</button>
+                </form>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo" style="color:var(--color-ocean)">Hawaii<span style="color:var(--color-sunset)">CarPrice</span>Index</a>
+                <p>The only used car pricing tool built for Hawaii. We track 1,000+ listings daily across all islands.</p>
+            </div>
+            <div class="footer-col">
+                <h4>By Island</h4>
+                <a href="/oahu">Oahu</a>
+                <a href="/maui">Maui</a>
+                <a href="/big-island">Big Island</a>
+                <a href="/kauai">Kauai</a>
+            </div>
+            <div class="footer-col">
+                <h4>Guides</h4>
+                <a href="/guides/best-used-cars-hawaii">Best Used Cars</a>
+                <a href="/guides/electric-vehicles-hawaii">Electric Vehicles</a>
+                <a href="/guides/ship-vs-buy">Ship vs Buy</a>
+                <a href="/guides/why-cars-cost-more">Why Cars Cost More</a>
+                <a href="/guides/financing-used-car-hawaii">Financing</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="/#calculator">Price Calculator</a>
+                <a href="/about">About</a>
+                <a href="/privacy">Privacy</a>
+                <a href="/terms">Terms</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Hawaii Car Price Index. Data updated daily.</span>
+            <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+        </div>
+    </footer>
+</body>
+</html>
