@@ -102,6 +102,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://hawaiicarpriceindex.com/guides/financing-used-car-hawaii</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- About -->
   <url>
